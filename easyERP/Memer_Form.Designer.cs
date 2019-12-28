@@ -57,7 +57,7 @@
             this.nudPageSize = new System.Windows.Forms.NumericUpDown();
             this.btnLastPage = new System.Windows.Forms.Button();
             this.UpdateMember_button = new System.Windows.Forms.Button();
-            this.memberTableAdapter1 = new easyERP.ERPDataSet3TableAdapters.MemberTableAdapter();
+            this.memberTableAdapter = new easyERP.ERPDataSet3TableAdapters.MemberTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.IInsertMember_button = new System.Windows.Forms.Button();
             this.DeleteMember_button = new System.Windows.Forms.Button();
@@ -328,9 +328,9 @@
             this.UpdateMember_button.UseVisualStyleBackColor = true;
             this.UpdateMember_button.Click += new System.EventHandler(this.UpdateMember_button_Click);
             // 
-            // memberTableAdapter1
+            // memberTableAdapter
             // 
-            this.memberTableAdapter1.ClearBeforeFill = true;
+            this.memberTableAdapter.ClearBeforeFill = true;
             // 
             // pictureBox1
             // 
@@ -521,7 +521,7 @@
         private System.Windows.Forms.Button UpdateMember_button;
         private ERPDataSet3 eRPDataSet3;
         private System.Windows.Forms.BindingSource easyERP_Member;
-        private ERPDataSet3TableAdapters.MemberTableAdapter memberTableAdapter1;
+        private ERPDataSet3TableAdapters.MemberTableAdapter memberTableAdapter;
         private System.Windows.Forms.Button IInsertMember_button;
         private System.Windows.Forms.Button DeleteMember_button;
         public System.Windows.Forms.Button SelectMember_button;

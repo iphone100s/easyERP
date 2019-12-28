@@ -68,11 +68,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>easyERP_Member.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ERPDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ERPDataSet3.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,17 +119,6 @@
     </None>
     <None Include="easyERP_Member.xss">
       <DependentUpon>easyERP_Member.xsd</DependentUpon>
-    </None>
-    <None Include="ERPDataSet3.xsc">
-      <DependentUpon>ERPDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="ERPDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ERPDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ERPDataSet3.xss">
-      <DependentUpon>ERPDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
