@@ -51,6 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,24 +68,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>easyERP_Member.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ERPDataSet.cs">
-      <DependentUpon>ERPDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ERPDataSet.Designer.cs">
-      <DependentUpon>ERPDataSet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ERPDataSet1.Designer.cs">
+    <Compile Include="ERPDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ERPDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ERPDataSet2.cs">
-      <DependentUpon>ERPDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ERPDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ERPDataSet2.xsd</DependentUpon>
+      <DependentUpon>ERPDataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="Login_Form.cs">
       <SubType>Form</SubType>
@@ -92,17 +79,11 @@
     <Compile Include="Login_Form.Designer.cs">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member_Form.cs">
+    <Compile Include="Memer_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Member_Form.Designer.cs">
-      <DependentUpon>Member_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="selectMemer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="selectMemer.Designer.cs">
-      <DependentUpon>selectMemer.cs</DependentUpon>
+    <Compile Include="Memer_Form.Designer.cs">
+      <DependentUpon>Memer_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Second_Form.cs">
       <SubType>Form</SubType>
@@ -116,11 +97,9 @@
     <EmbeddedResource Include="Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Member_Form.resx">
-      <DependentUpon>Member_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="selectMemer.resx">
-      <DependentUpon>selectMemer.cs</DependentUpon>
+    <EmbeddedResource Include="Memer_Form.resx">
+      <DependentUpon>Memer_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Second_Form.resx">
       <DependentUpon>Second_Form.cs</DependentUpon>
@@ -146,27 +125,16 @@
     <None Include="easyERP_Member.xss">
       <DependentUpon>easyERP_Member.xsd</DependentUpon>
     </None>
-    <None Include="ERPDataSet.xsc">
-      <DependentUpon>ERPDataSet.xsd</DependentUpon>
+    <None Include="ERPDataSet3.xsc">
+      <DependentUpon>ERPDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="ERPDataSet.xsd">
+    <None Include="ERPDataSet3.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ERPDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>ERPDataSet3.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ERPDataSet.xss">
-      <DependentUpon>ERPDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ERPDataSet2.xsc">
-      <DependentUpon>ERPDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="ERPDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ERPDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ERPDataSet2.xss">
-      <DependentUpon>ERPDataSet2.xsd</DependentUpon>
+    <None Include="ERPDataSet3.xss">
+      <DependentUpon>ERPDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -213,6 +181,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\74712.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -59,7 +59,7 @@ namespace easyERP
 
             if (username.Equals("") || password.Equals(""))
             {
-                MessageBox.Show("請勿空白帳號密碼!!");
+                MessageBox.Show("請勿空白帳號密碼!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -194,7 +194,9 @@ namespace easyERP
                     {
                          ReturnPermission = ds.Tables["Member"].Rows[0]["memberName"].ToString().Trim();
 
-                        MessageBox.Show( ReturnPermission + " 歡迎您登入，請按確定登入系統" );
+                        //MessageBox.Show( ReturnPermission + " 歡迎您登入，請按確定登入系統" );
+
+                        MessageBox.Show(ReturnPermission + " 歡迎您登入，請按確定登入系統", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         //跳轉道主頁面
                         Second_Form view = new Second_Form();
@@ -206,7 +208,9 @@ namespace easyERP
                     }
                     if (ReturnPermission.Equals("C"))
                     {
-                        MessageBox.Show( ReturnPermission + " 歡迎您登入，請按確定登入系統");
+
+                        //MessageBox.Show( ReturnPermission + " 歡迎您登入，請按確定登入系統");
+                        MessageBox.Show(ReturnPermission + " 歡迎您登入，請按確定登入系統", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         //跳轉道主頁面
                         Second_Form view = new Second_Form();
@@ -220,7 +224,7 @@ namespace easyERP
                 }
                 else
                 {
-                    MessageBox.Show("使用者名稱或密碼錯誤");
+                    MessageBox.Show("使用者名稱或密碼錯誤", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
 

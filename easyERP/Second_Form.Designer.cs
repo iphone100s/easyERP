@@ -43,7 +43,7 @@
             this.member_button.Name = "member_button";
             this.member_button.Size = new System.Drawing.Size(210, 40);
             this.member_button.TabIndex = 7;
-            this.member_button.Text = "會員新增與查詢系統";
+            this.member_button.Text = "員工系統";
             this.member_button.UseVisualStyleBackColor = true;
             this.member_button.Click += new System.EventHandler(this.Member_button_Click);
             // 
