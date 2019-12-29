@@ -33,8 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Memer_Form));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Employee_label = new System.Windows.Forms.Label();
             this.SelectMember_button = new System.Windows.Forms.Button();
             this.select_dataGridView = new System.Windows.Forms.DataGridView();
             this.memberIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +48,6 @@
             this.btnNextPage = new System.Windows.Forms.Button();
             this.lbCurrentPage = new System.Windows.Forms.Label();
             this.lbTotalPage = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSet = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -62,15 +60,16 @@
             this.IInsertMember_button = new System.Windows.Forms.Button();
             this.DeleteMember_button = new System.Windows.Forms.Button();
             this.status_comboBox = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.permissionName_label = new System.Windows.Forms.Label();
+            this.memberName_label = new System.Windows.Forms.Label();
             this.memberName_textBox = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.Password_label = new System.Windows.Forms.Label();
+            this.memberAccount_label = new System.Windows.Forms.Label();
             this.password_textBox = new System.Windows.Forms.TextBox();
             this.memberAccount_textbox = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
+            this.memberID_label = new System.Windows.Forms.Label();
             this.memberID_textBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.select_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyERP_Member)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eRPDataSet3)).BeginInit();
@@ -79,31 +78,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // Employee_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(417, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 27);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "員工系統";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(984, 136);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 27);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "請輸入帳號密碼";
+            this.Employee_label.AutoSize = true;
+            this.Employee_label.Font = new System.Drawing.Font("標楷體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Employee_label.ForeColor = System.Drawing.Color.Red;
+            this.Employee_label.Location = new System.Drawing.Point(198, 20);
+            this.Employee_label.Name = "Employee_label";
+            this.Employee_label.Size = new System.Drawing.Size(335, 32);
+            this.Employee_label.TabIndex = 5;
+            this.Employee_label.Text = "員工新增修改查詢系統";
             // 
             // SelectMember_button
             // 
-            this.SelectMember_button.Location = new System.Drawing.Point(663, 61);
+            this.SelectMember_button.Location = new System.Drawing.Point(135, 228);
             this.SelectMember_button.Name = "SelectMember_button";
-            this.SelectMember_button.Size = new System.Drawing.Size(114, 43);
+            this.SelectMember_button.Size = new System.Drawing.Size(100, 45);
             this.SelectMember_button.TabIndex = 9;
             this.SelectMember_button.Text = "查詢";
             this.SelectMember_button.UseVisualStyleBackColor = true;
@@ -113,7 +103,11 @@
             // 
             this.select_dataGridView.AllowUserToAddRows = false;
             this.select_dataGridView.AllowUserToDeleteRows = false;
+            this.select_dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.select_dataGridView.AutoGenerateColumns = false;
+            this.select_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.select_dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -138,7 +132,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.select_dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.select_dataGridView.Location = new System.Drawing.Point(53, 323);
+            this.select_dataGridView.Location = new System.Drawing.Point(53, 288);
             this.select_dataGridView.Name = "select_dataGridView";
             this.select_dataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -150,7 +144,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.select_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.select_dataGridView.RowTemplate.Height = 24;
-            this.select_dataGridView.Size = new System.Drawing.Size(545, 170);
+            this.select_dataGridView.Size = new System.Drawing.Size(642, 240);
             this.select_dataGridView.TabIndex = 10;
             // 
             // memberIDDataGridViewTextBoxColumn
@@ -200,84 +194,86 @@
             // 
             // btnFirstPage
             // 
-            this.btnFirstPage.Location = new System.Drawing.Point(53, 523);
+            this.btnFirstPage.BackColor = System.Drawing.SystemColors.Control;
+            this.btnFirstPage.Font = new System.Drawing.Font("標楷體", 11.25F);
+            this.btnFirstPage.Location = new System.Drawing.Point(53, 547);
             this.btnFirstPage.Name = "btnFirstPage";
-            this.btnFirstPage.Size = new System.Drawing.Size(75, 23);
+            this.btnFirstPage.Size = new System.Drawing.Size(95, 40);
             this.btnFirstPage.TabIndex = 11;
             this.btnFirstPage.Text = "第一頁";
-            this.btnFirstPage.UseVisualStyleBackColor = true;
+            this.btnFirstPage.UseVisualStyleBackColor = false;
             this.btnFirstPage.Click += new System.EventHandler(this.BtnFirstPage_Click);
             // 
             // btnPreviousPage
             // 
-            this.btnPreviousPage.Location = new System.Drawing.Point(148, 523);
+            this.btnPreviousPage.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPreviousPage.Font = new System.Drawing.Font("標楷體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPreviousPage.Location = new System.Drawing.Point(178, 547);
             this.btnPreviousPage.Name = "btnPreviousPage";
-            this.btnPreviousPage.Size = new System.Drawing.Size(75, 23);
+            this.btnPreviousPage.Size = new System.Drawing.Size(95, 40);
             this.btnPreviousPage.TabIndex = 12;
             this.btnPreviousPage.Text = "<<上一頁";
-            this.btnPreviousPage.UseVisualStyleBackColor = true;
+            this.btnPreviousPage.UseVisualStyleBackColor = false;
             this.btnPreviousPage.Click += new System.EventHandler(this.BtnPreviousPage_Click);
             // 
             // btnNextPage
             // 
-            this.btnNextPage.Location = new System.Drawing.Point(381, 523);
+            this.btnNextPage.BackColor = System.Drawing.SystemColors.Control;
+            this.btnNextPage.Font = new System.Drawing.Font("標楷體", 11.25F);
+            this.btnNextPage.Location = new System.Drawing.Point(482, 547);
             this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(75, 23);
+            this.btnNextPage.Size = new System.Drawing.Size(95, 40);
             this.btnNextPage.TabIndex = 13;
             this.btnNextPage.Text = "下一頁>>";
-            this.btnNextPage.UseVisualStyleBackColor = true;
+            this.btnNextPage.UseVisualStyleBackColor = false;
             this.btnNextPage.Click += new System.EventHandler(this.BtnNextPage_Click);
             // 
             // lbCurrentPage
             // 
             this.lbCurrentPage.AutoSize = true;
-            this.lbCurrentPage.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lbCurrentPage.Location = new System.Drawing.Point(255, 523);
+            this.lbCurrentPage.Font = new System.Drawing.Font("標楷體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbCurrentPage.ForeColor = System.Drawing.Color.Red;
+            this.lbCurrentPage.Location = new System.Drawing.Point(327, 558);
             this.lbCurrentPage.Name = "lbCurrentPage";
-            this.lbCurrentPage.Size = new System.Drawing.Size(96, 27);
+            this.lbCurrentPage.Size = new System.Drawing.Size(103, 29);
             this.lbCurrentPage.TabIndex = 15;
             this.lbCurrentPage.Text = "第  頁";
             // 
             // lbTotalPage
             // 
             this.lbTotalPage.AutoSize = true;
-            this.lbTotalPage.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lbTotalPage.Location = new System.Drawing.Point(502, 622);
+            this.lbTotalPage.Font = new System.Drawing.Font("標楷體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbTotalPage.ForeColor = System.Drawing.Color.Red;
+            this.lbTotalPage.Location = new System.Drawing.Point(595, 659);
             this.lbTotalPage.Name = "lbTotalPage";
-            this.lbTotalPage.Size = new System.Drawing.Size(96, 27);
+            this.lbTotalPage.Size = new System.Drawing.Size(103, 29);
             this.lbTotalPage.TabIndex = 16;
             this.lbTotalPage.Text = "共  頁";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.Location = new System.Drawing.Point(778, 443);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(292, 27);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "請輸入要修改帳號密碼";
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnSet);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.nudPageSize);
-            this.groupBox1.Location = new System.Drawing.Point(53, 578);
+            this.groupBox1.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Red;
+            this.groupBox1.Location = new System.Drawing.Point(53, 606);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(402, 100);
+            this.groupBox1.Size = new System.Drawing.Size(514, 111);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "設定分頁";
             // 
             // btnSet
             // 
-            this.btnSet.Location = new System.Drawing.Point(302, 44);
+            this.btnSet.Font = new System.Drawing.Font("標楷體", 11.25F);
+            this.btnSet.Location = new System.Drawing.Point(341, 40);
             this.btnSet.Name = "btnSet";
-            this.btnSet.Size = new System.Drawing.Size(75, 23);
+            this.btnSet.Size = new System.Drawing.Size(107, 42);
             this.btnSet.TabIndex = 28;
-            this.btnSet.Text = "設定";
+            this.btnSet.Text = "設  定";
             this.btnSet.UseVisualStyleBackColor = true;
             this.btnSet.Click += new System.EventHandler(this.BtnSet_Click);
             // 
@@ -285,7 +281,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label13.Location = new System.Drawing.Point(258, 42);
+            this.label13.Location = new System.Drawing.Point(245, 28);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(40, 27);
             this.label13.TabIndex = 29;
@@ -295,7 +291,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label12.Location = new System.Drawing.Point(6, 42);
+            this.label12.Location = new System.Drawing.Point(27, 28);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(68, 27);
             this.label12.TabIndex = 28;
@@ -303,26 +299,34 @@
             // 
             // nudPageSize
             // 
-            this.nudPageSize.Location = new System.Drawing.Point(125, 47);
+            this.nudPageSize.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.nudPageSize.Location = new System.Drawing.Point(101, 30);
+            this.nudPageSize.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.nudPageSize.Name = "nudPageSize";
-            this.nudPageSize.Size = new System.Drawing.Size(120, 22);
+            this.nudPageSize.Size = new System.Drawing.Size(127, 25);
             this.nudPageSize.TabIndex = 0;
             // 
             // btnLastPage
             // 
-            this.btnLastPage.Location = new System.Drawing.Point(498, 514);
+            this.btnLastPage.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLastPage.Font = new System.Drawing.Font("標楷體", 11.25F);
+            this.btnLastPage.Location = new System.Drawing.Point(600, 547);
             this.btnLastPage.Name = "btnLastPage";
-            this.btnLastPage.Size = new System.Drawing.Size(75, 23);
+            this.btnLastPage.Size = new System.Drawing.Size(95, 40);
             this.btnLastPage.TabIndex = 28;
             this.btnLastPage.Text = "最後頁";
-            this.btnLastPage.UseVisualStyleBackColor = true;
+            this.btnLastPage.UseVisualStyleBackColor = false;
             this.btnLastPage.Click += new System.EventHandler(this.BtnLastPage_Click);
             // 
             // UpdateMember_button
             // 
-            this.UpdateMember_button.Location = new System.Drawing.Point(663, 227);
+            this.UpdateMember_button.Location = new System.Drawing.Point(265, 228);
             this.UpdateMember_button.Name = "UpdateMember_button";
-            this.UpdateMember_button.Size = new System.Drawing.Size(114, 57);
+            this.UpdateMember_button.Size = new System.Drawing.Size(100, 45);
             this.UpdateMember_button.TabIndex = 29;
             this.UpdateMember_button.Text = "修改";
             this.UpdateMember_button.UseVisualStyleBackColor = true;
@@ -337,16 +341,17 @@
             this.pictureBox1.Image = global::easyERP.Properties.Resources.view_four;
             this.pictureBox1.Location = new System.Drawing.Point(0, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1218, 703);
+            this.pictureBox1.Size = new System.Drawing.Size(795, 744);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // IInsertMember_button
             // 
-            this.IInsertMember_button.Location = new System.Drawing.Point(673, 314);
+            this.IInsertMember_button.Location = new System.Drawing.Point(527, 228);
             this.IInsertMember_button.Name = "IInsertMember_button";
-            this.IInsertMember_button.Size = new System.Drawing.Size(104, 52);
+            this.IInsertMember_button.Size = new System.Drawing.Size(100, 45);
             this.IInsertMember_button.TabIndex = 41;
             this.IInsertMember_button.Text = "新增";
             this.IInsertMember_button.UseVisualStyleBackColor = true;
@@ -354,9 +359,9 @@
             // 
             // DeleteMember_button
             // 
-            this.DeleteMember_button.Location = new System.Drawing.Point(663, 143);
+            this.DeleteMember_button.Location = new System.Drawing.Point(397, 228);
             this.DeleteMember_button.Name = "DeleteMember_button";
-            this.DeleteMember_button.Size = new System.Drawing.Size(114, 50);
+            this.DeleteMember_button.Size = new System.Drawing.Size(100, 45);
             this.DeleteMember_button.TabIndex = 44;
             this.DeleteMember_button.Text = "刪除";
             this.DeleteMember_button.UseVisualStyleBackColor = true;
@@ -364,107 +369,135 @@
             // 
             // status_comboBox
             // 
+            this.status_comboBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.status_comboBox.FormattingEnabled = true;
-            this.status_comboBox.Location = new System.Drawing.Point(164, 220);
+            this.status_comboBox.Location = new System.Drawing.Point(204, 182);
             this.status_comboBox.Name = "status_comboBox";
-            this.status_comboBox.Size = new System.Drawing.Size(121, 20);
+            this.status_comboBox.Size = new System.Drawing.Size(153, 24);
             this.status_comboBox.TabIndex = 52;
-            this.status_comboBox.SelectedIndexChanged += new System.EventHandler(this.Status_comboBox_SelectedIndexChanged);
             // 
-            // label17
+            // permissionName_label
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label17.Location = new System.Drawing.Point(60, 211);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(68, 27);
-            this.label17.TabIndex = 51;
-            this.label17.Text = "職等";
+            this.permissionName_label.AutoSize = true;
+            this.permissionName_label.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.permissionName_label.ForeColor = System.Drawing.Color.Red;
+            this.permissionName_label.Location = new System.Drawing.Point(102, 182);
+            this.permissionName_label.Name = "permissionName_label";
+            this.permissionName_label.Size = new System.Drawing.Size(68, 27);
+            this.permissionName_label.TabIndex = 51;
+            this.permissionName_label.Text = "職等";
             // 
-            // label18
+            // memberName_label
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label18.Location = new System.Drawing.Point(57, 114);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(68, 27);
-            this.label18.TabIndex = 50;
-            this.label18.Text = "姓名";
+            this.memberName_label.AutoSize = true;
+            this.memberName_label.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.memberName_label.ForeColor = System.Drawing.Color.Red;
+            this.memberName_label.Location = new System.Drawing.Point(413, 100);
+            this.memberName_label.Name = "memberName_label";
+            this.memberName_label.Size = new System.Drawing.Size(68, 27);
+            this.memberName_label.TabIndex = 50;
+            this.memberName_label.Text = "姓名";
             // 
             // memberName_textBox
             // 
-            this.memberName_textBox.Location = new System.Drawing.Point(140, 114);
+            this.memberName_textBox.Font = new System.Drawing.Font("新細明體", 14.25F);
+            this.memberName_textBox.Location = new System.Drawing.Point(515, 100);
+            this.memberName_textBox.MaxLength = 10;
+            this.memberName_textBox.Multiline = true;
             this.memberName_textBox.Name = "memberName_textBox";
-            this.memberName_textBox.Size = new System.Drawing.Size(100, 22);
+            this.memberName_textBox.Size = new System.Drawing.Size(153, 27);
             this.memberName_textBox.TabIndex = 49;
-            this.memberName_textBox.TextChanged += new System.EventHandler(this.MemberName_textBox_TextChanged);
             // 
-            // label19
+            // Password_label
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label19.Location = new System.Drawing.Point(60, 166);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(68, 27);
-            this.label19.TabIndex = 48;
-            this.label19.Text = "密碼";
+            this.Password_label.AutoSize = true;
+            this.Password_label.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Password_label.ForeColor = System.Drawing.Color.Red;
+            this.Password_label.Location = new System.Drawing.Point(102, 125);
+            this.Password_label.Name = "Password_label";
+            this.Password_label.Size = new System.Drawing.Size(68, 27);
+            this.Password_label.TabIndex = 48;
+            this.Password_label.Text = "密碼";
             // 
-            // label20
+            // memberAccount_label
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label20.Location = new System.Drawing.Point(59, 61);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(68, 27);
-            this.label20.TabIndex = 47;
-            this.label20.Text = "帳號";
+            this.memberAccount_label.AutoSize = true;
+            this.memberAccount_label.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.memberAccount_label.ForeColor = System.Drawing.Color.Red;
+            this.memberAccount_label.Location = new System.Drawing.Point(102, 69);
+            this.memberAccount_label.Name = "memberAccount_label";
+            this.memberAccount_label.Size = new System.Drawing.Size(68, 27);
+            this.memberAccount_label.TabIndex = 47;
+            this.memberAccount_label.Text = "帳號";
             // 
             // password_textBox
             // 
-            this.password_textBox.Location = new System.Drawing.Point(152, 166);
+            this.password_textBox.Font = new System.Drawing.Font("新細明體", 14.25F);
+            this.password_textBox.Location = new System.Drawing.Point(204, 127);
+            this.password_textBox.MaxLength = 10;
+            this.password_textBox.Multiline = true;
             this.password_textBox.Name = "password_textBox";
-            this.password_textBox.Size = new System.Drawing.Size(100, 22);
+            this.password_textBox.Size = new System.Drawing.Size(153, 27);
             this.password_textBox.TabIndex = 46;
             // 
             // memberAccount_textbox
             // 
-            this.memberAccount_textbox.Location = new System.Drawing.Point(145, 61);
+            this.memberAccount_textbox.BackColor = System.Drawing.SystemColors.Window;
+            this.memberAccount_textbox.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.memberAccount_textbox.ForeColor = System.Drawing.Color.Red;
+            this.memberAccount_textbox.Location = new System.Drawing.Point(204, 69);
+            this.memberAccount_textbox.MaxLength = 10;
+            this.memberAccount_textbox.Multiline = true;
             this.memberAccount_textbox.Name = "memberAccount_textbox";
-            this.memberAccount_textbox.Size = new System.Drawing.Size(100, 22);
+            this.memberAccount_textbox.Size = new System.Drawing.Size(153, 27);
             this.memberAccount_textbox.TabIndex = 45;
-            this.memberAccount_textbox.TextChanged += new System.EventHandler(this.MemberAccount_textbox_TextChanged);
             // 
-            // label21
+            // memberID_label
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label21.Location = new System.Drawing.Point(76, 261);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(40, 27);
-            this.label21.TabIndex = 54;
-            this.label21.Text = "ID";
+            this.memberID_label.AutoSize = true;
+            this.memberID_label.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.memberID_label.ForeColor = System.Drawing.Color.Red;
+            this.memberID_label.Location = new System.Drawing.Point(413, 158);
+            this.memberID_label.Name = "memberID_label";
+            this.memberID_label.Size = new System.Drawing.Size(96, 27);
+            this.memberID_label.TabIndex = 54;
+            this.memberID_label.Text = "員工ID";
             // 
             // memberID_textBox
             // 
-            this.memberID_textBox.Location = new System.Drawing.Point(159, 261);
+            this.memberID_textBox.Font = new System.Drawing.Font("新細明體", 14.25F);
+            this.memberID_textBox.Location = new System.Drawing.Point(515, 156);
+            this.memberID_textBox.MaxLength = 10;
+            this.memberID_textBox.Multiline = true;
             this.memberID_textBox.Name = "memberID_textBox";
-            this.memberID_textBox.Size = new System.Drawing.Size(100, 22);
+            this.memberID_textBox.Size = new System.Drawing.Size(153, 27);
             this.memberID_textBox.TabIndex = 53;
-            this.memberID_textBox.TextChanged += new System.EventHandler(this.MemberID_textBox_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("標楷體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(28, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(262, 24);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "!請先設定分頁才可查詢";
             // 
             // Memer_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1214, 698);
-            this.Controls.Add(this.label21);
+            this.ClientSize = new System.Drawing.Size(791, 738);
+            this.Controls.Add(this.memberID_label);
             this.Controls.Add(this.memberID_textBox);
             this.Controls.Add(this.status_comboBox);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.permissionName_label);
+            this.Controls.Add(this.lbTotalPage);
+            this.Controls.Add(this.memberName_label);
             this.Controls.Add(this.memberName_textBox);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label20);
+            this.Controls.Add(this.Password_label);
+            this.Controls.Add(this.memberAccount_label);
             this.Controls.Add(this.password_textBox);
             this.Controls.Add(this.memberAccount_textbox);
             this.Controls.Add(this.DeleteMember_button);
@@ -472,17 +505,15 @@
             this.Controls.Add(this.UpdateMember_button);
             this.Controls.Add(this.btnLastPage);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.lbTotalPage);
             this.Controls.Add(this.lbCurrentPage);
             this.Controls.Add(this.btnNextPage);
             this.Controls.Add(this.btnPreviousPage);
             this.Controls.Add(this.btnFirstPage);
             this.Controls.Add(this.select_dataGridView);
             this.Controls.Add(this.SelectMember_button);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Employee_label);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Memer_Form";
@@ -503,15 +534,13 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Employee_label;
         private System.Windows.Forms.DataGridView select_dataGridView;
         private System.Windows.Forms.Button btnFirstPage;
         private System.Windows.Forms.Button btnPreviousPage;
         private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.Label lbCurrentPage;
         private System.Windows.Forms.Label lbTotalPage;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSet;
         private System.Windows.Forms.Label label13;
@@ -526,19 +555,20 @@
         private System.Windows.Forms.Button DeleteMember_button;
         public System.Windows.Forms.Button SelectMember_button;
         private System.Windows.Forms.ComboBox status_comboBox;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label permissionName_label;
+        private System.Windows.Forms.Label memberName_label;
         private System.Windows.Forms.TextBox memberName_textBox;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label Password_label;
+        private System.Windows.Forms.Label memberAccount_label;
         private System.Windows.Forms.TextBox password_textBox;
         private System.Windows.Forms.TextBox memberAccount_textbox;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label memberID_label;
         private System.Windows.Forms.TextBox memberID_textBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn memberIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn memberAccountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn memberNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn permissionNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -88,6 +88,7 @@
             this.Controls.Add(this.insert_button);
             this.Controls.Add(this.member_button);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Second_Form";

@@ -76,7 +76,7 @@
             this.userTextBox.Name = "userTextBox";
             this.userTextBox.Size = new System.Drawing.Size(170, 30);
             this.userTextBox.TabIndex = 2;
-            this.userTextBox.Text = "username";
+            this.userTextBox.Text = "帳號";
             this.userTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.userTextBox.Click += new System.EventHandler(this.userTextBox_Click);
             this.userTextBox.TextChanged += new System.EventHandler(this.UserTextBox_TextChanged);
@@ -92,7 +92,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(170, 30);
             this.passwordTextBox.TabIndex = 3;
-            this.passwordTextBox.Text = "password";
+            this.passwordTextBox.Text = "密碼";
             this.passwordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passwordTextBox.Click += new System.EventHandler(this.PasswordTextBox_Click);
             this.passwordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);

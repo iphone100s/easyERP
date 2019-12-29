@@ -329,16 +329,16 @@ namespace easyERP
                         }
 
                     }
-                    //catch (System.Data.Linq.DuplicateKeyException exception)
+                    //catch (DuplicateKeyException ex)
                     //{
 
-                    //    MessageBox.Show("請勿重複員工ID!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    //    MessageBox.Show(Environment.NewLine + ex.Message + "請勿重複員工ID!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     //    return;
 
                     //}
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show(ex.Message);                      
                     }
                     finally
                     {
@@ -440,8 +440,7 @@ namespace easyERP
 
             status_comboBox.DisplayMember = "Key";
             status_comboBox.ValueMember = "Value";
-
-            status_comboBox.SelectedIndex = 0;
+            status_comboBox.SelectedIndex = 0; //設定下拉式選項為第一筆
 
             SelectMember_button.Enabled = false;
             btnFirstPage.Enabled = false;
@@ -450,42 +449,45 @@ namespace easyERP
             btnLastPage.Enabled = false;
 
 
-        }
-        private void CbxCity_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            //設定標題的底色為透明標題
+            Employee_label.BackColor = Color.Transparent;
+            Employee_label.Parent = pictureBox1;
 
+            memberAccount_label.BackColor = Color.Transparent;
+            memberAccount_label.Parent = pictureBox1;
+
+            Password_label.BackColor = Color.Transparent;
+            Password_label.Parent = pictureBox1;
+
+            permissionName_label.BackColor = Color.Transparent;
+            permissionName_label.Parent = pictureBox1;
+
+            memberName_label.BackColor = Color.Transparent;
+            memberName_label.Parent = pictureBox1;
+
+            memberID_label.BackColor = Color.Transparent;
+            memberID_label.Parent = pictureBox1;
+
+            Employee_label.BackColor = Color.Transparent;
+            Employee_label.Parent = pictureBox1;
+
+            lbCurrentPage.BackColor = Color.Transparent;
+            lbCurrentPage.Parent = pictureBox1;
+
+            lbTotalPage.BackColor = Color.Transparent;
+            lbTotalPage.Parent = pictureBox1;
+
+            
         }
+
+
+
         public Memer_Form()
         {
             InitializeComponent();
         }
 
-
-
-
-
-
-        private void MemberID_textBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Status_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MemberName_textBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MemberAccount_textbox_TextChanged(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
 
         }
