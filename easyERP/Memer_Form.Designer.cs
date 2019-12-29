@@ -345,7 +345,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // IInsertMember_button
             // 
@@ -370,6 +369,7 @@
             // status_comboBox
             // 
             this.status_comboBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.status_comboBox.ForeColor = System.Drawing.Color.Red;
             this.status_comboBox.FormattingEnabled = true;
             this.status_comboBox.Location = new System.Drawing.Point(204, 182);
             this.status_comboBox.Name = "status_comboBox";
@@ -401,6 +401,7 @@
             // memberName_textBox
             // 
             this.memberName_textBox.Font = new System.Drawing.Font("新細明體", 14.25F);
+            this.memberName_textBox.ForeColor = System.Drawing.Color.Red;
             this.memberName_textBox.Location = new System.Drawing.Point(515, 100);
             this.memberName_textBox.MaxLength = 10;
             this.memberName_textBox.Multiline = true;
@@ -433,6 +434,7 @@
             // password_textBox
             // 
             this.password_textBox.Font = new System.Drawing.Font("新細明體", 14.25F);
+            this.password_textBox.ForeColor = System.Drawing.Color.Red;
             this.password_textBox.Location = new System.Drawing.Point(204, 127);
             this.password_textBox.MaxLength = 10;
             this.password_textBox.Multiline = true;
@@ -466,6 +468,7 @@
             // memberID_textBox
             // 
             this.memberID_textBox.Font = new System.Drawing.Font("新細明體", 14.25F);
+            this.memberID_textBox.ForeColor = System.Drawing.Color.Red;
             this.memberID_textBox.Location = new System.Drawing.Point(515, 156);
             this.memberID_textBox.MaxLength = 10;
             this.memberID_textBox.Multiline = true;

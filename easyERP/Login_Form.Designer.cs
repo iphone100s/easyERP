@@ -69,7 +69,7 @@
             // 
             this.userTextBox.BackColor = System.Drawing.Color.DarkGray;
             this.userTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.userTextBox.Font = new System.Drawing.Font("Verdana", 15.75F);
+            this.userTextBox.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userTextBox.ForeColor = System.Drawing.Color.DimGray;
             this.userTextBox.Location = new System.Drawing.Point(123, 118);
             this.userTextBox.Multiline = true;
@@ -85,7 +85,7 @@
             // 
             this.passwordTextBox.BackColor = System.Drawing.Color.DarkGray;
             this.passwordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passwordTextBox.Font = new System.Drawing.Font("Verdana", 15.75F);
+            this.passwordTextBox.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.passwordTextBox.ForeColor = System.Drawing.Color.DimGray;
             this.passwordTextBox.Location = new System.Drawing.Point(123, 189);
             this.passwordTextBox.Multiline = true;

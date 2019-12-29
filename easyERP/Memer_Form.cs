@@ -164,24 +164,29 @@ namespace easyERP
         private void SelectMember_button_Click(object sender, EventArgs e)
         {
 
-
-            string memberAccount = this.memberAccount_textbox.Text.Trim();
+            //string memberAccount = this.memberAccount_textbox.Text.Trim();
             //string memberName = this.memberName_textBox.Text.Trim();
-            string password = this.password_textBox.Text.Trim();
-           //string memberID = this.memberID_textBox.Text.Trim();
+            //string password = this.password_textBox.Text.Trim();
+            string memberID = this.memberID_textBox.Text.Trim();
 
 
             using (SqlConnection con = new SqlConnection(_connecString))
             {
                 SqlCommand cmd = new SqlCommand();
                 {
-                    if (memberAccount.Equals("") || password.Equals(""))
+                    if (memberID.Equals(""))
                     {
-                        cmd = new SqlCommand("select  TOP 10 memberAccount,password,memberName,permissionName from Member", con);
+                        MessageBox.Show("請輸入員工ID!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
                     }
+                    //if (memberAccount.Equals("") || password.Equals(""))
+                    //{
+                    //    cmd = new SqlCommand("select  TOP 10 memberAccount,password,memberName,permissionName from Member", con);
+                    //}
                     else
                     {
-                        cmd = new SqlCommand("select memberID,memberAccount, password, memberName, permissionName from Member where memberAccount='" + memberAccount + "'and password='" + password + "'", con);
+                        //cmd = new SqlCommand("select memberID,memberAccount, password, memberName, permissionName from Member where memberAccount='" + memberAccount + "'and password='" + password + "'", con);
+                        cmd = new SqlCommand("select memberID,memberAccount, password, memberName, permissionName from Member where memberID='" + memberID + "' ", con);
                     }
                 }
 
@@ -231,23 +236,25 @@ namespace easyERP
                         if (memberAccount != "" && password.Equals("") && memberName.Equals(""))//輸入 帳號
                         {
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "'  where memberID = " + memberID + "", con);
+                            updateSuccess();
                         }
                         if (memberAccount != "" && password != "" && memberName.Equals(""))//輸入 帳號 密碼
                         {
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' where memberID =" + memberID + "", con);
+                            updateSuccess();
                         }
                         if (memberAccount.Trim().Length > 0 && password != "" && memberName != "")   //輸入 帳號 密碼 姓名
                         {
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' , memberName='" + memberName + "' where memberID =" + memberID + "", con);
+                            updateSuccess();
                         }
                         if (memberAccount.Trim().Length > 0 && password != "" && memberName != "" && key != "" && Value != "")   //輸入 帳號 密碼 姓名 職等
                         {
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' , memberName='" + memberName + "' , permission='" + Value + "' , permissionName='" + key + "' where memberID =" + memberID + " " , con);
+                            updateSuccess();
                         }
 
                     }
-
-
 
                 }
 
@@ -260,7 +267,6 @@ namespace easyERP
                 SqlCommand cmd1 = new SqlCommand();
                 {
                     cmd1 = new SqlCommand(" select memberID,memberAccount, password, memberName, permissionName from Member where memberID ='" + memberID + "' ", con);
-
                 }
 
                 DataTable dt1 = new DataTable();
@@ -270,6 +276,11 @@ namespace easyERP
                 select_dataGridView.DataSource = dt1;
 
             }
+        }
+
+        private void updateSuccess()
+        {
+            MessageBox.Show("資料修改成功!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         //新增
@@ -325,17 +336,8 @@ namespace easyERP
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("資料儲存成功!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             cmd = new SqlCommand(" select memberID,memberAccount, password, memberName, permissionName from Member where memberID ='" + memberID + "' ", con);
-
                         }
-
                     }
-                    //catch (DuplicateKeyException ex)
-                    //{
-
-                    //    MessageBox.Show(Environment.NewLine + ex.Message + "請勿重複員工ID!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    //    return;
-
-                    //}
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);                      
@@ -477,7 +479,6 @@ namespace easyERP
             lbTotalPage.BackColor = Color.Transparent;
             lbTotalPage.Parent = pictureBox1;
 
-            
         }
 
 
@@ -487,9 +488,6 @@ namespace easyERP
             InitializeComponent();
         }
 
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
