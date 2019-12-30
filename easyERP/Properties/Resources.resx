@@ -133,6 +133,9 @@
   <data name="view_one" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\04128_glaciertrifecta_1920x1080.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="view_six" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\533933.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="view_three" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\490400.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

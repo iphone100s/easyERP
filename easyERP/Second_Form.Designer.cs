@@ -56,6 +56,7 @@
             this.insert_button.TabIndex = 8;
             this.insert_button.Text = "建檔系統";
             this.insert_button.UseVisualStyleBackColor = true;
+            this.insert_button.Click += new System.EventHandler(this.Insert_button_Click);
             // 
             // select_button
             // 

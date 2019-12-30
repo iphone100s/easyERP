@@ -24,8 +24,6 @@ namespace easyERP
             //MDI視窗
             //ShowForm(selectMemer_Form.Instance);
 
-
-
             Memer_Form selectMemer_Form = new Memer_Form();
             selectMemer_Form.ShowDialog();
 
@@ -39,9 +37,9 @@ namespace easyERP
 
         }
 
+        private void Insert_button_Click(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 }

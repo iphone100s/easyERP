@@ -68,6 +68,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>easyERP_Member.xsd</DependentUpon>
     </Compile>
+    <Compile Include="InsertFile_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertFile_Form.Designer.cs">
+      <DependentUpon>InsertFile_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlHelp.cs" />
+    <EmbeddedResource Include="InsertFile_Form.resx">
+      <DependentUpon>InsertFile_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +177,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\74712.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\533933.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -113,6 +113,16 @@ namespace easyERP.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap view_six {
+            get {
+                object obj = ResourceManager.GetObject("view_six", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap view_three {
             get {
                 object obj = ResourceManager.GetObject("view_three", resourceCulture);
