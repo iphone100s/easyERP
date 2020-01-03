@@ -28,7 +28,7 @@ namespace easyERP
         // 頁面大小
         private int _pageSize = 10;
 
-        //分頁功能
+      //分頁功能
 
         // 計算頁數
         /// </summary>
@@ -210,8 +210,45 @@ namespace easyERP
         //查詢
         private void SelectFile_button_Click(object sender, EventArgs e)
         {
+           string productNo = this.productNo_textBox.Text.Trim();
 
+
+
+            using (SqlConnection con = new SqlConnection(_connecString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                {
+                    if (productNo.Equals(""))
+                    {
+                        MessageBox.Show("請輸入產品編號!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    else
+                    {                       
+                        cmd = new SqlCommand("select p.productNo ,p.productName,p.productSpec,p.productSn,p.productModel," +
+                            "p.inQuantity, p.inventoryQuantity, p.factoryName," +
+                            "p.factoryNo, p.note," +
+                            "m.Untaxed, m.taxIncluded," +
+                            "a.depotNo, a.depotName," +
+                            "t.inDate, t.outDate " +
+                            "from Product p join Price m " +
+                            "on p.productNo = m.productNo " +
+                            "join Depot a " +
+                            "on p.productNo = a.productNo " +
+                            "join Date t " +
+                            "on p.productNo = t.productNo " +
+                            " where p.productNo = '" + productNo + "' ", con);
+                    }
+                }
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                select_dataGridView.DataSource = dt;
+                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+            }
         }
+
         //修改
         private void UpdateFile_button_Click(object sender, EventArgs e)
         {
