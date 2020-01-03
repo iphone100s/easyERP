@@ -254,11 +254,72 @@ namespace easyERP
         {
 
         }
-        //查詢
+        //刪除
         private void DeleteFile_button_Click(object sender, EventArgs e)
         {
+            string productNo = this.productNo_textBox.Text.Trim();
+            string productSn = this.productSn_textBox.Text.Trim();
+            string productModel = this.productModel_textBox.Text.Trim();
 
+
+            using (SqlConnection con = new SqlConnection(_connecString))
+            {
+
+                con.Open();
+
+
+                SqlCommand cmd = new SqlCommand();
+                {
+
+                    try
+                    {
+                        if (productNo.Equals("") || productSn.Equals("") )
+                        {
+                            MessageBox.Show("請輸入產品編號，產品序號!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("delete from Product where productNo ='" + productNo + "' AND productSn  ='" + productSn + "';  " +
+                                "delete from Date where productNo ='" + productNo + "'; " +
+                                "delete from Depot where productNo ='" + productNo + "'; " +
+                                "delete from Price where productNo ='" + productNo + "' ", con);
+
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("資料刪除成功!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            cmd = new SqlCommand("select p.productNo ,p.productName,p.productSpec,p.productSn,p.productModel," +
+                                    "p.inQuantity, p.inventoryQuantity, p.factoryName," +
+                                    "p.factoryNo, p.note," +
+                                    "m.Untaxed, m.taxIncluded," +
+                                    "a.depotNo, a.depotName," +
+                                    "t.inDate, t.outDate " +
+                                    "from Product p join Price m " +
+                                    "on p.productNo = m.productNo " +
+                                    "join Depot a " +
+                                    "on p.productNo = a.productNo " +
+                                    "join Date t " +
+                                    "on p.productNo = t.productNo ", con);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                }
+                DataTable dt1 = new DataTable();
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd);
+                da1.Fill(dt1);
+
+                select_dataGridView.DataSource = dt1;
+
+            }
         }
+
         //新增
         private void IInsertFile_button_Click(object sender, EventArgs e)
         {
