@@ -49,6 +49,7 @@
             this.lbCurrentPage = new System.Windows.Forms.Label();
             this.lbTotalPage = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSet = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@
             this.memberAccount_textbox = new System.Windows.Forms.TextBox();
             this.memberID_label = new System.Windows.Forms.Label();
             this.memberID_textBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.select_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyERP_Member)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eRPDataSet3)).BeginInit();
@@ -266,6 +266,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "設定分頁";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("標楷體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(28, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(262, 24);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "!請先設定分頁才可查詢";
+            // 
             // btnSet
             // 
             this.btnSet.Font = new System.Drawing.Font("標楷體", 11.25F);
@@ -371,7 +382,7 @@
             this.status_comboBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.status_comboBox.ForeColor = System.Drawing.Color.Red;
             this.status_comboBox.FormattingEnabled = true;
-            this.status_comboBox.Location = new System.Drawing.Point(204, 182);
+            this.status_comboBox.Location = new System.Drawing.Point(178, 182);
             this.status_comboBox.Name = "status_comboBox";
             this.status_comboBox.Size = new System.Drawing.Size(153, 24);
             this.status_comboBox.TabIndex = 52;
@@ -402,7 +413,7 @@
             // 
             this.memberName_textBox.Font = new System.Drawing.Font("新細明體", 14.25F);
             this.memberName_textBox.ForeColor = System.Drawing.Color.Red;
-            this.memberName_textBox.Location = new System.Drawing.Point(515, 100);
+            this.memberName_textBox.Location = new System.Drawing.Point(487, 100);
             this.memberName_textBox.MaxLength = 10;
             this.memberName_textBox.Multiline = true;
             this.memberName_textBox.Name = "memberName_textBox";
@@ -435,7 +446,7 @@
             // 
             this.password_textBox.Font = new System.Drawing.Font("新細明體", 14.25F);
             this.password_textBox.ForeColor = System.Drawing.Color.Red;
-            this.password_textBox.Location = new System.Drawing.Point(204, 127);
+            this.password_textBox.Location = new System.Drawing.Point(178, 125);
             this.password_textBox.MaxLength = 10;
             this.password_textBox.Multiline = true;
             this.password_textBox.Name = "password_textBox";
@@ -447,7 +458,7 @@
             this.memberAccount_textbox.BackColor = System.Drawing.SystemColors.Window;
             this.memberAccount_textbox.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.memberAccount_textbox.ForeColor = System.Drawing.Color.Red;
-            this.memberAccount_textbox.Location = new System.Drawing.Point(204, 69);
+            this.memberAccount_textbox.Location = new System.Drawing.Point(178, 69);
             this.memberAccount_textbox.MaxLength = 10;
             this.memberAccount_textbox.Multiline = true;
             this.memberAccount_textbox.Name = "memberAccount_textbox";
@@ -475,17 +486,6 @@
             this.memberID_textBox.Name = "memberID_textBox";
             this.memberID_textBox.Size = new System.Drawing.Size(153, 27);
             this.memberID_textBox.TabIndex = 53;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("標楷體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(28, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 24);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "!請先設定分頁才可查詢";
             // 
             // Memer_Form
             // 

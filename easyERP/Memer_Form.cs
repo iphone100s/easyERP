@@ -89,9 +89,9 @@ namespace easyERP
                     int PreviousPageOffSet = (page - 1) * _pageSize;
 
                     cmd = new SqlCommand("Select TOP " + _pageSize + " memberID, memberAccount, password, memberName, permissionName " +
-                        "FROM Member  where memberAccount " +
+                        "FROM Member  where memberID " +
                         "NOT IN " +
-                        "(Select TOP " + PreviousPageOffSet + "  memberAccount from Member ) "
+                        "(Select TOP " + PreviousPageOffSet + "  memberID from Member ) "
                         , con);
                 }
                 SqlDataAdapter da = new SqlDataAdapter(cmd);

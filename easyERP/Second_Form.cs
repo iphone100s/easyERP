@@ -39,7 +39,8 @@ namespace easyERP
 
         private void Insert_button_Click(object sender, EventArgs e)
         {
-
+            InsertFile_Form insertFile_Form = new InsertFile_Form();
+            insertFile_Form.ShowDialog();
         }
     }
 }

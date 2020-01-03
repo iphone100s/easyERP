@@ -68,6 +68,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>easyERP_Member.xsd</DependentUpon>
     </Compile>
+    <Compile Include="easyERP_Product.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>easyERP_Product.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InsertFile_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +133,17 @@
     </None>
     <None Include="easyERP_Member.xss">
       <DependentUpon>easyERP_Member.xsd</DependentUpon>
+    </None>
+    <None Include="easyERP_Product.xsc">
+      <DependentUpon>easyERP_Product.xsd</DependentUpon>
+    </None>
+    <None Include="easyERP_Product.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>easyERP_Product.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="easyERP_Product.xss">
+      <DependentUpon>easyERP_Product.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
