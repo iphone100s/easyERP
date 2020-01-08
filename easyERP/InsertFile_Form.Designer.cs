@@ -793,16 +793,17 @@
             // 
             // SelectFactory_button
             // 
-            this.SelectFactory_button.Location = new System.Drawing.Point(1133, 237);
+            this.SelectFactory_button.Location = new System.Drawing.Point(1117, 214);
             this.SelectFactory_button.Name = "SelectFactory_button";
             this.SelectFactory_button.Size = new System.Drawing.Size(100, 45);
             this.SelectFactory_button.TabIndex = 89;
             this.SelectFactory_button.Text = "廠商查詢";
             this.SelectFactory_button.UseVisualStyleBackColor = true;
+            this.SelectFactory_button.Click += new System.EventHandler(this.SelectFactory_button_Click);
             // 
             // SelectPrice_button
             // 
-            this.SelectPrice_button.Location = new System.Drawing.Point(1245, 148);
+            this.SelectPrice_button.Location = new System.Drawing.Point(1126, 276);
             this.SelectPrice_button.Name = "SelectPrice_button";
             this.SelectPrice_button.Size = new System.Drawing.Size(100, 45);
             this.SelectPrice_button.TabIndex = 90;

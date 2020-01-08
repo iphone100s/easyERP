@@ -561,6 +561,125 @@ namespace easyERP
         }
 
 
+
+        //廠商查詢
+        private void SelectFactory_button_Click(object sender, EventArgs e)
+        {
+            SelectFactory_Form SelectFactory_Form = new SelectFactory_Form();
+            SelectFactory_Form.Show();
+            this.Close();
+
+        }
+        //廠商編號查詢
+        public void getFactoryNo(string factoryNo)
+        {
+            using (SqlConnection con = new SqlConnection(_connecString))
+            {
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                {
+
+                    try
+                    {
+                        if (factoryNo.Equals(""))
+                        {
+                            MessageBox.Show("請輸入廠商編號!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("select p.productNo ,p.productName,p.productSpec,p.productSn,p.productModel," +
+                                "p.inQuantity, p.inventoryQuantity, p.factoryName," +
+                                "p.factoryNo, p.note," +
+                                "m.Untaxed, m.taxIncluded," +
+                                "a.depotNo, a.depotName," +
+                                "t.inDate, t.outDate " +
+                                "from Product p join Price m " +
+                                "on p.productNo = m.productNo " +
+                                "join Depot a " +
+                                "on p.productNo = a.productNo " +
+                                "join Date t " +
+                                "on p.productNo = t.productNo " +
+                                " where p.factoryNo Like '%" + factoryNo + "%'  ", con);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                }
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                selectFile_dataGridView.DataSource = dt;
+                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
+            }
+
+        }
+
+
+        //廠商名稱查詢
+        public void getFactoryName(string factoryName)
+        {
+            using (SqlConnection con = new SqlConnection(_connecString))
+            {
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                {
+
+                    try
+                    {
+                        if (factoryName.Equals(""))
+                        {
+                            MessageBox.Show("請輸入廠商編號!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("select p.productNo ,p.productName,p.productSpec,p.productSn,p.productModel," +
+                                "p.inQuantity, p.inventoryQuantity, p.factoryName," +
+                                "p.factoryNo, p.note," +
+                                "m.Untaxed, m.taxIncluded," +
+                                "a.depotNo, a.depotName," +
+                                "t.inDate, t.outDate " +
+                                "from Product p join Price m " +
+                                "on p.productNo = m.productNo " +
+                                "join Depot a " +
+                                "on p.productNo = a.productNo " +
+                                "join Date t " +
+                                "on p.productNo = t.productNo " +
+                                " where p.factoryNo Like '%" + factoryName + "%'  ", con);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                }
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                selectFile_dataGridView.DataSource = dt;
+                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
+            }
+
+        }
+
+
         //出貨日期查詢
         private void SelectoutDate_button_Click(object sender, EventArgs e)
         {
