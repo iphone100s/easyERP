@@ -110,8 +110,9 @@
     <Compile Include="SelectOutdate_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectOutdate_Form.Designer.cs">
+    <Compile Include=".Designer.cs">
       <DependentUpon>SelectOutdate_Form.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="SqlHelp.cs" />
     <EmbeddedResource Include="InsertFile_Form.resx">

@@ -827,6 +827,7 @@
             this.SelectoutDate_button.TabIndex = 93;
             this.SelectoutDate_button.Text = "出貨日期查詢";
             this.SelectoutDate_button.UseVisualStyleBackColor = true;
+            this.SelectoutDate_button.Click += new System.EventHandler(this.SelectoutDate_button_Click);
             // 
             // SelectinDate_button
             // 

@@ -561,9 +561,16 @@ namespace easyERP
         }
 
 
+        //出貨日期查詢
+        private void SelectoutDate_button_Click(object sender, EventArgs e)
+        {
+            SelectOutdate_Form selectOutdate_Form = new SelectOutdate_Form();
+            selectOutdate_Form.Show();
+            this.Close();
+        }
 
-       
-        //進出貨日期查詢
+
+        //進貨日期查詢
         private void SelectinDate_button_Click(object sender, EventArgs e)
         {
             SelectIndate_Form selectIndate_Form = new SelectIndate_Form();
@@ -664,5 +671,7 @@ namespace easyERP
             }
 
         }
+
+
     }
 }
