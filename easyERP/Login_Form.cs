@@ -170,7 +170,7 @@ namespace easyERP
                 //        // Main view = new Main();//建立新的頁面
                 //        view.Show();//顯示新頁面
                 //        this.Hide();//隱藏當前頁面
-                        
+
                 //    }
                 //    else
                 //    {

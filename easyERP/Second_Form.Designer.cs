@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Second_Form));
             this.member_button = new System.Windows.Forms.Button();
             this.insert_button = new System.Windows.Forms.Button();
-            this.select_button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -39,7 +38,7 @@
             // member_button
             // 
             this.member_button.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.member_button.Location = new System.Drawing.Point(87, 52);
+            this.member_button.Location = new System.Drawing.Point(88, 77);
             this.member_button.Name = "member_button";
             this.member_button.Size = new System.Drawing.Size(210, 40);
             this.member_button.TabIndex = 7;
@@ -50,23 +49,13 @@
             // insert_button
             // 
             this.insert_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.insert_button.Location = new System.Drawing.Point(87, 159);
+            this.insert_button.Location = new System.Drawing.Point(88, 209);
             this.insert_button.Name = "insert_button";
             this.insert_button.Size = new System.Drawing.Size(210, 40);
             this.insert_button.TabIndex = 8;
             this.insert_button.Text = "建檔系統";
             this.insert_button.UseVisualStyleBackColor = true;
             this.insert_button.Click += new System.EventHandler(this.Insert_button_Click);
-            // 
-            // select_button
-            // 
-            this.select_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.select_button.Location = new System.Drawing.Point(87, 265);
-            this.select_button.Name = "select_button";
-            this.select_button.Size = new System.Drawing.Size(210, 40);
-            this.select_button.TabIndex = 9;
-            this.select_button.Text = "查詢系統";
-            this.select_button.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -85,7 +74,6 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(384, 361);
-            this.Controls.Add(this.select_button);
             this.Controls.Add(this.insert_button);
             this.Controls.Add(this.member_button);
             this.Controls.Add(this.pictureBox1);
@@ -104,6 +92,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Button member_button;
         public System.Windows.Forms.Button insert_button;
-        public System.Windows.Forms.Button select_button;
     }
 }

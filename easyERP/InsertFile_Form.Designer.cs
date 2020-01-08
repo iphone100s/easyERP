@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsertFile_Form));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.insertSystem_label = new System.Windows.Forms.Label();
             this.productModel_label = new System.Windows.Forms.Label();
             this.inQuantity_label = new System.Windows.Forms.Label();
@@ -46,47 +45,11 @@
             this.factoryNo_label = new System.Windows.Forms.Label();
             this.factoryName_label = new System.Windows.Forms.Label();
             this.note_label = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.note_textBox = new System.Windows.Forms.TextBox();
             this.productNo_textBox = new System.Windows.Forms.TextBox();
             this.depotName_label = new System.Windows.Forms.Label();
             this.untaxed_label = new System.Windows.Forms.Label();
-            this.select_dataGridView = new System.Windows.Forms.DataGridView();
-            this.inDate_label = new System.Windows.Forms.Label();
-            this.outDate_label = new System.Windows.Forms.Label();
-            this.taxIncluded_label = new System.Windows.Forms.Label();
-            this.productName_textBox = new System.Windows.Forms.TextBox();
-            this.productSn_textBox = new System.Windows.Forms.TextBox();
-            this.productModel_textBox = new System.Windows.Forms.TextBox();
-            this.productSpec_textBox = new System.Windows.Forms.TextBox();
-            this.inQuantity_textBox = new System.Windows.Forms.TextBox();
-            this.inventoryQuantity_textBox = new System.Windows.Forms.TextBox();
-            this.factoryNo_textBox = new System.Windows.Forms.TextBox();
-            this.factoryName_textBox = new System.Windows.Forms.TextBox();
-            this.depotNo_label = new System.Windows.Forms.Label();
-            this.depotNo_textBox = new System.Windows.Forms.TextBox();
-            this.depotName_textBox = new System.Windows.Forms.TextBox();
-            this.taxIncluded_textBox = new System.Windows.Forms.TextBox();
-            this.untaxed_textBox = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.DeleteFile_button = new System.Windows.Forms.Button();
-            this.IInsertFile_button = new System.Windows.Forms.Button();
-            this.UpdateFile_button = new System.Windows.Forms.Button();
-            this.btnLastPage = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSet = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.nudPageSize = new System.Windows.Forms.NumericUpDown();
-            this.btnNextPage = new System.Windows.Forms.Button();
-            this.btnPreviousPage = new System.Windows.Forms.Button();
-            this.btnFirstPage = new System.Windows.Forms.Button();
-            this.SelectFile_button = new System.Windows.Forms.Button();
-            this.lbTotalPage = new System.Windows.Forms.Label();
-            this.lbCurrentPage = new System.Windows.Forms.Label();
-            this.easyERP_Product = new easyERP.easyERP_Product();
-            this.easyERPProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.selectFile_dataGridView = new System.Windows.Forms.DataGridView();
             this.productNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productSpec = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,23 +66,57 @@
             this.untaxed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.taxIncluded = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.select_dataGridView)).BeginInit();
+            this.easyERPProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.easyERP_Product = new easyERP.easyERP_Product();
+            this.inDate_label = new System.Windows.Forms.Label();
+            this.outDate_label = new System.Windows.Forms.Label();
+            this.taxIncluded_label = new System.Windows.Forms.Label();
+            this.productName_textBox = new System.Windows.Forms.TextBox();
+            this.productSn_textBox = new System.Windows.Forms.TextBox();
+            this.productModel_textBox = new System.Windows.Forms.TextBox();
+            this.productSpec_textBox = new System.Windows.Forms.TextBox();
+            this.inQuantity_textBox = new System.Windows.Forms.TextBox();
+            this.inventoryQuantity_textBox = new System.Windows.Forms.TextBox();
+            this.factoryNo_textBox = new System.Windows.Forms.TextBox();
+            this.factoryName_textBox = new System.Windows.Forms.TextBox();
+            this.depotNo_label = new System.Windows.Forms.Label();
+            this.depotNo_textBox = new System.Windows.Forms.TextBox();
+            this.depotName_textBox = new System.Windows.Forms.TextBox();
+            this.taxIncluded_textBox = new System.Windows.Forms.TextBox();
+            this.untaxed_textBox = new System.Windows.Forms.TextBox();
+            this.inDate_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.outDate_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.DeleteFile_button = new System.Windows.Forms.Button();
+            this.IInsertFile_button = new System.Windows.Forms.Button();
+            this.UpdateFile_button = new System.Windows.Forms.Button();
+            this.btnLastPage = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSet = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.nudPageSize = new System.Windows.Forms.NumericUpDown();
+            this.btnNextPage = new System.Windows.Forms.Button();
+            this.btnPreviousPage = new System.Windows.Forms.Button();
+            this.btnFirstPage = new System.Windows.Forms.Button();
+            this.SelectFile_button = new System.Windows.Forms.Button();
+            this.lbTotalPage = new System.Windows.Forms.Label();
+            this.lbCurrentPage = new System.Windows.Forms.Label();
+            this.SelectDepot_button = new System.Windows.Forms.Button();
+            this.SelectFactory_button = new System.Windows.Forms.Button();
+            this.SelectPrice_button = new System.Windows.Forms.Button();
+            this.status_comboBox = new System.Windows.Forms.ComboBox();
+            this.SelectoutDate_button = new System.Windows.Forms.Button();
+            this.SelectinDate_button = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
+            ((System.ComponentModel.ISupportInitialize)(this.selectFile_dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyERPProductBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyERP_Product)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPageSize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.easyERP_Product)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.easyERPProductBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::easyERP.Properties.Resources.view_six;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1499, 886);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // insertSystem_label
             // 
@@ -231,13 +228,13 @@
             this.note_label.TabIndex = 13;
             this.note_label.Text = "備註";
             // 
-            // textBox9
+            // note_textBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(481, 214);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(361, 150);
-            this.textBox9.TabIndex = 22;
+            this.note_textBox.Location = new System.Drawing.Point(481, 214);
+            this.note_textBox.Multiline = true;
+            this.note_textBox.Name = "note_textBox";
+            this.note_textBox.Size = new System.Drawing.Size(361, 150);
+            this.note_textBox.TabIndex = 22;
             // 
             // productNo_textBox
             // 
@@ -267,15 +264,15 @@
             this.untaxed_label.TabIndex = 55;
             this.untaxed_label.Text = "未稅金額";
             // 
-            // select_dataGridView
+            // selectFile_dataGridView
             // 
-            this.select_dataGridView.AllowUserToAddRows = false;
-            this.select_dataGridView.AllowUserToDeleteRows = false;
-            this.select_dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.selectFile_dataGridView.AllowUserToAddRows = false;
+            this.selectFile_dataGridView.AllowUserToDeleteRows = false;
+            this.selectFile_dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.select_dataGridView.AutoGenerateColumns = false;
-            this.select_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.select_dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.selectFile_dataGridView.AutoGenerateColumns = false;
+            this.selectFile_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.selectFile_dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -283,9 +280,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.select_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.select_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.select_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.selectFile_dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.selectFile_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.selectFile_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productNo,
             this.productName,
             this.productSpec,
@@ -302,7 +299,7 @@
             this.untaxed,
             this.taxIncluded,
             this.note});
-            this.select_dataGridView.DataSource = this.easyERPProductBindingSource;
+            this.selectFile_dataGridView.DataSource = this.easyERPProductBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -310,10 +307,10 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.select_dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.select_dataGridView.Location = new System.Drawing.Point(7, 533);
-            this.select_dataGridView.Name = "select_dataGridView";
-            this.select_dataGridView.ReadOnly = true;
+            this.selectFile_dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.selectFile_dataGridView.Location = new System.Drawing.Point(7, 533);
+            this.selectFile_dataGridView.Name = "selectFile_dataGridView";
+            this.selectFile_dataGridView.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -321,10 +318,135 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.select_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.select_dataGridView.RowTemplate.Height = 24;
-            this.select_dataGridView.Size = new System.Drawing.Size(1472, 320);
-            this.select_dataGridView.TabIndex = 57;
+            this.selectFile_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.selectFile_dataGridView.RowTemplate.Height = 24;
+            this.selectFile_dataGridView.Size = new System.Drawing.Size(1472, 320);
+            this.selectFile_dataGridView.TabIndex = 57;
+            this.selectFile_dataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SelectFile_dataGridView_CellMouseClick);
+            // 
+            // productNo
+            // 
+            this.productNo.DataPropertyName = "productNo";
+            this.productNo.HeaderText = "產品編號";
+            this.productNo.Name = "productNo";
+            this.productNo.ReadOnly = true;
+            // 
+            // productName
+            // 
+            this.productName.DataPropertyName = "productName";
+            this.productName.HeaderText = "產品名稱";
+            this.productName.Name = "productName";
+            this.productName.ReadOnly = true;
+            // 
+            // productSpec
+            // 
+            this.productSpec.DataPropertyName = "productSpec";
+            this.productSpec.HeaderText = "產品規格";
+            this.productSpec.Name = "productSpec";
+            this.productSpec.ReadOnly = true;
+            // 
+            // productSn
+            // 
+            this.productSn.DataPropertyName = "productSn";
+            this.productSn.HeaderText = "產品序號";
+            this.productSn.Name = "productSn";
+            this.productSn.ReadOnly = true;
+            // 
+            // productModel
+            // 
+            this.productModel.DataPropertyName = "productModel";
+            this.productModel.HeaderText = "產品型號";
+            this.productModel.Name = "productModel";
+            this.productModel.ReadOnly = true;
+            // 
+            // inQuantity
+            // 
+            this.inQuantity.DataPropertyName = "inQuantity";
+            this.inQuantity.HeaderText = "進貨數量";
+            this.inQuantity.Name = "inQuantity";
+            this.inQuantity.ReadOnly = true;
+            // 
+            // inventoryQuantity
+            // 
+            this.inventoryQuantity.DataPropertyName = "inventoryQuantity";
+            this.inventoryQuantity.HeaderText = "庫存數量";
+            this.inventoryQuantity.Name = "inventoryQuantity";
+            this.inventoryQuantity.ReadOnly = true;
+            // 
+            // factoryName
+            // 
+            this.factoryName.DataPropertyName = "factoryName";
+            this.factoryName.HeaderText = "廠商名稱";
+            this.factoryName.Name = "factoryName";
+            this.factoryName.ReadOnly = true;
+            // 
+            // factoryNo
+            // 
+            this.factoryNo.DataPropertyName = "factoryNo";
+            this.factoryNo.HeaderText = "廠商編號";
+            this.factoryNo.Name = "factoryNo";
+            this.factoryNo.ReadOnly = true;
+            // 
+            // inDate
+            // 
+            this.inDate.DataPropertyName = "inDate";
+            this.inDate.HeaderText = "進貨日期";
+            this.inDate.Name = "inDate";
+            this.inDate.ReadOnly = true;
+            // 
+            // outDate
+            // 
+            this.outDate.DataPropertyName = "outDate";
+            this.outDate.HeaderText = "出貨日期";
+            this.outDate.Name = "outDate";
+            this.outDate.ReadOnly = true;
+            // 
+            // depotNo
+            // 
+            this.depotNo.DataPropertyName = "depotNo";
+            this.depotNo.HeaderText = "倉庫編號";
+            this.depotNo.Name = "depotNo";
+            this.depotNo.ReadOnly = true;
+            // 
+            // depotName
+            // 
+            this.depotName.DataPropertyName = "depotName";
+            this.depotName.HeaderText = "倉庫名稱";
+            this.depotName.Name = "depotName";
+            this.depotName.ReadOnly = true;
+            // 
+            // untaxed
+            // 
+            this.untaxed.DataPropertyName = "untaxed";
+            this.untaxed.HeaderText = "免稅金額";
+            this.untaxed.Name = "untaxed";
+            this.untaxed.ReadOnly = true;
+            // 
+            // taxIncluded
+            // 
+            this.taxIncluded.DataPropertyName = "taxIncluded";
+            this.taxIncluded.HeaderText = "含稅金額";
+            this.taxIncluded.Name = "taxIncluded";
+            this.taxIncluded.ReadOnly = true;
+            // 
+            // note
+            // 
+            this.note.DataPropertyName = "note";
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.note.DefaultCellStyle = dataGridViewCellStyle2;
+            this.note.HeaderText = "備註";
+            this.note.Name = "note";
+            this.note.ReadOnly = true;
+            // 
+            // easyERPProductBindingSource
+            // 
+            this.easyERPProductBindingSource.DataSource = this.easyERP_Product;
+            this.easyERPProductBindingSource.Position = 0;
+            // 
+            // easyERP_Product
+            // 
+            this.easyERP_Product.DataSetName = "easyERP_Product";
+            this.easyERP_Product.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // inDate_label
             // 
@@ -462,23 +584,26 @@
             this.untaxed_textBox.Size = new System.Drawing.Size(109, 27);
             this.untaxed_textBox.TabIndex = 72;
             // 
-            // dateTimePicker1
+            // inDate_dateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(640, 105);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(169, 22);
-            this.dateTimePicker1.TabIndex = 74;
+            this.inDate_dateTimePicker.CalendarFont = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.inDate_dateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.inDate_dateTimePicker.Location = new System.Drawing.Point(640, 105);
+            this.inDate_dateTimePicker.Name = "inDate_dateTimePicker";
+            this.inDate_dateTimePicker.Size = new System.Drawing.Size(169, 22);
+            this.inDate_dateTimePicker.TabIndex = 74;
+            this.inDate_dateTimePicker.Value = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             // 
-            // dateTimePicker2
+            // outDate_dateTimePicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(640, 137);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(169, 22);
-            this.dateTimePicker2.TabIndex = 75;
+            this.outDate_dateTimePicker.Location = new System.Drawing.Point(640, 137);
+            this.outDate_dateTimePicker.Name = "outDate_dateTimePicker";
+            this.outDate_dateTimePicker.Size = new System.Drawing.Size(169, 22);
+            this.outDate_dateTimePicker.TabIndex = 75;
             // 
             // DeleteFile_button
             // 
-            this.DeleteFile_button.Location = new System.Drawing.Point(963, 199);
+            this.DeleteFile_button.Location = new System.Drawing.Point(963, 276);
             this.DeleteFile_button.Name = "DeleteFile_button";
             this.DeleteFile_button.Size = new System.Drawing.Size(100, 45);
             this.DeleteFile_button.TabIndex = 84;
@@ -488,7 +613,7 @@
             // 
             // IInsertFile_button
             // 
-            this.IInsertFile_button.Location = new System.Drawing.Point(963, 268);
+            this.IInsertFile_button.Location = new System.Drawing.Point(963, 345);
             this.IInsertFile_button.Name = "IInsertFile_button";
             this.IInsertFile_button.Size = new System.Drawing.Size(100, 45);
             this.IInsertFile_button.TabIndex = 83;
@@ -498,7 +623,7 @@
             // 
             // UpdateFile_button
             // 
-            this.UpdateFile_button.Location = new System.Drawing.Point(963, 137);
+            this.UpdateFile_button.Location = new System.Drawing.Point(963, 214);
             this.UpdateFile_button.Name = "UpdateFile_button";
             this.UpdateFile_button.Size = new System.Drawing.Size(100, 45);
             this.UpdateFile_button.TabIndex = 82;
@@ -631,7 +756,7 @@
             this.SelectFile_button.Name = "SelectFile_button";
             this.SelectFile_button.Size = new System.Drawing.Size(100, 45);
             this.SelectFile_button.TabIndex = 76;
-            this.SelectFile_button.Text = "查詢";
+            this.SelectFile_button.Text = "綜合查詢";
             this.SelectFile_button.UseVisualStyleBackColor = true;
             this.SelectFile_button.Click += new System.EventHandler(this.SelectFile_button_Click);
             // 
@@ -657,135 +782,83 @@
             this.lbCurrentPage.TabIndex = 85;
             this.lbCurrentPage.Text = "第  頁";
             // 
-            // easyERP_Product
+            // SelectDepot_button
             // 
-            this.easyERP_Product.DataSetName = "easyERP_Product";
-            this.easyERP_Product.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.SelectDepot_button.Location = new System.Drawing.Point(1245, 85);
+            this.SelectDepot_button.Name = "SelectDepot_button";
+            this.SelectDepot_button.Size = new System.Drawing.Size(100, 45);
+            this.SelectDepot_button.TabIndex = 88;
+            this.SelectDepot_button.Text = "倉庫查詢";
+            this.SelectDepot_button.UseVisualStyleBackColor = true;
             // 
-            // easyERPProductBindingSource
+            // SelectFactory_button
             // 
-            this.easyERPProductBindingSource.DataSource = this.easyERP_Product;
-            this.easyERPProductBindingSource.Position = 0;
+            this.SelectFactory_button.Location = new System.Drawing.Point(1133, 237);
+            this.SelectFactory_button.Name = "SelectFactory_button";
+            this.SelectFactory_button.Size = new System.Drawing.Size(100, 45);
+            this.SelectFactory_button.TabIndex = 89;
+            this.SelectFactory_button.Text = "廠商查詢";
+            this.SelectFactory_button.UseVisualStyleBackColor = true;
             // 
-            // productNo
+            // SelectPrice_button
             // 
-            this.productNo.DataPropertyName = "productNo";
-            this.productNo.HeaderText = "產品編號";
-            this.productNo.Name = "productNo";
-            this.productNo.ReadOnly = true;
+            this.SelectPrice_button.Location = new System.Drawing.Point(1245, 148);
+            this.SelectPrice_button.Name = "SelectPrice_button";
+            this.SelectPrice_button.Size = new System.Drawing.Size(100, 45);
+            this.SelectPrice_button.TabIndex = 90;
+            this.SelectPrice_button.Text = "金額查詢";
+            this.SelectPrice_button.UseVisualStyleBackColor = true;
             // 
-            // productName
+            // status_comboBox
             // 
-            this.productName.DataPropertyName = "productName";
-            this.productName.HeaderText = "產品名稱";
-            this.productName.Name = "productName";
-            this.productName.ReadOnly = true;
+            this.status_comboBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.status_comboBox.ForeColor = System.Drawing.Color.Red;
+            this.status_comboBox.FormattingEnabled = true;
+            this.status_comboBox.Location = new System.Drawing.Point(231, 370);
+            this.status_comboBox.Name = "status_comboBox";
+            this.status_comboBox.Size = new System.Drawing.Size(153, 24);
+            this.status_comboBox.TabIndex = 91;
             // 
-            // productSpec
+            // SelectoutDate_button
             // 
-            this.productSpec.DataPropertyName = "productSpec";
-            this.productSpec.HeaderText = "產品規格";
-            this.productSpec.Name = "productSpec";
-            this.productSpec.ReadOnly = true;
+            this.SelectoutDate_button.Location = new System.Drawing.Point(1097, 141);
+            this.SelectoutDate_button.Name = "SelectoutDate_button";
+            this.SelectoutDate_button.Size = new System.Drawing.Size(100, 45);
+            this.SelectoutDate_button.TabIndex = 93;
+            this.SelectoutDate_button.Text = "出貨日期查詢";
+            this.SelectoutDate_button.UseVisualStyleBackColor = true;
             // 
-            // productSn
+            // SelectinDate_button
             // 
-            this.productSn.DataPropertyName = "productSn";
-            this.productSn.HeaderText = "產品序號";
-            this.productSn.Name = "productSn";
-            this.productSn.ReadOnly = true;
+            this.SelectinDate_button.Location = new System.Drawing.Point(1097, 74);
+            this.SelectinDate_button.Name = "SelectinDate_button";
+            this.SelectinDate_button.Size = new System.Drawing.Size(100, 45);
+            this.SelectinDate_button.TabIndex = 94;
+            this.SelectinDate_button.Text = "進貨日期查詢";
+            this.SelectinDate_button.UseVisualStyleBackColor = true;
+            this.SelectinDate_button.Click += new System.EventHandler(this.SelectinDate_button_Click);
             // 
-            // productModel
+            // pictureBox1
             // 
-            this.productModel.DataPropertyName = "productModel";
-            this.productModel.HeaderText = "產品型號";
-            this.productModel.Name = "productModel";
-            this.productModel.ReadOnly = true;
-            // 
-            // inQuantity
-            // 
-            this.inQuantity.DataPropertyName = "inQuantity";
-            this.inQuantity.HeaderText = "進貨數量";
-            this.inQuantity.Name = "inQuantity";
-            this.inQuantity.ReadOnly = true;
-            // 
-            // inventoryQuantity
-            // 
-            this.inventoryQuantity.DataPropertyName = "inventoryQuantity";
-            this.inventoryQuantity.HeaderText = "庫存數量";
-            this.inventoryQuantity.Name = "inventoryQuantity";
-            this.inventoryQuantity.ReadOnly = true;
-            // 
-            // factoryName
-            // 
-            this.factoryName.DataPropertyName = "factoryName";
-            this.factoryName.HeaderText = "廠商名稱";
-            this.factoryName.Name = "factoryName";
-            this.factoryName.ReadOnly = true;
-            // 
-            // factoryNo
-            // 
-            this.factoryNo.DataPropertyName = "factoryNo";
-            this.factoryNo.HeaderText = "廠商編號";
-            this.factoryNo.Name = "factoryNo";
-            this.factoryNo.ReadOnly = true;
-            // 
-            // inDate
-            // 
-            this.inDate.DataPropertyName = "inDate";
-            this.inDate.HeaderText = "進貨日期";
-            this.inDate.Name = "inDate";
-            this.inDate.ReadOnly = true;
-            // 
-            // outDate
-            // 
-            this.outDate.DataPropertyName = "outDate";
-            this.outDate.HeaderText = "出貨日期";
-            this.outDate.Name = "outDate";
-            this.outDate.ReadOnly = true;
-            // 
-            // depotNo
-            // 
-            this.depotNo.DataPropertyName = "depotNo";
-            this.depotNo.HeaderText = "倉庫編號";
-            this.depotNo.Name = "depotNo";
-            this.depotNo.ReadOnly = true;
-            // 
-            // depotName
-            // 
-            this.depotName.DataPropertyName = "depotName";
-            this.depotName.HeaderText = "倉庫名稱";
-            this.depotName.Name = "depotName";
-            this.depotName.ReadOnly = true;
-            // 
-            // untaxed
-            // 
-            this.untaxed.DataPropertyName = "untaxed";
-            this.untaxed.HeaderText = "免稅金額";
-            this.untaxed.Name = "untaxed";
-            this.untaxed.ReadOnly = true;
-            // 
-            // taxIncluded
-            // 
-            this.taxIncluded.DataPropertyName = "taxIncluded";
-            this.taxIncluded.HeaderText = "含稅金額";
-            this.taxIncluded.Name = "taxIncluded";
-            this.taxIncluded.ReadOnly = true;
-            // 
-            // note
-            // 
-            this.note.DataPropertyName = "note";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.note.DefaultCellStyle = dataGridViewCellStyle2;
-            this.note.HeaderText = "備註";
-            this.note.Name = "note";
-            this.note.ReadOnly = true;
+            this.pictureBox1.Image = global::easyERP.Properties.Resources.view_six;
+            this.pictureBox1.Location = new System.Drawing.Point(-2, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1499, 886);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // InsertFile_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1491, 881);
+            this.Controls.Add(this.SelectinDate_button);
+            this.Controls.Add(this.SelectoutDate_button);
+            this.Controls.Add(this.status_comboBox);
+            this.Controls.Add(this.SelectPrice_button);
+            this.Controls.Add(this.SelectFactory_button);
+            this.Controls.Add(this.SelectDepot_button);
             this.Controls.Add(this.lbTotalPage);
             this.Controls.Add(this.lbCurrentPage);
             this.Controls.Add(this.DeleteFile_button);
@@ -797,8 +870,8 @@
             this.Controls.Add(this.btnPreviousPage);
             this.Controls.Add(this.btnFirstPage);
             this.Controls.Add(this.SelectFile_button);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.outDate_dateTimePicker);
+            this.Controls.Add(this.inDate_dateTimePicker);
             this.Controls.Add(this.taxIncluded_textBox);
             this.Controls.Add(this.untaxed_textBox);
             this.Controls.Add(this.depotName_textBox);
@@ -815,11 +888,11 @@
             this.Controls.Add(this.taxIncluded_label);
             this.Controls.Add(this.outDate_label);
             this.Controls.Add(this.inDate_label);
-            this.Controls.Add(this.select_dataGridView);
+            this.Controls.Add(this.selectFile_dataGridView);
             this.Controls.Add(this.untaxed_label);
             this.Controls.Add(this.depotName_label);
             this.Controls.Add(this.productNo_textBox);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.note_textBox);
             this.Controls.Add(this.note_label);
             this.Controls.Add(this.factoryName_label);
             this.Controls.Add(this.factoryNo_label);
@@ -838,13 +911,13 @@
             this.Name = "InsertFile_Form";
             this.Text = "easyERP-建檔系統";
             this.Load += new System.EventHandler(this.InsertFile_Form_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.select_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectFile_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyERPProductBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyERP_Product)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPageSize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.easyERP_Product)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.easyERPProductBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -863,11 +936,10 @@
         private System.Windows.Forms.Label factoryNo_label;
         private System.Windows.Forms.Label factoryName_label;
         private System.Windows.Forms.Label note_label;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox note_textBox;
         private System.Windows.Forms.TextBox productNo_textBox;
         private System.Windows.Forms.Label depotName_label;
         private System.Windows.Forms.Label untaxed_label;
-        private System.Windows.Forms.DataGridView select_dataGridView;
         private System.Windows.Forms.Label inDate_label;
         private System.Windows.Forms.Label outDate_label;
         private System.Windows.Forms.Label taxIncluded_label;
@@ -884,8 +956,8 @@
         private System.Windows.Forms.TextBox depotName_textBox;
         private System.Windows.Forms.TextBox taxIncluded_textBox;
         private System.Windows.Forms.TextBox untaxed_textBox;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker inDate_dateTimePicker;
+        private System.Windows.Forms.DateTimePicker outDate_dateTimePicker;
         private System.Windows.Forms.Button DeleteFile_button;
         private System.Windows.Forms.Button IInsertFile_button;
         private System.Windows.Forms.Button UpdateFile_button;
@@ -920,5 +992,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn untaxed;
         private System.Windows.Forms.DataGridViewTextBoxColumn taxIncluded;
         private System.Windows.Forms.DataGridViewTextBoxColumn note;
+        private System.Windows.Forms.Button SelectDepot_button;
+        private System.Windows.Forms.Button SelectFactory_button;
+        private System.Windows.Forms.Button SelectPrice_button;
+        private System.Windows.Forms.ComboBox status_comboBox;
+        private System.Windows.Forms.Button SelectoutDate_button;
+        public System.Windows.Forms.DataGridView selectFile_dataGridView;
+        private System.DirectoryServices.DirectoryEntry directoryEntry1;
+        public System.Windows.Forms.Button SelectinDate_button;
     }
 }

@@ -245,7 +245,7 @@ namespace easyERP
                         }
                         if (memberAccount.Trim().Length > 0 && password != "" && memberName != "")   //輸入 帳號 密碼 姓名
                         {
-                            cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' , memberName='" + memberName + "' where memberID =" + memberID + "", con);
+                            cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' , memberName='" + memberName + "' where memberID =" + memberID + " ", con);
                             updateSuccess();
                         }
                         if (memberAccount.Trim().Length > 0 && password != "" && memberName != "" && key != "" && Value != "")   //輸入 帳號 密碼 姓名 職等
