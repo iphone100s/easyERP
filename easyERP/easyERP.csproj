@@ -107,6 +107,12 @@
     <Compile Include="SelectIndate_Form.Designer.cs">
       <DependentUpon>SelectIndate_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelectOutdate_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectOutdate_Form.Designer.cs">
+      <DependentUpon>SelectOutdate_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlHelp.cs" />
     <EmbeddedResource Include="InsertFile_Form.resx">
       <DependentUpon>InsertFile_Form.cs</DependentUpon>
@@ -133,6 +139,9 @@
     </Compile>
     <EmbeddedResource Include="SelectIndate_Form.resx">
       <DependentUpon>SelectIndate_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectOutdate_Form.resx">
+      <DependentUpon>SelectOutdate_Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="easyERP_Member.xsc">
       <DependentUpon>easyERP_Member.xsd</DependentUpon>

@@ -563,17 +563,13 @@ namespace easyERP
 
 
        
-        //進貨日期查詢
+        //進出貨日期查詢
         private void SelectinDate_button_Click(object sender, EventArgs e)
         {
             SelectIndate_Form selectIndate_Form = new SelectIndate_Form();
             selectIndate_Form.Show();
             this.Close();
         }
-
-
-
-
 
         public void getDate(string startDate, string finishDate)
         {
