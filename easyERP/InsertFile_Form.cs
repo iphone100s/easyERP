@@ -560,6 +560,125 @@ namespace easyERP
 
         }
 
+        //金額查詢
+        private void SelectPrice_button_Click(object sender, EventArgs e)
+        {
+            SelectPrice_Form SelectPrice_Form = new SelectPrice_Form();
+            SelectPrice_Form.Show();
+            this.Close();
+        }
+        //未稅金額查詢
+        public void getUntaxed(int untaxed)
+        {
+            using (SqlConnection con = new SqlConnection(_connecString))
+            {
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                {
+
+                    try
+                    {
+                        if (untaxed.Equals(""))
+                        {
+                            MessageBox.Show("請輸入未稅金額!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("select p.productNo ,p.productName,p.productSpec,p.productSn,p.productModel," +
+                                "p.inQuantity, p.inventoryQuantity, p.factoryName," +
+                                "p.factoryNo, p.note," +
+                                "m.Untaxed, m.taxIncluded," +
+                                "a.depotNo, a.depotName," +
+                                "t.inDate, t.outDate " +
+                                "from Product p join Price m " +
+                                "on p.productNo = m.productNo " +
+                                "join Depot a " +
+                                "on p.productNo = a.productNo " +
+                                "join Date t " +
+                                "on p.productNo = t.productNo " +
+                                " where m.Untaxed Like '%" + untaxed + "%'  ", con);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                }
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                selectFile_dataGridView.DataSource = dt;
+                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
+            }
+
+        }
+
+        //含稅金額查詢
+        public void getTaxIncluded(int taxIncluded)
+        {
+            using (SqlConnection con = new SqlConnection(_connecString))
+            {
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                {
+
+                    try
+                    {
+                        if (taxIncluded.Equals(""))
+                        {
+                            MessageBox.Show("請輸入含稅金額!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("select p.productNo ,p.productName,p.productSpec,p.productSn,p.productModel," +
+                                "p.inQuantity, p.inventoryQuantity, p.factoryName," +
+                                "p.factoryNo, p.note," +
+                                "m.Untaxed, m.taxIncluded," +
+                                "a.depotNo, a.depotName," +
+                                "t.inDate, t.outDate " +
+                                "from Product p join Price m " +
+                                "on p.productNo = m.productNo " +
+                                "join Depot a " +
+                                "on p.productNo = a.productNo " +
+                                "join Date t " +
+                                "on p.productNo = t.productNo " +
+                                " where m.taxIncluded Like '%" + taxIncluded + "%'  ", con);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                }
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                selectFile_dataGridView.DataSource = dt;
+                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
+            }
+
+        }
+
+
+
+
+
 
 
         //廠商查詢
@@ -766,27 +885,40 @@ namespace easyERP
             {
 
 
-                productNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[1].Value.ToString();
-                productName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[2].Value.ToString();
+                productNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[0].Value.ToString();
+                productName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[1].Value.ToString();
+                productSpec_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[2].Value.ToString();
                 productSn_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[3].Value.ToString();
-
-
                 productModel_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[4].Value.ToString();
-                productSpec_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[5].Value.ToString();
+                
 
-                inQuantity_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[6].Value.ToString();
+                inQuantity_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[5].Value.ToString();
+                inventoryQuantity_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[6].Value.ToString();
+                factoryNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[7].Value.ToString();
+                factoryName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[8].Value.ToString();
 
-                inventoryQuantity_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[7].Value.ToString();
-                factoryNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[8].Value.ToString();
 
-                factoryName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[9].Value.ToString();
+                string dateInput = selectFile_dataGridView.CurrentRow.Cells[9].Value.ToString();
+                DateTime parsedDate = DateTime.Parse(dateInput);
+                inDate_dateTimePicker.Value = parsedDate;
 
-                depotNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[10].Value.ToString();
-                depotName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[11].Value.ToString();
 
-                untaxed_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[12].Value.ToString();
-                taxIncluded_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[13].Value.ToString();
-                note_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[14].Value.ToString();
+
+                string dateInputa = selectFile_dataGridView.CurrentRow.Cells[10].Value.ToString();
+                DateTime parsedDatea = DateTime.Parse(dateInputa);
+                outDate_dateTimePicker.Value = parsedDatea;
+
+
+
+
+                depotNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[11].Value.ToString();
+                depotName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[12].Value.ToString();
+
+                untaxed_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[13].Value.ToString();
+                taxIncluded_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[14].Value.ToString();
+                note_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[15].Value.ToString();
+
+
             }
 
         }

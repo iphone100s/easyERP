@@ -803,12 +803,13 @@
             // 
             // SelectPrice_button
             // 
-            this.SelectPrice_button.Location = new System.Drawing.Point(1126, 276);
+            this.SelectPrice_button.Location = new System.Drawing.Point(1146, 306);
             this.SelectPrice_button.Name = "SelectPrice_button";
             this.SelectPrice_button.Size = new System.Drawing.Size(100, 45);
             this.SelectPrice_button.TabIndex = 90;
             this.SelectPrice_button.Text = "金額查詢";
             this.SelectPrice_button.UseVisualStyleBackColor = true;
+            this.SelectPrice_button.Click += new System.EventHandler(this.SelectPrice_button_Click);
             // 
             // status_comboBox
             // 

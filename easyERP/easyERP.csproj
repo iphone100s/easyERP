@@ -120,6 +120,12 @@
       <DependentUpon>SelectOutdate_Form.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SelectPrice_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectPrice_Form.Designer.cs">
+      <DependentUpon>SelectPrice_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlHelp.cs" />
     <EmbeddedResource Include="InsertFile_Form.resx">
       <DependentUpon>InsertFile_Form.cs</DependentUpon>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectOutdate_Form.resx">
       <DependentUpon>SelectOutdate_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectPrice_Form.resx">
+      <DependentUpon>SelectPrice_Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="easyERP_Member.xsc">
       <DependentUpon>easyERP_Member.xsd</DependentUpon>

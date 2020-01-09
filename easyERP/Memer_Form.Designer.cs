@@ -146,6 +146,7 @@
             this.select_dataGridView.RowTemplate.Height = 24;
             this.select_dataGridView.Size = new System.Drawing.Size(642, 240);
             this.select_dataGridView.TabIndex = 10;
+            this.select_dataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Select_dataGridView_CellMouseClick);
             // 
             // memberIDDataGridViewTextBoxColumn
             // 

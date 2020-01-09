@@ -488,6 +488,14 @@ namespace easyERP
             InitializeComponent();
         }
 
+        private void Select_dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            memberID_textBox.Text = select_dataGridView.CurrentRow.Cells[0].Value.ToString();
+            memberAccount_textbox.Text = select_dataGridView.CurrentRow.Cells[1].Value.ToString();
+            memberName_textBox.Text = select_dataGridView.CurrentRow.Cells[2].Value.ToString();
+            password_textBox.Text = select_dataGridView.CurrentRow.Cells[3].Value.ToString();            
+            status_comboBox.Text = select_dataGridView.CurrentRow.Cells[4].Value.ToString();
 
+        }
     }
 }
