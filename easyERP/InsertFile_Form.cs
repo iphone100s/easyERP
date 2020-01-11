@@ -213,7 +213,7 @@ namespace easyERP
         }
 
 
-        //查詢
+        //綜合查詢
         private void SelectFile_button_Click(object sender, EventArgs e)
         {
            string productNo = this.productNo_textBox.Text.Trim();
@@ -256,6 +256,9 @@ namespace easyERP
         //修改
         private void UpdateFile_button_Click(object sender, EventArgs e)
         {
+
+
+
             string productNo = this.productNo_textBox.Text.Trim();
             string productName = this.productName_textBox.Text.Trim();
             string productSn = this.productSn_textBox.Text.Trim();
@@ -264,7 +267,7 @@ namespace easyERP
 
             //int inQuantity = Convert.ToInt32(this.inQuantity_textBox.Text);
             //int inventoryQuantity = Convert.ToInt32(this.inventoryQuantity_textBox.Text);
-
+            
             int inQuantity = int.Parse(this.inQuantity_textBox.Text);
             int inventoryQuantity = int.Parse(this.inventoryQuantity_textBox.Text);
 
@@ -286,16 +289,17 @@ namespace easyERP
             string note = this.note_textBox.Text.Trim();
 
 
-            ////下拉式選單
-            //KeyValuePair<string, string> kvp = (KeyValuePair<string, string>)status_comboBox.SelectedItem;
-            //string key = kvp.Key.ToString();
-            //string Value = kvp.Value.ToString();
+            //下拉式選單
+            KeyValuePair<string, string> kvp = (KeyValuePair<string, string>)status_comboBox.SelectedItem;
+            string key = kvp.Key.ToString(); //顯示在前台
+            string Value = kvp.Value.ToString(); //未顯示
 
 
             using (SqlConnection con = new SqlConnection(_connecString))
             {
                 SqlCommand cmd = new SqlCommand();
                 {
+
                     if (productNo.Equals(""))
                     {
                         MessageBox.Show("請輸入產品編號!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -304,7 +308,7 @@ namespace easyERP
                     else
                     {
                         cmd = new SqlCommand(" UPDATE Date SET inDate = '" + inDate + "' , outDate = '" + outDate + "' WHERE productNo =  '" + productNo + "' ; " +
-                            "UPDATE Depot SET depotNo = '" + depotNo + "' , depotName = '" + depotName + "'  WHERE productNo = '" + productNo + "' ;" +
+                            "UPDATE Depot SET depotNo = '" + Value + "' , depotName = '" + key + "'  WHERE productNo = '" + productNo + "' ;" +
                             "UPDATE Price SET Untaxed = " + untaxed + " , taxIncluded  = " + taxIncluded + "  WHERE productNo  = '" + productNo + "' ;" +
                             "UPDATE Product SET productName = '" + productName + "' , productSpec = '" + productSpec + "' , productSn = '" + productSn + "' , productModel = '" + productModel + "' , inQuantity = " + inQuantity + ", inventoryQuantity = " + inventoryQuantity + ", factoryName = '" + factoryName + "', factoryNo = '" + factoryNo + "', note = '" + note + "' " +
                             "WHERE productNo  = '" + productNo + "' ; ", con);
@@ -312,6 +316,7 @@ namespace easyERP
                         MessageBox.Show("資料修改成功!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
+
 
                 }
 
@@ -440,11 +445,10 @@ namespace easyERP
             string note = this.note_textBox.Text.Trim();
 
 
-
-            ////下拉式選單
-            //KeyValuePair<string, string> kvp = (KeyValuePair<string, string>)status_comboBox.SelectedItem;
-            //string key = kvp.Key.ToString();
-            //string Value = kvp.Value.ToString();
+            //下拉式選單
+            KeyValuePair<string, string> kvp = (KeyValuePair<string, string>)status_comboBox.SelectedItem;
+            string key = kvp.Key.ToString(); //顯示在前台
+            string Value = kvp.Value.ToString(); //未顯示
 
 
             //查詢重複產品編號
@@ -465,7 +469,7 @@ namespace easyERP
 
                     try
                     {
-                        if (productNo.Equals("") || productSn.Equals("") ||  factoryNo.Equals("") || factoryName.Equals("") || depotNo.Equals("") || depotName.Equals("") || inDate.Equals(""))
+                        if (productNo.Equals("") || productSn.Equals("") ||  factoryNo.Equals("") || factoryName.Equals("") ||  inDate.Equals(""))
                         {
                             MessageBox.Show("請勿空白產品編號" + Environment.NewLine + 
                                                     "產品序號" + Environment.NewLine + 
@@ -489,7 +493,7 @@ namespace easyERP
                         else
                         {
                             cmd = new SqlCommand("insert into Date(inDate, outDate,productNo) values('" + inDate + "','" + outDate + "','" + productNo + "');" +
-                                                 "insert into Depot(depotNo, depotName,productNo) values('" + depotNo + "','" + depotName + "','" + productNo + "');" +
+                                                 "insert into Depot(depotNo, depotName,productNo) values('" + Value + "','" + key + "','" + productNo + "');" +
                                                  "insert into Price(Untaxed, taxIncluded,productNo) values(" + untaxed + "," + taxIncluded + ",'" + productNo + "'); " +
                                                  "insert into Product(productNo, productName,productSpec,productSn,productModel,inQuantity,inventoryQuantity,factoryName,factoryNo,note) values" +
                                                  "(" + productNo + "," + productName + ",'" + productSpec + "' ,'" + productSn + "','" + productModel + "'," + inQuantity + "," + inventoryQuantity + ",'" + factoryName + "','" + factoryNo + "','" + note + "' ) ", con);
@@ -869,7 +873,49 @@ namespace easyERP
             }
         }
 
+        //倉庫查詢
+        private void SelectDepot_button_Click(object sender, EventArgs e)
+        {
+            //下拉式選單
+            KeyValuePair<string, string> kvp = (KeyValuePair<string, string>)status_comboBox.SelectedItem;
+            string key = kvp.Key.ToString(); //顯示在前台
+            string Value = kvp.Value.ToString(); //未顯示
 
+
+            using (SqlConnection con = new SqlConnection(_connecString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                {
+                    if (productNo.Equals(""))
+                    {
+                        MessageBox.Show("請輸入產品編號!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    else
+                    {
+                        cmd = new SqlCommand("select p.productNo ,p.productName,p.productSpec,p.productSn,p.productModel," +
+                            "p.inQuantity, p.inventoryQuantity, p.factoryName," +
+                            "p.factoryNo, p.note," +
+                            "m.Untaxed, m.taxIncluded," +
+                            "a.depotNo, a.depotName," +
+                            "t.inDate, t.outDate " +
+                            "from Product p join Price m " +
+                            "on p.productNo = m.productNo " +
+                            "join Depot a " +
+                            "on p.productNo = a.productNo " +
+                            "join Date t " +
+                            "on p.productNo = t.productNo " +
+                            " where a.depotName = '" + key + "' ", con);
+                    }
+                }
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                selectFile_dataGridView.DataSource = dt;
+                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+            }
+        }
 
         private void SelectFile_dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -883,8 +929,6 @@ namespace easyERP
             }
             else
             {
-
-
                 productNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[0].Value.ToString();
                 productName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[1].Value.ToString();
                 productSpec_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[2].Value.ToString();
@@ -897,19 +941,18 @@ namespace easyERP
                 factoryNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[7].Value.ToString();
                 factoryName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[8].Value.ToString();
 
+               
+                //string dateInput = selectFile_dataGridView.CurrentRow.Cells[9].Value.ToString();
+                //DateTime parsedDate = DateTime.Parse(dateInput);
+                //inDate_dateTimePicker.Value = parsedDate;
 
-                string dateInput = selectFile_dataGridView.CurrentRow.Cells[9].Value.ToString();
-                DateTime parsedDate = DateTime.Parse(dateInput);
-                inDate_dateTimePicker.Value = parsedDate;
-
-
-
-                string dateInputa = selectFile_dataGridView.CurrentRow.Cells[10].Value.ToString();
-                DateTime parsedDatea = DateTime.Parse(dateInputa);
-                outDate_dateTimePicker.Value = parsedDatea;
+                //string dateInputa = selectFile_dataGridView.CurrentRow.Cells[10].Value.ToString();
+                //DateTime parsedDatea = DateTime.Parse(dateInputa);
+                //outDate_dateTimePicker.Value = parsedDatea;
 
 
-
+                inDate_dateTimePicker.Text = selectFile_dataGridView.CurrentRow.Cells[9].Value.ToString();
+                outDate_dateTimePicker.Text = selectFile_dataGridView.CurrentRow.Cells[10].Value.ToString();
 
                 depotNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[11].Value.ToString();
                 depotName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[12].Value.ToString();
@@ -923,6 +966,6 @@ namespace easyERP
 
         }
 
-
+       
     }
 }

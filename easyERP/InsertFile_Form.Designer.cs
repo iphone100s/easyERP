@@ -517,6 +517,7 @@
             this.inQuantity_textBox.Name = "inQuantity_textBox";
             this.inQuantity_textBox.Size = new System.Drawing.Size(109, 27);
             this.inQuantity_textBox.TabIndex = 65;
+            this.inQuantity_textBox.Text = "0";
             // 
             // inventoryQuantity_textBox
             // 
@@ -525,6 +526,7 @@
             this.inventoryQuantity_textBox.Name = "inventoryQuantity_textBox";
             this.inventoryQuantity_textBox.Size = new System.Drawing.Size(109, 27);
             this.inventoryQuantity_textBox.TabIndex = 66;
+            this.inventoryQuantity_textBox.Text = "0";
             // 
             // factoryNo_textBox
             // 
@@ -575,6 +577,7 @@
             this.taxIncluded_textBox.Name = "taxIncluded_textBox";
             this.taxIncluded_textBox.Size = new System.Drawing.Size(109, 27);
             this.taxIncluded_textBox.TabIndex = 73;
+            this.taxIncluded_textBox.Text = "0";
             // 
             // untaxed_textBox
             // 
@@ -583,6 +586,7 @@
             this.untaxed_textBox.Name = "untaxed_textBox";
             this.untaxed_textBox.Size = new System.Drawing.Size(109, 27);
             this.untaxed_textBox.TabIndex = 72;
+            this.untaxed_textBox.Text = "0";
             // 
             // inDate_dateTimePicker
             // 
@@ -752,7 +756,7 @@
             // 
             // SelectFile_button
             // 
-            this.SelectFile_button.Location = new System.Drawing.Point(963, 74);
+            this.SelectFile_button.Location = new System.Drawing.Point(965, 74);
             this.SelectFile_button.Name = "SelectFile_button";
             this.SelectFile_button.Size = new System.Drawing.Size(100, 45);
             this.SelectFile_button.TabIndex = 76;
@@ -784,16 +788,17 @@
             // 
             // SelectDepot_button
             // 
-            this.SelectDepot_button.Location = new System.Drawing.Point(1245, 85);
+            this.SelectDepot_button.Location = new System.Drawing.Point(1086, 210);
             this.SelectDepot_button.Name = "SelectDepot_button";
             this.SelectDepot_button.Size = new System.Drawing.Size(100, 45);
             this.SelectDepot_button.TabIndex = 88;
             this.SelectDepot_button.Text = "倉庫查詢";
             this.SelectDepot_button.UseVisualStyleBackColor = true;
+            this.SelectDepot_button.Click += new System.EventHandler(this.SelectDepot_button_Click);
             // 
             // SelectFactory_button
             // 
-            this.SelectFactory_button.Location = new System.Drawing.Point(1117, 214);
+            this.SelectFactory_button.Location = new System.Drawing.Point(1086, 141);
             this.SelectFactory_button.Name = "SelectFactory_button";
             this.SelectFactory_button.Size = new System.Drawing.Size(100, 45);
             this.SelectFactory_button.TabIndex = 89;
@@ -803,7 +808,7 @@
             // 
             // SelectPrice_button
             // 
-            this.SelectPrice_button.Location = new System.Drawing.Point(1146, 306);
+            this.SelectPrice_button.Location = new System.Drawing.Point(1208, 141);
             this.SelectPrice_button.Name = "SelectPrice_button";
             this.SelectPrice_button.Size = new System.Drawing.Size(100, 45);
             this.SelectPrice_button.TabIndex = 90;
@@ -816,14 +821,14 @@
             this.status_comboBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.status_comboBox.ForeColor = System.Drawing.Color.Red;
             this.status_comboBox.FormattingEnabled = true;
-            this.status_comboBox.Location = new System.Drawing.Point(231, 370);
+            this.status_comboBox.Location = new System.Drawing.Point(165, 366);
             this.status_comboBox.Name = "status_comboBox";
-            this.status_comboBox.Size = new System.Drawing.Size(153, 24);
+            this.status_comboBox.Size = new System.Drawing.Size(200, 24);
             this.status_comboBox.TabIndex = 91;
             // 
             // SelectoutDate_button
             // 
-            this.SelectoutDate_button.Location = new System.Drawing.Point(1097, 141);
+            this.SelectoutDate_button.Location = new System.Drawing.Point(1208, 74);
             this.SelectoutDate_button.Name = "SelectoutDate_button";
             this.SelectoutDate_button.Size = new System.Drawing.Size(100, 45);
             this.SelectoutDate_button.TabIndex = 93;
@@ -833,7 +838,7 @@
             // 
             // SelectinDate_button
             // 
-            this.SelectinDate_button.Location = new System.Drawing.Point(1097, 74);
+            this.SelectinDate_button.Location = new System.Drawing.Point(1086, 74);
             this.SelectinDate_button.Name = "SelectinDate_button";
             this.SelectinDate_button.Size = new System.Drawing.Size(100, 45);
             this.SelectinDate_button.TabIndex = 94;
