@@ -57,5 +57,14 @@ namespace easyERP
             insertFile_Form.Show();
             this.Close();
         }
+
+        private void SelectPrice_Form_Load(object sender, EventArgs e)
+        {
+            untaxed_label.BackColor = Color.Transparent;
+            untaxed_label.Parent = pictureBox1;
+
+            taxIncluded_label.BackColor = Color.Transparent;
+            taxIncluded_label.Parent = pictureBox1;
+        }
     }
 }

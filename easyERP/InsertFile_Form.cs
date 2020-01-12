@@ -601,7 +601,60 @@ namespace easyERP
 
 
 
+            //設定標題的底色為透明標題
+            productNo_label.BackColor = Color.Transparent;
+            productNo_label.Parent = pictureBox1;
 
+            productName_label.BackColor = Color.Transparent;
+            productName_label.Parent = pictureBox1;
+
+            productSn_label.BackColor = Color.Transparent;
+            productSn_label.Parent = pictureBox1;
+
+            productModel_label.BackColor = Color.Transparent;
+            productModel_label.Parent = pictureBox1;
+
+            productSpec_label.BackColor = Color.Transparent;
+            productSpec_label.Parent = pictureBox1;
+
+            inQuantity_label.BackColor = Color.Transparent;
+            inQuantity_label.Parent = pictureBox1;
+
+            inventoryQuantity_label.BackColor = Color.Transparent;
+            inventoryQuantity_label.Parent = pictureBox1;
+
+            factoryNo_label.BackColor = Color.Transparent;
+            factoryNo_label.Parent = pictureBox1;
+
+            factoryName_label.BackColor = Color.Transparent;
+            factoryName_label.Parent = pictureBox1;
+
+            depotName_label.BackColor = Color.Transparent;
+            depotName_label.Parent = pictureBox1;
+
+            untaxed_label.BackColor = Color.Transparent;
+            untaxed_label.Parent = pictureBox1;
+
+            taxIncluded_label.BackColor = Color.Transparent;
+            taxIncluded_label.Parent = pictureBox1;
+
+            inDate_label.BackColor = Color.Transparent;
+            inDate_label.Parent = pictureBox1;
+
+            outDate_label.BackColor = Color.Transparent;
+            outDate_label.Parent = pictureBox1;
+
+            note_label.BackColor = Color.Transparent;
+            note_label.Parent = pictureBox1;
+
+            insertSystem_label.BackColor = Color.Transparent;
+            insertSystem_label.Parent = pictureBox1;
+
+            lbCurrentPage.BackColor = Color.Transparent;
+            lbCurrentPage.Parent = pictureBox1;
+
+            lbTotalPage.BackColor = Color.Transparent;
+            lbTotalPage.Parent = pictureBox1;
 
 
         }

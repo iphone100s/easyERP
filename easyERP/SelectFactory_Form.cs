@@ -38,5 +38,15 @@ namespace easyERP
             insertFile_Form.Show();
             this.Close();
         }
+
+        private void SelectFactory_Form_Load(object sender, EventArgs e)
+        {
+            factoryNo_label.BackColor = Color.Transparent;
+            factoryNo_label.Parent = pictureBox1;
+
+            factoryName_label.BackColor = Color.Transparent;
+            factoryName_label.Parent = pictureBox1;
+
+        }
     }
 }

@@ -32,8 +32,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.startDate_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.finishDate_dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.factoryName_label = new System.Windows.Forms.Label();
-            this.factoryNo_label = new System.Windows.Forms.Label();
+            this.finishDate_date_label = new System.Windows.Forms.Label();
+            this.startDate_date_label = new System.Windows.Forms.Label();
             this.SelectinDate_button = new System.Windows.Forms.Button();
             this.SelectOutDate_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,27 +71,27 @@
             this.finishDate_dateTimePicker.TabIndex = 98;
             this.finishDate_dateTimePicker.Value = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             // 
-            // factoryName_label
+            // finishDate_date_label
             // 
-            this.factoryName_label.AutoSize = true;
-            this.factoryName_label.Font = new System.Drawing.Font("標楷體", 20.25F);
-            this.factoryName_label.ForeColor = System.Drawing.Color.Red;
-            this.factoryName_label.Location = new System.Drawing.Point(71, 150);
-            this.factoryName_label.Name = "factoryName_label";
-            this.factoryName_label.Size = new System.Drawing.Size(124, 27);
-            this.factoryName_label.TabIndex = 102;
-            this.factoryName_label.Text = "結束日期";
+            this.finishDate_date_label.AutoSize = true;
+            this.finishDate_date_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.finishDate_date_label.ForeColor = System.Drawing.Color.Red;
+            this.finishDate_date_label.Location = new System.Drawing.Point(71, 150);
+            this.finishDate_date_label.Name = "finishDate_date_label";
+            this.finishDate_date_label.Size = new System.Drawing.Size(124, 27);
+            this.finishDate_date_label.TabIndex = 102;
+            this.finishDate_date_label.Text = "結束日期";
             // 
-            // factoryNo_label
+            // startDate_date_label
             // 
-            this.factoryNo_label.AutoSize = true;
-            this.factoryNo_label.Font = new System.Drawing.Font("標楷體", 20.25F);
-            this.factoryNo_label.ForeColor = System.Drawing.Color.Red;
-            this.factoryNo_label.Location = new System.Drawing.Point(71, 61);
-            this.factoryNo_label.Name = "factoryNo_label";
-            this.factoryNo_label.Size = new System.Drawing.Size(124, 27);
-            this.factoryNo_label.TabIndex = 101;
-            this.factoryNo_label.Text = "起始日期";
+            this.startDate_date_label.AutoSize = true;
+            this.startDate_date_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.startDate_date_label.ForeColor = System.Drawing.Color.Red;
+            this.startDate_date_label.Location = new System.Drawing.Point(71, 61);
+            this.startDate_date_label.Name = "startDate_date_label";
+            this.startDate_date_label.Size = new System.Drawing.Size(124, 27);
+            this.startDate_date_label.TabIndex = 101;
+            this.startDate_date_label.Text = "起始日期";
             // 
             // SelectinDate_button
             // 
@@ -122,14 +122,15 @@
             this.ClientSize = new System.Drawing.Size(434, 301);
             this.Controls.Add(this.SelectOutDate_button);
             this.Controls.Add(this.SelectinDate_button);
-            this.Controls.Add(this.factoryName_label);
-            this.Controls.Add(this.factoryNo_label);
+            this.Controls.Add(this.finishDate_date_label);
+            this.Controls.Add(this.startDate_date_label);
             this.Controls.Add(this.startDate_dateTimePicker);
             this.Controls.Add(this.finishDate_dateTimePicker);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelectIndate_Form";
             this.Text = "easyERP-進出貨日期查詢";
+            this.Load += new System.EventHandler(this.SelectIndate_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,8 +142,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker startDate_dateTimePicker;
         private System.Windows.Forms.DateTimePicker finishDate_dateTimePicker;
-        private System.Windows.Forms.Label factoryName_label;
-        private System.Windows.Forms.Label factoryNo_label;
+        private System.Windows.Forms.Label finishDate_date_label;
+        private System.Windows.Forms.Label startDate_date_label;
         public System.Windows.Forms.Button SelectinDate_button;
         public System.Windows.Forms.Button SelectOutDate_button;
     }

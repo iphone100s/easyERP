@@ -40,6 +40,15 @@ namespace easyERP
             insertFile_Form.Show();
             this.Close();
         }
+
+        private void SelectIndate_Form_Load(object sender, EventArgs e)
+        {
+            startDate_date_label.BackColor = Color.Transparent;
+            startDate_date_label.Parent = pictureBox1;
+
+            finishDate_date_label.BackColor = Color.Transparent;
+            finishDate_date_label.Parent = pictureBox1;
+        }
     }
   }
 
