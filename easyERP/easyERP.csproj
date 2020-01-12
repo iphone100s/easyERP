@@ -114,13 +114,6 @@
     <Compile Include="SelectIndate_Form.Designer.cs">
       <DependentUpon>SelectIndate_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelectOutdate_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include=".Designer.cs">
-      <DependentUpon>SelectOutdate_Form.cs</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="SelectPrice_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,9 +149,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectIndate_Form.resx">
       <DependentUpon>SelectIndate_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SelectOutdate_Form.resx">
-      <DependentUpon>SelectOutdate_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectPrice_Form.resx">
       <DependentUpon>SelectPrice_Form.cs</DependentUpon>

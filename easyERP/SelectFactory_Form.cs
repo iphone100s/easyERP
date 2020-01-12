@@ -17,20 +17,19 @@ namespace easyERP
             InitializeComponent();
         }
 
-        private void SelectfactoryNo_button_Click(object sender, EventArgs e)
+
+        private void SelectfactoryNo_button_Click_1(object sender, EventArgs e)
         {
             string factoryNo = this.factoryNo_textBox.Text.Trim();
-   
+
 
             InsertFile_Form insertFile_Form = new InsertFile_Form();
             insertFile_Form.getFactoryNo(factoryNo);
             insertFile_Form.Show();
             this.Close();
-
-
         }
 
-        private void SelectfactoryName_button_Click(object sender, EventArgs e)
+        private void SelectfactoryName_button_Click_1(object sender, EventArgs e)
         {
             string factoryName = this.factoryName_textBox.Text.Trim();
 

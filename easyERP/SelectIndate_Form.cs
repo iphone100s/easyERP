@@ -19,7 +19,6 @@ namespace easyERP
             InitializeComponent();
         }
 
-
         private void SelectinDate_button_Click(object sender, EventArgs e)
         {
             string startDate = this.startDate_dateTimePicker.Value.Date.ToString("yyyy-MM-dd");
@@ -29,9 +28,18 @@ namespace easyERP
             insertFile_Form.getDate(startDate, finishDate);
             insertFile_Form.Show();
             this.Close();
-
         }
 
+        private void SelectOutDate_button_Click(object sender, EventArgs e)
+        {
+            string startDate = this.startDate_dateTimePicker.Value.Date.ToString("yyyy-MM-dd");
+            string finishDate = this.finishDate_dateTimePicker.Value.Date.ToString("yyyy-MM-dd");
+
+            InsertFile_Form insertFile_Form = new InsertFile_Form();
+            insertFile_Form.getDate(startDate, finishDate);
+            insertFile_Form.Show();
+            this.Close();
+        }
     }
   }
 

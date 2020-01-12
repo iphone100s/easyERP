@@ -79,9 +79,6 @@
             this.inventoryQuantity_textBox = new System.Windows.Forms.TextBox();
             this.factoryNo_textBox = new System.Windows.Forms.TextBox();
             this.factoryName_textBox = new System.Windows.Forms.TextBox();
-            this.depotNo_label = new System.Windows.Forms.Label();
-            this.depotNo_textBox = new System.Windows.Forms.TextBox();
-            this.depotName_textBox = new System.Windows.Forms.TextBox();
             this.taxIncluded_textBox = new System.Windows.Forms.TextBox();
             this.untaxed_textBox = new System.Windows.Forms.TextBox();
             this.inDate_dateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -106,7 +103,6 @@
             this.SelectFactory_button = new System.Windows.Forms.Button();
             this.SelectPrice_button = new System.Windows.Forms.Button();
             this.status_comboBox = new System.Windows.Forms.ComboBox();
-            this.SelectoutDate_button = new System.Windows.Forms.Button();
             this.SelectinDate_button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
@@ -121,10 +117,11 @@
             // insertSystem_label
             // 
             this.insertSystem_label.AutoSize = true;
-            this.insertSystem_label.Font = new System.Drawing.Font("標楷體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.insertSystem_label.Location = new System.Drawing.Point(975, 20);
+            this.insertSystem_label.Font = new System.Drawing.Font("標楷體", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.insertSystem_label.ForeColor = System.Drawing.Color.Red;
+            this.insertSystem_label.Location = new System.Drawing.Point(1065, 17);
             this.insertSystem_label.Name = "insertSystem_label";
-            this.insertSystem_label.Size = new System.Drawing.Size(143, 32);
+            this.insertSystem_label.Size = new System.Drawing.Size(212, 48);
             this.insertSystem_label.TabIndex = 2;
             this.insertSystem_label.Text = "建檔系統";
             // 
@@ -132,6 +129,7 @@
             // 
             this.productModel_label.AutoSize = true;
             this.productModel_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.productModel_label.ForeColor = System.Drawing.Color.Red;
             this.productModel_label.Location = new System.Drawing.Point(35, 114);
             this.productModel_label.Name = "productModel_label";
             this.productModel_label.Size = new System.Drawing.Size(124, 27);
@@ -142,6 +140,7 @@
             // 
             this.inQuantity_label.AutoSize = true;
             this.inQuantity_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.inQuantity_label.ForeColor = System.Drawing.Color.Red;
             this.inQuantity_label.Location = new System.Drawing.Point(35, 187);
             this.inQuantity_label.Name = "inQuantity_label";
             this.inQuantity_label.Size = new System.Drawing.Size(124, 27);
@@ -152,6 +151,7 @@
             // 
             this.productSpec_label.AutoSize = true;
             this.productSpec_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.productSpec_label.ForeColor = System.Drawing.Color.Red;
             this.productSpec_label.Location = new System.Drawing.Point(35, 141);
             this.productSpec_label.Name = "productSpec_label";
             this.productSpec_label.Size = new System.Drawing.Size(124, 27);
@@ -162,6 +162,7 @@
             // 
             this.productSn_label.AutoSize = true;
             this.productSn_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.productSn_label.ForeColor = System.Drawing.Color.Red;
             this.productSn_label.Location = new System.Drawing.Point(35, 87);
             this.productSn_label.Name = "productSn_label";
             this.productSn_label.Size = new System.Drawing.Size(124, 27);
@@ -172,6 +173,7 @@
             // 
             this.productName_label.AutoSize = true;
             this.productName_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.productName_label.ForeColor = System.Drawing.Color.Red;
             this.productName_label.Location = new System.Drawing.Point(35, 60);
             this.productName_label.Name = "productName_label";
             this.productName_label.Size = new System.Drawing.Size(124, 27);
@@ -182,6 +184,7 @@
             // 
             this.productNo_label.AutoSize = true;
             this.productNo_label.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.productNo_label.ForeColor = System.Drawing.Color.Red;
             this.productNo_label.Location = new System.Drawing.Point(35, 33);
             this.productNo_label.Name = "productNo_label";
             this.productNo_label.Size = new System.Drawing.Size(124, 27);
@@ -192,6 +195,7 @@
             // 
             this.inventoryQuantity_label.AutoSize = true;
             this.inventoryQuantity_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.inventoryQuantity_label.ForeColor = System.Drawing.Color.Red;
             this.inventoryQuantity_label.Location = new System.Drawing.Point(35, 214);
             this.inventoryQuantity_label.Name = "inventoryQuantity_label";
             this.inventoryQuantity_label.Size = new System.Drawing.Size(124, 27);
@@ -202,6 +206,7 @@
             // 
             this.factoryNo_label.AutoSize = true;
             this.factoryNo_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.factoryNo_label.ForeColor = System.Drawing.Color.Red;
             this.factoryNo_label.Location = new System.Drawing.Point(35, 241);
             this.factoryNo_label.Name = "factoryNo_label";
             this.factoryNo_label.Size = new System.Drawing.Size(124, 27);
@@ -212,6 +217,7 @@
             // 
             this.factoryName_label.AutoSize = true;
             this.factoryName_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.factoryName_label.ForeColor = System.Drawing.Color.Red;
             this.factoryName_label.Location = new System.Drawing.Point(35, 268);
             this.factoryName_label.Name = "factoryName_label";
             this.factoryName_label.Size = new System.Drawing.Size(124, 27);
@@ -222,6 +228,7 @@
             // 
             this.note_label.AutoSize = true;
             this.note_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.note_label.ForeColor = System.Drawing.Color.Red;
             this.note_label.Location = new System.Drawing.Point(510, 178);
             this.note_label.Name = "note_label";
             this.note_label.Size = new System.Drawing.Size(68, 27);
@@ -230,6 +237,7 @@
             // 
             // note_textBox
             // 
+            this.note_textBox.Font = new System.Drawing.Font("新細明體", 12F);
             this.note_textBox.Location = new System.Drawing.Point(481, 214);
             this.note_textBox.Multiline = true;
             this.note_textBox.Name = "note_textBox";
@@ -238,6 +246,7 @@
             // 
             // productNo_textBox
             // 
+            this.productNo_textBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.productNo_textBox.Location = new System.Drawing.Point(165, 33);
             this.productNo_textBox.Multiline = true;
             this.productNo_textBox.Name = "productNo_textBox";
@@ -248,6 +257,7 @@
             // 
             this.depotName_label.AutoSize = true;
             this.depotName_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.depotName_label.ForeColor = System.Drawing.Color.Red;
             this.depotName_label.Location = new System.Drawing.Point(35, 337);
             this.depotName_label.Name = "depotName_label";
             this.depotName_label.Size = new System.Drawing.Size(124, 27);
@@ -258,6 +268,7 @@
             // 
             this.untaxed_label.AutoSize = true;
             this.untaxed_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.untaxed_label.ForeColor = System.Drawing.Color.Red;
             this.untaxed_label.Location = new System.Drawing.Point(510, 33);
             this.untaxed_label.Name = "untaxed_label";
             this.untaxed_label.Size = new System.Drawing.Size(124, 27);
@@ -452,6 +463,7 @@
             // 
             this.inDate_label.AutoSize = true;
             this.inDate_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.inDate_label.ForeColor = System.Drawing.Color.Red;
             this.inDate_label.Location = new System.Drawing.Point(510, 105);
             this.inDate_label.Name = "inDate_label";
             this.inDate_label.Size = new System.Drawing.Size(124, 27);
@@ -462,6 +474,7 @@
             // 
             this.outDate_label.AutoSize = true;
             this.outDate_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.outDate_label.ForeColor = System.Drawing.Color.Red;
             this.outDate_label.Location = new System.Drawing.Point(510, 132);
             this.outDate_label.Name = "outDate_label";
             this.outDate_label.Size = new System.Drawing.Size(124, 27);
@@ -472,6 +485,7 @@
             // 
             this.taxIncluded_label.AutoSize = true;
             this.taxIncluded_label.Font = new System.Drawing.Font("標楷體", 20.25F);
+            this.taxIncluded_label.ForeColor = System.Drawing.Color.Red;
             this.taxIncluded_label.Location = new System.Drawing.Point(510, 60);
             this.taxIncluded_label.Name = "taxIncluded_label";
             this.taxIncluded_label.Size = new System.Drawing.Size(124, 27);
@@ -480,6 +494,7 @@
             // 
             // productName_textBox
             // 
+            this.productName_textBox.Font = new System.Drawing.Font("新細明體", 12F);
             this.productName_textBox.Location = new System.Drawing.Point(165, 60);
             this.productName_textBox.Multiline = true;
             this.productName_textBox.Name = "productName_textBox";
@@ -488,6 +503,7 @@
             // 
             // productSn_textBox
             // 
+            this.productSn_textBox.Font = new System.Drawing.Font("新細明體", 12F);
             this.productSn_textBox.Location = new System.Drawing.Point(165, 87);
             this.productSn_textBox.Multiline = true;
             this.productSn_textBox.Name = "productSn_textBox";
@@ -496,6 +512,7 @@
             // 
             // productModel_textBox
             // 
+            this.productModel_textBox.Font = new System.Drawing.Font("新細明體", 12F);
             this.productModel_textBox.Location = new System.Drawing.Point(165, 114);
             this.productModel_textBox.Multiline = true;
             this.productModel_textBox.Name = "productModel_textBox";
@@ -504,6 +521,7 @@
             // 
             // productSpec_textBox
             // 
+            this.productSpec_textBox.Font = new System.Drawing.Font("新細明體", 12F);
             this.productSpec_textBox.Location = new System.Drawing.Point(165, 141);
             this.productSpec_textBox.Multiline = true;
             this.productSpec_textBox.Name = "productSpec_textBox";
@@ -512,6 +530,7 @@
             // 
             // inQuantity_textBox
             // 
+            this.inQuantity_textBox.Font = new System.Drawing.Font("新細明體", 12F);
             this.inQuantity_textBox.Location = new System.Drawing.Point(165, 187);
             this.inQuantity_textBox.Multiline = true;
             this.inQuantity_textBox.Name = "inQuantity_textBox";
@@ -521,6 +540,7 @@
             // 
             // inventoryQuantity_textBox
             // 
+            this.inventoryQuantity_textBox.Font = new System.Drawing.Font("新細明體", 12F);
             this.inventoryQuantity_textBox.Location = new System.Drawing.Point(165, 214);
             this.inventoryQuantity_textBox.Multiline = true;
             this.inventoryQuantity_textBox.Name = "inventoryQuantity_textBox";
@@ -530,6 +550,7 @@
             // 
             // factoryNo_textBox
             // 
+            this.factoryNo_textBox.Font = new System.Drawing.Font("新細明體", 12F);
             this.factoryNo_textBox.Location = new System.Drawing.Point(165, 241);
             this.factoryNo_textBox.Multiline = true;
             this.factoryNo_textBox.Name = "factoryNo_textBox";
@@ -538,40 +559,16 @@
             // 
             // factoryName_textBox
             // 
+            this.factoryName_textBox.Font = new System.Drawing.Font("新細明體", 12F);
             this.factoryName_textBox.Location = new System.Drawing.Point(165, 268);
             this.factoryName_textBox.Multiline = true;
             this.factoryName_textBox.Name = "factoryName_textBox";
             this.factoryName_textBox.Size = new System.Drawing.Size(200, 27);
             this.factoryName_textBox.TabIndex = 68;
             // 
-            // depotNo_label
-            // 
-            this.depotNo_label.AutoSize = true;
-            this.depotNo_label.Font = new System.Drawing.Font("標楷體", 20.25F);
-            this.depotNo_label.Location = new System.Drawing.Point(35, 310);
-            this.depotNo_label.Name = "depotNo_label";
-            this.depotNo_label.Size = new System.Drawing.Size(124, 27);
-            this.depotNo_label.TabIndex = 69;
-            this.depotNo_label.Text = "倉庫編號";
-            // 
-            // depotNo_textBox
-            // 
-            this.depotNo_textBox.Location = new System.Drawing.Point(165, 310);
-            this.depotNo_textBox.Multiline = true;
-            this.depotNo_textBox.Name = "depotNo_textBox";
-            this.depotNo_textBox.Size = new System.Drawing.Size(200, 27);
-            this.depotNo_textBox.TabIndex = 70;
-            // 
-            // depotName_textBox
-            // 
-            this.depotName_textBox.Location = new System.Drawing.Point(165, 337);
-            this.depotName_textBox.Multiline = true;
-            this.depotName_textBox.Name = "depotName_textBox";
-            this.depotName_textBox.Size = new System.Drawing.Size(200, 27);
-            this.depotName_textBox.TabIndex = 71;
-            // 
             // taxIncluded_textBox
             // 
+            this.taxIncluded_textBox.Font = new System.Drawing.Font("新細明體", 12F);
             this.taxIncluded_textBox.Location = new System.Drawing.Point(640, 60);
             this.taxIncluded_textBox.Multiline = true;
             this.taxIncluded_textBox.Name = "taxIncluded_textBox";
@@ -581,6 +578,7 @@
             // 
             // untaxed_textBox
             // 
+            this.untaxed_textBox.Font = new System.Drawing.Font("新細明體", 12F);
             this.untaxed_textBox.Location = new System.Drawing.Point(640, 33);
             this.untaxed_textBox.Multiline = true;
             this.untaxed_textBox.Name = "untaxed_textBox";
@@ -592,22 +590,25 @@
             // 
             this.inDate_dateTimePicker.CalendarFont = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.inDate_dateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.inDate_dateTimePicker.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.inDate_dateTimePicker.Location = new System.Drawing.Point(640, 105);
             this.inDate_dateTimePicker.Name = "inDate_dateTimePicker";
-            this.inDate_dateTimePicker.Size = new System.Drawing.Size(169, 22);
+            this.inDate_dateTimePicker.Size = new System.Drawing.Size(169, 25);
             this.inDate_dateTimePicker.TabIndex = 74;
             this.inDate_dateTimePicker.Value = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             // 
             // outDate_dateTimePicker
             // 
+            this.outDate_dateTimePicker.Font = new System.Drawing.Font("新細明體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.outDate_dateTimePicker.Location = new System.Drawing.Point(640, 137);
             this.outDate_dateTimePicker.Name = "outDate_dateTimePicker";
-            this.outDate_dateTimePicker.Size = new System.Drawing.Size(169, 22);
+            this.outDate_dateTimePicker.Size = new System.Drawing.Size(169, 25);
             this.outDate_dateTimePicker.TabIndex = 75;
             // 
             // DeleteFile_button
             // 
-            this.DeleteFile_button.Location = new System.Drawing.Point(963, 276);
+            this.DeleteFile_button.Font = new System.Drawing.Font("標楷體", 14.25F);
+            this.DeleteFile_button.Location = new System.Drawing.Point(1263, 331);
             this.DeleteFile_button.Name = "DeleteFile_button";
             this.DeleteFile_button.Size = new System.Drawing.Size(100, 45);
             this.DeleteFile_button.TabIndex = 84;
@@ -617,7 +618,8 @@
             // 
             // IInsertFile_button
             // 
-            this.IInsertFile_button.Location = new System.Drawing.Point(963, 345);
+            this.IInsertFile_button.Font = new System.Drawing.Font("標楷體", 14.25F);
+            this.IInsertFile_button.Location = new System.Drawing.Point(960, 331);
             this.IInsertFile_button.Name = "IInsertFile_button";
             this.IInsertFile_button.Size = new System.Drawing.Size(100, 45);
             this.IInsertFile_button.TabIndex = 83;
@@ -627,7 +629,8 @@
             // 
             // UpdateFile_button
             // 
-            this.UpdateFile_button.Location = new System.Drawing.Point(963, 214);
+            this.UpdateFile_button.Font = new System.Drawing.Font("標楷體", 14.25F);
+            this.UpdateFile_button.Location = new System.Drawing.Point(1117, 331);
             this.UpdateFile_button.Name = "UpdateFile_button";
             this.UpdateFile_button.Size = new System.Drawing.Size(100, 45);
             this.UpdateFile_button.TabIndex = 82;
@@ -756,7 +759,8 @@
             // 
             // SelectFile_button
             // 
-            this.SelectFile_button.Location = new System.Drawing.Point(965, 74);
+            this.SelectFile_button.Font = new System.Drawing.Font("標楷體", 14.25F);
+            this.SelectFile_button.Location = new System.Drawing.Point(996, 114);
             this.SelectFile_button.Name = "SelectFile_button";
             this.SelectFile_button.Size = new System.Drawing.Size(100, 45);
             this.SelectFile_button.TabIndex = 76;
@@ -788,7 +792,8 @@
             // 
             // SelectDepot_button
             // 
-            this.SelectDepot_button.Location = new System.Drawing.Point(1086, 210);
+            this.SelectDepot_button.Font = new System.Drawing.Font("標楷體", 14.25F);
+            this.SelectDepot_button.Location = new System.Drawing.Point(1117, 181);
             this.SelectDepot_button.Name = "SelectDepot_button";
             this.SelectDepot_button.Size = new System.Drawing.Size(100, 45);
             this.SelectDepot_button.TabIndex = 88;
@@ -798,7 +803,8 @@
             // 
             // SelectFactory_button
             // 
-            this.SelectFactory_button.Location = new System.Drawing.Point(1086, 141);
+            this.SelectFactory_button.Font = new System.Drawing.Font("標楷體", 14.25F);
+            this.SelectFactory_button.Location = new System.Drawing.Point(1239, 113);
             this.SelectFactory_button.Name = "SelectFactory_button";
             this.SelectFactory_button.Size = new System.Drawing.Size(100, 45);
             this.SelectFactory_button.TabIndex = 89;
@@ -808,7 +814,8 @@
             // 
             // SelectPrice_button
             // 
-            this.SelectPrice_button.Location = new System.Drawing.Point(1208, 141);
+            this.SelectPrice_button.Font = new System.Drawing.Font("標楷體", 14.25F);
+            this.SelectPrice_button.Location = new System.Drawing.Point(1239, 181);
             this.SelectPrice_button.Name = "SelectPrice_button";
             this.SelectPrice_button.Size = new System.Drawing.Size(100, 45);
             this.SelectPrice_button.TabIndex = 90;
@@ -818,31 +825,22 @@
             // 
             // status_comboBox
             // 
-            this.status_comboBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.status_comboBox.ForeColor = System.Drawing.Color.Red;
+            this.status_comboBox.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.status_comboBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.status_comboBox.FormattingEnabled = true;
-            this.status_comboBox.Location = new System.Drawing.Point(165, 366);
+            this.status_comboBox.Location = new System.Drawing.Point(165, 337);
             this.status_comboBox.Name = "status_comboBox";
-            this.status_comboBox.Size = new System.Drawing.Size(200, 24);
+            this.status_comboBox.Size = new System.Drawing.Size(200, 27);
             this.status_comboBox.TabIndex = 91;
-            // 
-            // SelectoutDate_button
-            // 
-            this.SelectoutDate_button.Location = new System.Drawing.Point(1208, 74);
-            this.SelectoutDate_button.Name = "SelectoutDate_button";
-            this.SelectoutDate_button.Size = new System.Drawing.Size(100, 45);
-            this.SelectoutDate_button.TabIndex = 93;
-            this.SelectoutDate_button.Text = "出貨日期查詢";
-            this.SelectoutDate_button.UseVisualStyleBackColor = true;
-            this.SelectoutDate_button.Click += new System.EventHandler(this.SelectoutDate_button_Click);
             // 
             // SelectinDate_button
             // 
-            this.SelectinDate_button.Location = new System.Drawing.Point(1086, 74);
+            this.SelectinDate_button.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.SelectinDate_button.Location = new System.Drawing.Point(1117, 114);
             this.SelectinDate_button.Name = "SelectinDate_button";
             this.SelectinDate_button.Size = new System.Drawing.Size(100, 45);
             this.SelectinDate_button.TabIndex = 94;
-            this.SelectinDate_button.Text = "進貨日期查詢";
+            this.SelectinDate_button.Text = "進出貨日期查詢";
             this.SelectinDate_button.UseVisualStyleBackColor = true;
             this.SelectinDate_button.Click += new System.EventHandler(this.SelectinDate_button_Click);
             // 
@@ -862,7 +860,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1491, 881);
             this.Controls.Add(this.SelectinDate_button);
-            this.Controls.Add(this.SelectoutDate_button);
             this.Controls.Add(this.status_comboBox);
             this.Controls.Add(this.SelectPrice_button);
             this.Controls.Add(this.SelectFactory_button);
@@ -882,9 +879,6 @@
             this.Controls.Add(this.inDate_dateTimePicker);
             this.Controls.Add(this.taxIncluded_textBox);
             this.Controls.Add(this.untaxed_textBox);
-            this.Controls.Add(this.depotName_textBox);
-            this.Controls.Add(this.depotNo_textBox);
-            this.Controls.Add(this.depotNo_label);
             this.Controls.Add(this.factoryName_textBox);
             this.Controls.Add(this.factoryNo_textBox);
             this.Controls.Add(this.inventoryQuantity_textBox);
@@ -959,9 +953,6 @@
         private System.Windows.Forms.TextBox inventoryQuantity_textBox;
         private System.Windows.Forms.TextBox factoryNo_textBox;
         private System.Windows.Forms.TextBox factoryName_textBox;
-        private System.Windows.Forms.Label depotNo_label;
-        private System.Windows.Forms.TextBox depotNo_textBox;
-        private System.Windows.Forms.TextBox depotName_textBox;
         private System.Windows.Forms.TextBox taxIncluded_textBox;
         private System.Windows.Forms.TextBox untaxed_textBox;
         private System.Windows.Forms.DateTimePicker inDate_dateTimePicker;
@@ -1004,7 +995,6 @@
         private System.Windows.Forms.Button SelectFactory_button;
         private System.Windows.Forms.Button SelectPrice_button;
         private System.Windows.Forms.ComboBox status_comboBox;
-        private System.Windows.Forms.Button SelectoutDate_button;
         public System.Windows.Forms.DataGridView selectFile_dataGridView;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
         public System.Windows.Forms.Button SelectinDate_button;

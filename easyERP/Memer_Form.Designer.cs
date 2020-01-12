@@ -91,6 +91,7 @@
             // 
             // SelectMember_button
             // 
+            this.SelectMember_button.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.SelectMember_button.Location = new System.Drawing.Point(135, 228);
             this.SelectMember_button.Name = "SelectMember_button";
             this.SelectMember_button.Size = new System.Drawing.Size(100, 45);
@@ -336,6 +337,7 @@
             // 
             // UpdateMember_button
             // 
+            this.UpdateMember_button.Font = new System.Drawing.Font("標楷體", 14.25F);
             this.UpdateMember_button.Location = new System.Drawing.Point(265, 228);
             this.UpdateMember_button.Name = "UpdateMember_button";
             this.UpdateMember_button.Size = new System.Drawing.Size(100, 45);
@@ -360,6 +362,7 @@
             // 
             // IInsertMember_button
             // 
+            this.IInsertMember_button.Font = new System.Drawing.Font("標楷體", 14.25F);
             this.IInsertMember_button.Location = new System.Drawing.Point(527, 228);
             this.IInsertMember_button.Name = "IInsertMember_button";
             this.IInsertMember_button.Size = new System.Drawing.Size(100, 45);
@@ -370,6 +373,7 @@
             // 
             // DeleteMember_button
             // 
+            this.DeleteMember_button.Font = new System.Drawing.Font("標楷體", 14.25F);
             this.DeleteMember_button.Location = new System.Drawing.Point(397, 228);
             this.DeleteMember_button.Name = "DeleteMember_button";
             this.DeleteMember_button.Size = new System.Drawing.Size(100, 45);

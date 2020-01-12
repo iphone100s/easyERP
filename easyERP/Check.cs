@@ -9,11 +9,19 @@ namespace easyERP
     class Check
     {
 
-        public void getchecknumber()
+        public bool IsNumber(string oText)
         {
-
-
+            try
+            {
+                int var1 = Convert.ToInt32(oText);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
+
 
 
 

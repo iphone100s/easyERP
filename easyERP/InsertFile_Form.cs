@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
@@ -253,11 +254,34 @@ namespace easyERP
             }
         }
 
+
+
         //修改
         private void UpdateFile_button_Click(object sender, EventArgs e)
         {
+            Check check = new Check();
+            bool checkinQuantity =  check.IsNumber(inQuantity_textBox.Text.Trim());
+            bool checkinventoryQuantity = check.IsNumber(inventoryQuantity_textBox.Text.Trim());
+            bool checkuntaxed = check.IsNumber(untaxed_textBox.Text.Trim());
+            bool checktaxIncluded = check.IsNumber(taxIncluded_textBox.Text.Trim());
 
 
+            //if (check.IsNumber(inQuantity_textBox.Text.Trim())  == false || check.IsNumber(inventoryQuantity_textBox.Text.Trim()) == false || check.IsNumber(untaxed_textBox.Text.Trim()) == false || check.IsNumber(taxIncluded_textBox.Text.Trim()) == false)
+            //{
+            //    MessageBox.Show("文本框里只能为数字");
+            //    return;
+            //}
+
+            if (checkinQuantity == false || checkinventoryQuantity == false || checkuntaxed == false || checktaxIncluded == false)
+            {
+                MessageBox.Show("請勿空白或是輸入非數字在" + Environment.NewLine +
+                                         "進貨數量" + Environment.NewLine +
+                                         "庫存數量" + Environment.NewLine +
+                                         "未稅金額" + Environment.NewLine +
+                                         "含稅金額" + Environment.NewLine 
+                                         , "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
             string productNo = this.productNo_textBox.Text.Trim();
             string productName = this.productName_textBox.Text.Trim();
@@ -267,7 +291,7 @@ namespace easyERP
 
             //int inQuantity = Convert.ToInt32(this.inQuantity_textBox.Text);
             //int inventoryQuantity = Convert.ToInt32(this.inventoryQuantity_textBox.Text);
-            
+
             int inQuantity = int.Parse(this.inQuantity_textBox.Text);
             int inventoryQuantity = int.Parse(this.inventoryQuantity_textBox.Text);
 
@@ -277,8 +301,8 @@ namespace easyERP
             string factoryNo = this.factoryNo_textBox.Text.Trim();
             string factoryName = this.factoryName_textBox.Text.Trim();
 
-            string depotNo = this.depotNo_textBox.Text.Trim();
-            string depotName = this.depotName_textBox.Text.Trim();
+            //string depotNo = this.depotNo_textBox.Text.Trim();
+            //string depotName = this.depotName_textBox.Text.Trim();
            
             int untaxed = int.Parse(this.untaxed_textBox.Text);
             int taxIncluded = int.Parse(this.taxIncluded_textBox.Text);
@@ -356,8 +380,6 @@ namespace easyERP
         {
             string productNo = this.productNo_textBox.Text.Trim();
             string productSn = this.productSn_textBox.Text.Trim();
-            //string productModel = this.productModel_textBox.Text.Trim();
-
 
             using (SqlConnection con = new SqlConnection(_connecString))
             {
@@ -419,6 +441,23 @@ namespace easyERP
         //新增
         private void IInsertFile_button_Click(object sender, EventArgs e)
         {
+            Check check = new Check();
+            bool checkinQuantity = check.IsNumber(inQuantity_textBox.Text.Trim());
+            bool checkinventoryQuantity = check.IsNumber(inventoryQuantity_textBox.Text.Trim());
+            bool checkuntaxed = check.IsNumber(untaxed_textBox.Text.Trim());
+            bool checktaxIncluded = check.IsNumber(taxIncluded_textBox.Text.Trim());
+
+
+            if (checkinQuantity == false || checkinventoryQuantity == false || checkuntaxed == false || checktaxIncluded == false)
+            {
+                MessageBox.Show("請勿空白或是輸入非數字在" + Environment.NewLine +
+                                         "進貨數量" + Environment.NewLine +
+                                         "庫存數量" + Environment.NewLine +
+                                         "未稅金額" + Environment.NewLine +
+                                         "含稅金額" + Environment.NewLine
+                                         , "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
             string productNo = this.productNo_textBox.Text.Trim();
             string productName = this.productName_textBox.Text.Trim();
@@ -426,15 +465,15 @@ namespace easyERP
             string productModel = this.productModel_textBox.Text.Trim();
             string productSpec = this.productSpec_textBox.Text.Trim();
 
-            //int inQuantity = Convert.ToInt32(this.inQuantity_textBox.Text);
+            
             int inQuantity = int.Parse(this.inQuantity_textBox.Text);
             int inventoryQuantity = int.Parse(this.inventoryQuantity_textBox.Text);
 
             string factoryNo = this.factoryNo_textBox.Text.Trim();
             string factoryName = this.factoryName_textBox.Text.Trim();
 
-            string depotNo = this.depotNo_textBox.Text.Trim();
-            string depotName = this.depotName_textBox.Text.Trim();
+            //string depotNo = this.depotNo_textBox.Text.Trim();
+            //string depotName = this.depotName_textBox.Text.Trim();
 
             int untaxed = int.Parse(this.untaxed_textBox.Text);
             int taxIncluded = int.Parse(this.taxIncluded_textBox.Text);
@@ -560,7 +599,10 @@ namespace easyERP
             btnNextPage.Enabled = false;
             btnLastPage.Enabled = false;
 
-          
+
+
+
+
 
         }
 
@@ -803,15 +845,6 @@ namespace easyERP
         }
 
 
-        //出貨日期查詢
-        private void SelectoutDate_button_Click(object sender, EventArgs e)
-        {
-            SelectOutdate_Form selectOutdate_Form = new SelectOutdate_Form();
-            selectOutdate_Form.Show();
-            this.Close();
-        }
-
-
         //進貨日期查詢
         private void SelectinDate_button_Click(object sender, EventArgs e)
         {
@@ -954,12 +987,14 @@ namespace easyERP
                 inDate_dateTimePicker.Text = selectFile_dataGridView.CurrentRow.Cells[9].Value.ToString();
                 outDate_dateTimePicker.Text = selectFile_dataGridView.CurrentRow.Cells[10].Value.ToString();
 
-                depotNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[11].Value.ToString();
-                depotName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[12].Value.ToString();
+                //depotNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[11].Value.ToString();
+                status_comboBox.Text = selectFile_dataGridView.CurrentRow.Cells[12].Value.ToString();
 
                 untaxed_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[13].Value.ToString();
                 taxIncluded_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[14].Value.ToString();
                 note_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[15].Value.ToString();
+
+
 
 
             }
