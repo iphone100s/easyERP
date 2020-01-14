@@ -1010,7 +1010,7 @@ namespace easyERP
 
             if (A == 1)
             {
-                MessageBox.Show("請先查詢!");
+                MessageBox.Show("請先查詢", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             else

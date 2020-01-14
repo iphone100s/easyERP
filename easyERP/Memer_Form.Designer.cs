@@ -57,7 +57,6 @@
             this.btnLastPage = new System.Windows.Forms.Button();
             this.UpdateMember_button = new System.Windows.Forms.Button();
             this.memberTableAdapter = new easyERP.ERPDataSet3TableAdapters.MemberTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.IInsertMember_button = new System.Windows.Forms.Button();
             this.DeleteMember_button = new System.Windows.Forms.Button();
             this.status_comboBox = new System.Windows.Forms.ComboBox();
@@ -70,6 +69,7 @@
             this.memberAccount_textbox = new System.Windows.Forms.TextBox();
             this.memberID_label = new System.Windows.Forms.Label();
             this.memberID_textBox = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.select_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyERP_Member)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eRPDataSet3)).BeginInit();
@@ -188,6 +188,7 @@
             // 
             this.easyERP_Member.DataMember = "Member";
             this.easyERP_Member.DataSource = this.eRPDataSet3;
+            this.easyERP_Member.CurrentChanged += new System.EventHandler(this.EasyERP_Member_CurrentChanged);
             // 
             // eRPDataSet3
             // 
@@ -350,16 +351,6 @@
             // 
             this.memberTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::easyERP.Properties.Resources.view_four;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(795, 744);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // IInsertMember_button
             // 
             this.IInsertMember_button.Font = new System.Drawing.Font("標楷體", 14.25F);
@@ -491,6 +482,16 @@
             this.memberID_textBox.Name = "memberID_textBox";
             this.memberID_textBox.Size = new System.Drawing.Size(153, 27);
             this.memberID_textBox.TabIndex = 53;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::easyERP.Properties.Resources.view_four;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(795, 744);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Memer_Form
             // 

@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
-using System.Collections;
-using System.Data.Linq;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace easyERP
 {
@@ -25,7 +19,7 @@ namespace easyERP
         // 頁面大小
         private int _pageSize = 10;
 
-   //分頁功能
+        //分頁功能
 
         // 計算頁數
         /// </summary>
@@ -104,7 +98,7 @@ namespace easyERP
 
         //第一頁
         private void BtnFirstPage_Click(object sender, EventArgs e)
-        {           
+        {
             _currentPageIndex = 1;
             select_dataGridView.DataSource = GetCurrentRecords(_currentPageIndex);
         }
@@ -250,7 +244,7 @@ namespace easyERP
                         }
                         if (memberAccount.Trim().Length > 0 && password != "" && memberName != "" && key != "" && Value != "")   //輸入 帳號 密碼 姓名 職等
                         {
-                            cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' , memberName='" + memberName + "' , permission='" + Value + "' , permissionName='" + key + "' where memberID =" + memberID + " " , con);
+                            cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' , memberName='" + memberName + "' , permission='" + Value + "' , permissionName='" + key + "' where memberID =" + memberID + " ", con);
                             updateSuccess();
                         }
 
@@ -298,13 +292,13 @@ namespace easyERP
             string Value = kvp.Value.ToString();
 
 
-            string selectID = "select memberID from Member where memberID='" + memberID + "' "; 
+            string selectID = "select memberID from Member where memberID='" + memberID + "' ";
             //string selectID = "select memberID from Member";
             SqlHelp sqlhelper = new SqlHelp();
 
             DataSet ds = sqlhelper.SqlServerRecordCount2(selectID); // 返回符合的結果數量
 
-            
+
 
             using (SqlConnection con = new SqlConnection(_connecString))
             {
@@ -312,7 +306,7 @@ namespace easyERP
 
                 SqlCommand cmd = new SqlCommand();
                 {
-                   
+
 
                     try
                     {
@@ -340,7 +334,7 @@ namespace easyERP
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);                      
+                        MessageBox.Show(ex.Message);
                     }
                     finally
                     {
@@ -388,8 +382,8 @@ namespace easyERP
 
                     try
                     {
-                        if (memberAccount.Equals("") || password.Equals("") ||  memberID.Equals(""))
-                        {                       
+                        if (memberAccount.Equals("") || password.Equals("") || memberID.Equals(""))
+                        {
                             MessageBox.Show("請輸入帳號，密碼，員工ID!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             return;
                         }
@@ -397,7 +391,7 @@ namespace easyERP
                         {
                             cmd = new SqlCommand("delete from Member where memberID ='" + memberID + "'", con);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("資料刪除成功!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);                         
+                            MessageBox.Show("資料刪除成功!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             cmd = new SqlCommand(" select TOP 10 * from Member ", con);
                         }
                     }
@@ -490,12 +484,30 @@ namespace easyERP
 
         private void Select_dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            memberID_textBox.Text = select_dataGridView.CurrentRow.Cells[0].Value.ToString();
-            memberAccount_textbox.Text = select_dataGridView.CurrentRow.Cells[1].Value.ToString();
-            memberName_textBox.Text = select_dataGridView.CurrentRow.Cells[2].Value.ToString();
-            password_textBox.Text = select_dataGridView.CurrentRow.Cells[3].Value.ToString();            
-            status_comboBox.Text = select_dataGridView.CurrentRow.Cells[4].Value.ToString();
+            int A = select_dataGridView.Rows.Count;
+
+            if (A == 0)
+            {
+                MessageBox.Show("請先查詢", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            else
+            {
+
+                memberID_textBox.Text = select_dataGridView.CurrentRow.Cells[0].Value.ToString();
+                memberAccount_textbox.Text = select_dataGridView.CurrentRow.Cells[1].Value.ToString();
+                memberName_textBox.Text = select_dataGridView.CurrentRow.Cells[2].Value.ToString();
+                password_textBox.Text = select_dataGridView.CurrentRow.Cells[3].Value.ToString();
+                status_comboBox.Text = select_dataGridView.CurrentRow.Cells[4].Value.ToString();
+            }
 
         }
+
+
+        private void EasyERP_Member_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

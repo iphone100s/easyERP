@@ -30,7 +30,7 @@ namespace easyERP
             label_title.BackColor = Color.Transparent;
             label_title.Parent = pictureBox_one;//將pictureBox設為標籤的父控件
             //pictureBox_one.Controls.Add(label_title);
-            //label_title.Location = new Point(80, 80); //重新設定標籤的位置 此位置相對於父控件的左上角
+          
 
 
         }
