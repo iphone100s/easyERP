@@ -36,11 +36,6 @@
             this.Employee_label = new System.Windows.Forms.Label();
             this.SelectMember_button = new System.Windows.Forms.Button();
             this.select_dataGridView = new System.Windows.Forms.DataGridView();
-            this.memberIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memberAccountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memberNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.permissionNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.easyERP_Member = new System.Windows.Forms.BindingSource(this.components);
             this.eRPDataSet3 = new easyERP.ERPDataSet3();
             this.btnFirstPage = new System.Windows.Forms.Button();
@@ -70,6 +65,14 @@
             this.memberID_label = new System.Windows.Forms.Label();
             this.memberID_textBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.error_comboBox = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.memberIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.memberAccountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.memberNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.permissionNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.memberErrorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.select_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyERP_Member)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eRPDataSet3)).BeginInit();
@@ -83,7 +86,7 @@
             this.Employee_label.AutoSize = true;
             this.Employee_label.Font = new System.Drawing.Font("標楷體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Employee_label.ForeColor = System.Drawing.Color.Red;
-            this.Employee_label.Location = new System.Drawing.Point(198, 20);
+            this.Employee_label.Location = new System.Drawing.Point(297, 19);
             this.Employee_label.Name = "Employee_label";
             this.Employee_label.Size = new System.Drawing.Size(335, 32);
             this.Employee_label.TabIndex = 5;
@@ -92,7 +95,7 @@
             // SelectMember_button
             // 
             this.SelectMember_button.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.SelectMember_button.Location = new System.Drawing.Point(135, 228);
+            this.SelectMember_button.Location = new System.Drawing.Point(238, 225);
             this.SelectMember_button.Name = "SelectMember_button";
             this.SelectMember_button.Size = new System.Drawing.Size(100, 45);
             this.SelectMember_button.TabIndex = 9;
@@ -123,7 +126,8 @@
             this.memberAccountDataGridViewTextBoxColumn,
             this.memberNameDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
-            this.permissionNameDataGridViewTextBoxColumn});
+            this.permissionNameDataGridViewTextBoxColumn,
+            this.memberErrorName});
             this.select_dataGridView.DataSource = this.easyERP_Member;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -145,44 +149,9 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.select_dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.select_dataGridView.RowTemplate.Height = 24;
-            this.select_dataGridView.Size = new System.Drawing.Size(642, 240);
+            this.select_dataGridView.Size = new System.Drawing.Size(800, 240);
             this.select_dataGridView.TabIndex = 10;
             this.select_dataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Select_dataGridView_CellMouseClick);
-            // 
-            // memberIDDataGridViewTextBoxColumn
-            // 
-            this.memberIDDataGridViewTextBoxColumn.DataPropertyName = "memberID";
-            this.memberIDDataGridViewTextBoxColumn.HeaderText = "員工ID";
-            this.memberIDDataGridViewTextBoxColumn.Name = "memberIDDataGridViewTextBoxColumn";
-            this.memberIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // memberAccountDataGridViewTextBoxColumn
-            // 
-            this.memberAccountDataGridViewTextBoxColumn.DataPropertyName = "memberAccount";
-            this.memberAccountDataGridViewTextBoxColumn.HeaderText = "帳號";
-            this.memberAccountDataGridViewTextBoxColumn.Name = "memberAccountDataGridViewTextBoxColumn";
-            this.memberAccountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // memberNameDataGridViewTextBoxColumn
-            // 
-            this.memberNameDataGridViewTextBoxColumn.DataPropertyName = "memberName";
-            this.memberNameDataGridViewTextBoxColumn.HeaderText = "姓名";
-            this.memberNameDataGridViewTextBoxColumn.Name = "memberNameDataGridViewTextBoxColumn";
-            this.memberNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "密碼";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // permissionNameDataGridViewTextBoxColumn
-            // 
-            this.permissionNameDataGridViewTextBoxColumn.DataPropertyName = "permissionName";
-            this.permissionNameDataGridViewTextBoxColumn.HeaderText = "狀態";
-            this.permissionNameDataGridViewTextBoxColumn.Name = "permissionNameDataGridViewTextBoxColumn";
-            this.permissionNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // easyERP_Member
             // 
@@ -199,7 +168,7 @@
             // 
             this.btnFirstPage.BackColor = System.Drawing.SystemColors.Control;
             this.btnFirstPage.Font = new System.Drawing.Font("標楷體", 11.25F);
-            this.btnFirstPage.Location = new System.Drawing.Point(53, 547);
+            this.btnFirstPage.Location = new System.Drawing.Point(150, 548);
             this.btnFirstPage.Name = "btnFirstPage";
             this.btnFirstPage.Size = new System.Drawing.Size(95, 40);
             this.btnFirstPage.TabIndex = 11;
@@ -211,7 +180,7 @@
             // 
             this.btnPreviousPage.BackColor = System.Drawing.SystemColors.Control;
             this.btnPreviousPage.Font = new System.Drawing.Font("標楷體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnPreviousPage.Location = new System.Drawing.Point(178, 547);
+            this.btnPreviousPage.Location = new System.Drawing.Point(275, 548);
             this.btnPreviousPage.Name = "btnPreviousPage";
             this.btnPreviousPage.Size = new System.Drawing.Size(95, 40);
             this.btnPreviousPage.TabIndex = 12;
@@ -223,7 +192,7 @@
             // 
             this.btnNextPage.BackColor = System.Drawing.SystemColors.Control;
             this.btnNextPage.Font = new System.Drawing.Font("標楷體", 11.25F);
-            this.btnNextPage.Location = new System.Drawing.Point(482, 547);
+            this.btnNextPage.Location = new System.Drawing.Point(579, 548);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(95, 40);
             this.btnNextPage.TabIndex = 13;
@@ -236,7 +205,7 @@
             this.lbCurrentPage.AutoSize = true;
             this.lbCurrentPage.Font = new System.Drawing.Font("標楷體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbCurrentPage.ForeColor = System.Drawing.Color.Red;
-            this.lbCurrentPage.Location = new System.Drawing.Point(327, 558);
+            this.lbCurrentPage.Location = new System.Drawing.Point(424, 559);
             this.lbCurrentPage.Name = "lbCurrentPage";
             this.lbCurrentPage.Size = new System.Drawing.Size(103, 29);
             this.lbCurrentPage.TabIndex = 15;
@@ -247,7 +216,7 @@
             this.lbTotalPage.AutoSize = true;
             this.lbTotalPage.Font = new System.Drawing.Font("標楷體", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lbTotalPage.ForeColor = System.Drawing.Color.Red;
-            this.lbTotalPage.Location = new System.Drawing.Point(595, 659);
+            this.lbTotalPage.Location = new System.Drawing.Point(673, 658);
             this.lbTotalPage.Name = "lbTotalPage";
             this.lbTotalPage.Size = new System.Drawing.Size(103, 29);
             this.lbTotalPage.TabIndex = 16;
@@ -262,7 +231,7 @@
             this.groupBox1.Controls.Add(this.nudPageSize);
             this.groupBox1.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
-            this.groupBox1.Location = new System.Drawing.Point(53, 606);
+            this.groupBox1.Location = new System.Drawing.Point(131, 605);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(514, 111);
             this.groupBox1.TabIndex = 27;
@@ -328,7 +297,7 @@
             // 
             this.btnLastPage.BackColor = System.Drawing.SystemColors.Control;
             this.btnLastPage.Font = new System.Drawing.Font("標楷體", 11.25F);
-            this.btnLastPage.Location = new System.Drawing.Point(600, 547);
+            this.btnLastPage.Location = new System.Drawing.Point(697, 548);
             this.btnLastPage.Name = "btnLastPage";
             this.btnLastPage.Size = new System.Drawing.Size(95, 40);
             this.btnLastPage.TabIndex = 28;
@@ -339,7 +308,7 @@
             // UpdateMember_button
             // 
             this.UpdateMember_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.UpdateMember_button.Location = new System.Drawing.Point(265, 228);
+            this.UpdateMember_button.Location = new System.Drawing.Point(368, 225);
             this.UpdateMember_button.Name = "UpdateMember_button";
             this.UpdateMember_button.Size = new System.Drawing.Size(100, 45);
             this.UpdateMember_button.TabIndex = 29;
@@ -354,7 +323,7 @@
             // IInsertMember_button
             // 
             this.IInsertMember_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.IInsertMember_button.Location = new System.Drawing.Point(527, 228);
+            this.IInsertMember_button.Location = new System.Drawing.Point(630, 225);
             this.IInsertMember_button.Name = "IInsertMember_button";
             this.IInsertMember_button.Size = new System.Drawing.Size(100, 45);
             this.IInsertMember_button.TabIndex = 41;
@@ -365,7 +334,7 @@
             // DeleteMember_button
             // 
             this.DeleteMember_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.DeleteMember_button.Location = new System.Drawing.Point(397, 228);
+            this.DeleteMember_button.Location = new System.Drawing.Point(500, 225);
             this.DeleteMember_button.Name = "DeleteMember_button";
             this.DeleteMember_button.Size = new System.Drawing.Size(100, 45);
             this.DeleteMember_button.TabIndex = 44;
@@ -378,7 +347,7 @@
             this.status_comboBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.status_comboBox.ForeColor = System.Drawing.Color.Red;
             this.status_comboBox.FormattingEnabled = true;
-            this.status_comboBox.Location = new System.Drawing.Point(178, 182);
+            this.status_comboBox.Location = new System.Drawing.Point(268, 183);
             this.status_comboBox.Name = "status_comboBox";
             this.status_comboBox.Size = new System.Drawing.Size(153, 24);
             this.status_comboBox.TabIndex = 52;
@@ -388,7 +357,7 @@
             this.permissionName_label.AutoSize = true;
             this.permissionName_label.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.permissionName_label.ForeColor = System.Drawing.Color.Red;
-            this.permissionName_label.Location = new System.Drawing.Point(102, 182);
+            this.permissionName_label.Location = new System.Drawing.Point(192, 183);
             this.permissionName_label.Name = "permissionName_label";
             this.permissionName_label.Size = new System.Drawing.Size(68, 27);
             this.permissionName_label.TabIndex = 51;
@@ -399,7 +368,7 @@
             this.memberName_label.AutoSize = true;
             this.memberName_label.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.memberName_label.ForeColor = System.Drawing.Color.Red;
-            this.memberName_label.Location = new System.Drawing.Point(413, 100);
+            this.memberName_label.Location = new System.Drawing.Point(495, 126);
             this.memberName_label.Name = "memberName_label";
             this.memberName_label.Size = new System.Drawing.Size(68, 27);
             this.memberName_label.TabIndex = 50;
@@ -409,7 +378,7 @@
             // 
             this.memberName_textBox.Font = new System.Drawing.Font("新細明體", 14.25F);
             this.memberName_textBox.ForeColor = System.Drawing.Color.Red;
-            this.memberName_textBox.Location = new System.Drawing.Point(487, 100);
+            this.memberName_textBox.Location = new System.Drawing.Point(569, 126);
             this.memberName_textBox.MaxLength = 10;
             this.memberName_textBox.Multiline = true;
             this.memberName_textBox.Name = "memberName_textBox";
@@ -421,7 +390,7 @@
             this.Password_label.AutoSize = true;
             this.Password_label.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Password_label.ForeColor = System.Drawing.Color.Red;
-            this.Password_label.Location = new System.Drawing.Point(102, 125);
+            this.Password_label.Location = new System.Drawing.Point(192, 126);
             this.Password_label.Name = "Password_label";
             this.Password_label.Size = new System.Drawing.Size(68, 27);
             this.Password_label.TabIndex = 48;
@@ -432,7 +401,7 @@
             this.memberAccount_label.AutoSize = true;
             this.memberAccount_label.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.memberAccount_label.ForeColor = System.Drawing.Color.Red;
-            this.memberAccount_label.Location = new System.Drawing.Point(102, 69);
+            this.memberAccount_label.Location = new System.Drawing.Point(192, 70);
             this.memberAccount_label.Name = "memberAccount_label";
             this.memberAccount_label.Size = new System.Drawing.Size(68, 27);
             this.memberAccount_label.TabIndex = 47;
@@ -442,7 +411,7 @@
             // 
             this.password_textBox.Font = new System.Drawing.Font("新細明體", 14.25F);
             this.password_textBox.ForeColor = System.Drawing.Color.Red;
-            this.password_textBox.Location = new System.Drawing.Point(178, 125);
+            this.password_textBox.Location = new System.Drawing.Point(268, 126);
             this.password_textBox.MaxLength = 10;
             this.password_textBox.Multiline = true;
             this.password_textBox.Name = "password_textBox";
@@ -454,7 +423,7 @@
             this.memberAccount_textbox.BackColor = System.Drawing.SystemColors.Window;
             this.memberAccount_textbox.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.memberAccount_textbox.ForeColor = System.Drawing.Color.Red;
-            this.memberAccount_textbox.Location = new System.Drawing.Point(178, 69);
+            this.memberAccount_textbox.Location = new System.Drawing.Point(268, 70);
             this.memberAccount_textbox.MaxLength = 10;
             this.memberAccount_textbox.Multiline = true;
             this.memberAccount_textbox.Name = "memberAccount_textbox";
@@ -466,7 +435,7 @@
             this.memberID_label.AutoSize = true;
             this.memberID_label.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.memberID_label.ForeColor = System.Drawing.Color.Red;
-            this.memberID_label.Location = new System.Drawing.Point(413, 158);
+            this.memberID_label.Location = new System.Drawing.Point(495, 70);
             this.memberID_label.Name = "memberID_label";
             this.memberID_label.Size = new System.Drawing.Size(96, 27);
             this.memberID_label.TabIndex = 54;
@@ -476,7 +445,7 @@
             // 
             this.memberID_textBox.Font = new System.Drawing.Font("新細明體", 14.25F);
             this.memberID_textBox.ForeColor = System.Drawing.Color.Red;
-            this.memberID_textBox.Location = new System.Drawing.Point(515, 156);
+            this.memberID_textBox.Location = new System.Drawing.Point(597, 68);
             this.memberID_textBox.MaxLength = 10;
             this.memberID_textBox.Multiline = true;
             this.memberID_textBox.Name = "memberID_textBox";
@@ -488,16 +457,81 @@
             this.pictureBox1.Image = global::easyERP.Properties.Resources.view_four;
             this.pictureBox1.Location = new System.Drawing.Point(0, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(795, 744);
+            this.pictureBox1.Size = new System.Drawing.Size(912, 744);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // error_comboBox
+            // 
+            this.error_comboBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.error_comboBox.ForeColor = System.Drawing.Color.Red;
+            this.error_comboBox.FormattingEnabled = true;
+            this.error_comboBox.Location = new System.Drawing.Point(571, 183);
+            this.error_comboBox.Name = "error_comboBox";
+            this.error_comboBox.Size = new System.Drawing.Size(153, 24);
+            this.error_comboBox.TabIndex = 56;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(495, 183);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 27);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "狀態";
+            // 
+            // memberIDDataGridViewTextBoxColumn
+            // 
+            this.memberIDDataGridViewTextBoxColumn.DataPropertyName = "memberID";
+            this.memberIDDataGridViewTextBoxColumn.HeaderText = "員工ID";
+            this.memberIDDataGridViewTextBoxColumn.Name = "memberIDDataGridViewTextBoxColumn";
+            this.memberIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // memberAccountDataGridViewTextBoxColumn
+            // 
+            this.memberAccountDataGridViewTextBoxColumn.DataPropertyName = "memberAccount";
+            this.memberAccountDataGridViewTextBoxColumn.HeaderText = "帳號";
+            this.memberAccountDataGridViewTextBoxColumn.Name = "memberAccountDataGridViewTextBoxColumn";
+            this.memberAccountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // memberNameDataGridViewTextBoxColumn
+            // 
+            this.memberNameDataGridViewTextBoxColumn.DataPropertyName = "memberName";
+            this.memberNameDataGridViewTextBoxColumn.HeaderText = "姓名";
+            this.memberNameDataGridViewTextBoxColumn.Name = "memberNameDataGridViewTextBoxColumn";
+            this.memberNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "密碼";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // permissionNameDataGridViewTextBoxColumn
+            // 
+            this.permissionNameDataGridViewTextBoxColumn.DataPropertyName = "permissionName";
+            this.permissionNameDataGridViewTextBoxColumn.HeaderText = "職等";
+            this.permissionNameDataGridViewTextBoxColumn.Name = "permissionNameDataGridViewTextBoxColumn";
+            this.permissionNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // memberErrorName
+            // 
+            this.memberErrorName.DataPropertyName = "memberErrorName";
+            this.memberErrorName.HeaderText = "狀態";
+            this.memberErrorName.Name = "memberErrorName";
+            this.memberErrorName.ReadOnly = true;
             // 
             // Memer_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 738);
+            this.ClientSize = new System.Drawing.Size(905, 738);
+            this.Controls.Add(this.error_comboBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.memberID_label);
             this.Controls.Add(this.memberID_textBox);
             this.Controls.Add(this.status_comboBox);
@@ -573,11 +607,14 @@
         private System.Windows.Forms.TextBox memberAccount_textbox;
         private System.Windows.Forms.Label memberID_label;
         private System.Windows.Forms.TextBox memberID_textBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox error_comboBox;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn memberIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn memberAccountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn memberNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn permissionNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn memberErrorName;
     }
 }

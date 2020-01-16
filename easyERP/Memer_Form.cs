@@ -75,14 +75,14 @@ namespace easyERP
                 if (page == 1)
                 {
                     cmd = new SqlCommand("Select TOP " + _pageSize +
-                    " memberID, memberAccount, password, memberName, permissionName from Member ", con);
+                    " memberID, memberAccount, password, memberName, permissionName, memberErrorName from Member ", con);
                 }
                 else
                 {
                     //利用 SQL 語法來切換資料
                     int PreviousPageOffSet = (page - 1) * _pageSize;
 
-                    cmd = new SqlCommand("Select TOP " + _pageSize + " memberID, memberAccount, password, memberName, permissionName " +
+                    cmd = new SqlCommand("Select TOP " + _pageSize + " memberID, memberAccount, password, memberName, permissionName, memberErrorName " +
                         "FROM Member  where memberID " +
                         "NOT IN " +
                         "(Select TOP " + PreviousPageOffSet + "  memberID from Member ) "
@@ -140,7 +140,7 @@ namespace easyERP
             using (SqlConnection con = new SqlConnection(_connecString))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT memberID,memberAccount, password, memberName, permissionName  FROM [dbo].[Member] ", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT memberID,memberAccount, password, memberName, permissionName, memberErrorName  FROM Member ", con))
                 {
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
@@ -180,7 +180,7 @@ namespace easyERP
                     else
                     {
                         //cmd = new SqlCommand("select memberID,memberAccount, password, memberName, permissionName from Member where memberAccount='" + memberAccount + "'and password='" + password + "'", con);
-                        cmd = new SqlCommand("select memberID,memberAccount, password, memberName, permissionName from Member where memberID='" + memberID + "' ", con);
+                        cmd = new SqlCommand("select memberID,memberAccount, password, memberName, permissionName, memberErrorName from Member where memberID='" + memberID + "' ", con);
                     }
                 }
 
@@ -209,6 +209,11 @@ namespace easyERP
             string key = kvp.Key.ToString();
             string Value = kvp.Value.ToString();
 
+            //下拉式選單
+            KeyValuePair<string, string> Membererror = (KeyValuePair<string, string>)error_comboBox.SelectedItem;
+            string keyError = Membererror.Key.ToString();
+            string ValueError = Membererror.Value.ToString();
+
 
             using (SqlConnection con = new SqlConnection(_connecString))
             {
@@ -230,24 +235,29 @@ namespace easyERP
                         if (memberAccount != "" && password.Equals("") && memberName.Equals(""))//輸入 帳號
                         {
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "'  where memberID = " + memberID + "", con);
-                            updateSuccess();
+                           
                         }
                         if (memberAccount != "" && password != "" && memberName.Equals(""))//輸入 帳號 密碼
                         {
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' where memberID =" + memberID + "", con);
-                            updateSuccess();
+                           
                         }
                         if (memberAccount.Trim().Length > 0 && password != "" && memberName != "")   //輸入 帳號 密碼 姓名
                         {
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' , memberName='" + memberName + "' where memberID =" + memberID + " ", con);
-                            updateSuccess();
+                           
                         }
                         if (memberAccount.Trim().Length > 0 && password != "" && memberName != "" && key != "" && Value != "")   //輸入 帳號 密碼 姓名 職等
                         {
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' , memberName='" + memberName + "' , permission='" + Value + "' , permissionName='" + key + "' where memberID =" + memberID + " ", con);
-                            updateSuccess();
+                            
                         }
-
+                        if (memberAccount.Trim().Length > 0 && password != "" && memberName != "" && key != "" && Value != "" && keyError != "" && ValueError != "")   //輸入 帳號 密碼 姓名 職等 狀態
+                        {
+                            cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' , memberName='" + memberName + "' , permission='" + Value + "' , permissionName='" + key + "', memberError=" + ValueError + " , memberErrorName='" + keyError + "' where memberID =" + memberID + " ", con);
+                            
+                        }
+                        updateSuccess();
                     }
 
                 }
@@ -260,7 +270,7 @@ namespace easyERP
                 //修改完後重新查詢
                 SqlCommand cmd1 = new SqlCommand();
                 {
-                    cmd1 = new SqlCommand(" select memberID,memberAccount, password, memberName, permissionName from Member where memberID ='" + memberID + "' ", con);
+                    cmd1 = new SqlCommand(" select memberID,memberAccount, password, memberName, permissionName, memberErrorName from Member where memberID ='" + memberID + "' ", con);
                 }
 
                 DataTable dt1 = new DataTable();
@@ -291,6 +301,10 @@ namespace easyERP
             string key = kvp.Key.ToString();
             string Value = kvp.Value.ToString();
 
+            //下拉式選單
+            KeyValuePair<string, string> Membererror = (KeyValuePair<string, string>)error_comboBox.SelectedItem;
+            string keyError = Membererror.Key.ToString();
+            string ValueError = Membererror.Value.ToString();
 
             string selectID = "select memberID from Member where memberID='" + memberID + "' ";
             //string selectID = "select memberID from Member";
@@ -326,10 +340,10 @@ namespace easyERP
                         }
                         else
                         {
-                            cmd = new SqlCommand("insert into Member(memberAccount, password, memberName, permission,permissionName,memberID) values('" + memberAccount + "','" + password + "','" + memberName + "','" + Value + "','" + key + "','" + memberID + "') ", con);
+                            cmd = new SqlCommand("insert into Member(memberAccount, password, memberName, permission,permissionName, memberError,memberErrorName,memberID) values('" + memberAccount + "','" + password + "','" + memberName + "','" + Value + "','" + key + "'," + ValueError + ",'" + keyError + "','" + memberID + "') ", con);
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("資料儲存成功!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            cmd = new SqlCommand(" select memberID,memberAccount, password, memberName, permissionName from Member where memberID ='" + memberID + "' ", con);
+                            cmd = new SqlCommand(" select memberID,memberAccount, password, memberName, permissionName, memberErrorName from Member where memberID ='" + memberID + "' ", con);
                         }
                     }
                     catch (Exception ex)
@@ -438,6 +452,14 @@ namespace easyERP
             status_comboBox.ValueMember = "Value";
             status_comboBox.SelectedIndex = 0; //設定下拉式選項為第一筆
 
+            error_comboBox.Items.Add(new KeyValuePair<string, string>("未鎖定", "0"));
+            error_comboBox.Items.Add(new KeyValuePair<string, string>("已鎖定", "3"));
+
+            error_comboBox.DisplayMember = "Key";
+            error_comboBox.ValueMember = "Value";
+            error_comboBox.SelectedIndex = 0; //設定下拉式選項為第一筆
+
+
             SelectMember_button.Enabled = false;
             btnFirstPage.Enabled = false;
             btnPreviousPage.Enabled = false;
@@ -499,6 +521,7 @@ namespace easyERP
                 memberName_textBox.Text = select_dataGridView.CurrentRow.Cells[2].Value.ToString();
                 password_textBox.Text = select_dataGridView.CurrentRow.Cells[3].Value.ToString();
                 status_comboBox.Text = select_dataGridView.CurrentRow.Cells[4].Value.ToString();
+                error_comboBox.Text = select_dataGridView.CurrentRow.Cells[5].Value.ToString();
             }
 
         }
