@@ -92,7 +92,7 @@ namespace easyERP
         //    SqlCommand cmd = new SqlCommand();
         //    cmd.CommandText = sql;
         //    cmd.Connection = conn;
-            
+
         //    SqlDataReader dr;
         //    dr = cmd.ExecuteReader();
         //    int RecordCount = 0;
@@ -112,7 +112,7 @@ namespace easyERP
         //    cmd.Connection = conn;
         //    SqlDataReader dr;
         //    string permission = string.Empty;
-            
+
         //    dr = cmd.ExecuteReader();
         //    while (dr.Read())
         //    {

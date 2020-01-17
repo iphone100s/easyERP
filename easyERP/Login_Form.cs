@@ -30,7 +30,7 @@ namespace easyERP
             //設定標題的底色為透明標題
             label_title.BackColor = Color.Transparent;
             label_title.Parent = pictureBox_one;//將pictureBox設為標籤的父控件
-           //pictureBox_one.Controls.Add(label_title);
+                                                //pictureBox_one.Controls.Add(label_title);
 
         }
 
@@ -62,7 +62,7 @@ namespace easyERP
             }
             else
             {
-               
+
                 string selectAccount = "select * from Member where memberAccount='" + username + "'and password='" + password + "'"; //正式用資料庫
 
                 SqlHelp sqlhelper = new SqlHelp();
@@ -119,13 +119,32 @@ namespace easyERP
                 }
                 if (ds.Tables[0].Rows.Count == 0)
                 {
-                    string updateAddMemberError = "UPDATE Member SET memberError = memberError + 1 WHERE memberAccount ='" + username + "' ; "; //正式用資料庫
 
-                    sqlhelper.SqlServerRecordCount2(updateAddMemberError);
+                    try
+                    {
+                        string selectMemberError = "select memberAccount,memberError from Member where memberAccount='" + username + "' ; "; //正式用資料庫
+                        DataSet selectError = sqlhelper.SqlServerRecordCount2(selectMemberError);
+                        int ReturnNemberError = (int)selectError.Tables["Member"].Rows[0]["memberError"]; //.Rows[0] 抓一排 如果0改成1 就是往下抓一排
 
-                    MessageBox.Show("帳號或密碼錯誤喔!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-
+                        if (ReturnNemberError < 3)
+                        {
+                            string updateAddMemberError = "UPDATE Member SET memberError = memberError + 1 WHERE memberAccount ='" + username + "' ; "; //正式用資料庫
+                            sqlhelper.SqlServerRecordCount2(updateAddMemberError);
+                            MessageBox.Show("帳號或密碼錯誤喔!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        if (ReturnNemberError == 3)
+                        {
+                            string updateAddMemberError = "UPDATE Member SET memberErrorName = '已鎖定' WHERE memberAccount ='" + username + "' ; "; //正式用資料庫
+                            sqlhelper.SqlServerRecordCount2(updateAddMemberError);
+                            MessageBox.Show("帳號已鎖定!!請洽管理員", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("帳號或密碼錯誤喔!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
                 }
+
 
             }
         }
