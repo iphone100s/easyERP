@@ -72,7 +72,7 @@
             this.memberID_textBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.error_comboBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.error_label = new System.Windows.Forms.Label();
             this.ExportExcel_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.select_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyERP_Member)).BeginInit();
@@ -515,16 +515,16 @@
             this.error_comboBox.Size = new System.Drawing.Size(153, 24);
             this.error_comboBox.TabIndex = 56;
             // 
-            // label2
+            // error_label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(495, 183);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 27);
-            this.label2.TabIndex = 55;
-            this.label2.Text = "狀態";
+            this.error_label.AutoSize = true;
+            this.error_label.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.error_label.ForeColor = System.Drawing.Color.Red;
+            this.error_label.Location = new System.Drawing.Point(495, 183);
+            this.error_label.Name = "error_label";
+            this.error_label.Size = new System.Drawing.Size(68, 27);
+            this.error_label.TabIndex = 55;
+            this.error_label.Text = "狀態";
             // 
             // ExportExcel_button
             // 
@@ -533,7 +533,7 @@
             this.ExportExcel_button.Name = "ExportExcel_button";
             this.ExportExcel_button.Size = new System.Drawing.Size(100, 45);
             this.ExportExcel_button.TabIndex = 58;
-            this.ExportExcel_button.Text = "匯出EXCEL";
+            this.ExportExcel_button.Text = "匯出EXCEL表單";
             this.ExportExcel_button.UseVisualStyleBackColor = true;
             this.ExportExcel_button.Click += new System.EventHandler(this.ExportExcel_button_Click);
             // 
@@ -544,7 +544,7 @@
             this.ClientSize = new System.Drawing.Size(905, 738);
             this.Controls.Add(this.ExportExcel_button);
             this.Controls.Add(this.error_comboBox);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.error_label);
             this.Controls.Add(this.memberID_label);
             this.Controls.Add(this.memberID_textBox);
             this.Controls.Add(this.status_comboBox);
@@ -622,7 +622,7 @@
         private System.Windows.Forms.TextBox memberID_textBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox error_comboBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label error_label;
         private System.Windows.Forms.DataGridViewTextBoxColumn memberIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn memberAccountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn memberNameDataGridViewTextBoxColumn;

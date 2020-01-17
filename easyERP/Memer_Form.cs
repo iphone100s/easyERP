@@ -500,6 +500,10 @@ namespace easyERP
             lbTotalPage.BackColor = Color.Transparent;
             lbTotalPage.Parent = pictureBox1;
 
+            error_label.BackColor = Color.Transparent;
+            error_label.Parent = pictureBox1;
+            
+
         }
 
 
@@ -538,7 +542,7 @@ namespace easyERP
         }
 
 
-   
+        //輸出EXCEL表    
         private void ExportExcel_button_Click(object sender, EventArgs e)
         {
             string saveFileName = "";

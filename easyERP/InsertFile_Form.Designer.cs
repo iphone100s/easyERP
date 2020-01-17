@@ -106,6 +106,7 @@
             this.SelectinDate_button = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
+            this.ExportFileExcel_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.selectFile_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyERPProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyERP_Product)).BeginInit();
@@ -608,7 +609,7 @@
             // DeleteFile_button
             // 
             this.DeleteFile_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.DeleteFile_button.Location = new System.Drawing.Point(1263, 331);
+            this.DeleteFile_button.Location = new System.Drawing.Point(1327, 363);
             this.DeleteFile_button.Name = "DeleteFile_button";
             this.DeleteFile_button.Size = new System.Drawing.Size(100, 45);
             this.DeleteFile_button.TabIndex = 84;
@@ -619,7 +620,7 @@
             // IInsertFile_button
             // 
             this.IInsertFile_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.IInsertFile_button.Location = new System.Drawing.Point(960, 331);
+            this.IInsertFile_button.Location = new System.Drawing.Point(1024, 363);
             this.IInsertFile_button.Name = "IInsertFile_button";
             this.IInsertFile_button.Size = new System.Drawing.Size(100, 45);
             this.IInsertFile_button.TabIndex = 83;
@@ -630,7 +631,7 @@
             // UpdateFile_button
             // 
             this.UpdateFile_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.UpdateFile_button.Location = new System.Drawing.Point(1117, 331);
+            this.UpdateFile_button.Location = new System.Drawing.Point(1181, 363);
             this.UpdateFile_button.Name = "UpdateFile_button";
             this.UpdateFile_button.Size = new System.Drawing.Size(100, 45);
             this.UpdateFile_button.TabIndex = 82;
@@ -760,7 +761,7 @@
             // SelectFile_button
             // 
             this.SelectFile_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.SelectFile_button.Location = new System.Drawing.Point(996, 114);
+            this.SelectFile_button.Location = new System.Drawing.Point(960, 108);
             this.SelectFile_button.Name = "SelectFile_button";
             this.SelectFile_button.Size = new System.Drawing.Size(100, 45);
             this.SelectFile_button.TabIndex = 76;
@@ -793,7 +794,7 @@
             // SelectDepot_button
             // 
             this.SelectDepot_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.SelectDepot_button.Location = new System.Drawing.Point(1117, 181);
+            this.SelectDepot_button.Location = new System.Drawing.Point(1117, 196);
             this.SelectDepot_button.Name = "SelectDepot_button";
             this.SelectDepot_button.Size = new System.Drawing.Size(100, 45);
             this.SelectDepot_button.TabIndex = 88;
@@ -804,7 +805,7 @@
             // SelectFactory_button
             // 
             this.SelectFactory_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.SelectFactory_button.Location = new System.Drawing.Point(1239, 113);
+            this.SelectFactory_button.Location = new System.Drawing.Point(1263, 107);
             this.SelectFactory_button.Name = "SelectFactory_button";
             this.SelectFactory_button.Size = new System.Drawing.Size(100, 45);
             this.SelectFactory_button.TabIndex = 89;
@@ -815,7 +816,7 @@
             // SelectPrice_button
             // 
             this.SelectPrice_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.SelectPrice_button.Location = new System.Drawing.Point(1239, 181);
+            this.SelectPrice_button.Location = new System.Drawing.Point(1263, 196);
             this.SelectPrice_button.Name = "SelectPrice_button";
             this.SelectPrice_button.Size = new System.Drawing.Size(100, 45);
             this.SelectPrice_button.TabIndex = 90;
@@ -836,7 +837,7 @@
             // SelectinDate_button
             // 
             this.SelectinDate_button.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.SelectinDate_button.Location = new System.Drawing.Point(1117, 114);
+            this.SelectinDate_button.Location = new System.Drawing.Point(1117, 108);
             this.SelectinDate_button.Name = "SelectinDate_button";
             this.SelectinDate_button.Size = new System.Drawing.Size(100, 45);
             this.SelectinDate_button.TabIndex = 94;
@@ -854,11 +855,23 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // ExportFileExcel_button
+            // 
+            this.ExportFileExcel_button.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ExportFileExcel_button.Location = new System.Drawing.Point(1117, 278);
+            this.ExportFileExcel_button.Name = "ExportFileExcel_button";
+            this.ExportFileExcel_button.Size = new System.Drawing.Size(100, 45);
+            this.ExportFileExcel_button.TabIndex = 95;
+            this.ExportFileExcel_button.Text = "匯出EXCEL表單";
+            this.ExportFileExcel_button.UseVisualStyleBackColor = true;
+            this.ExportFileExcel_button.Click += new System.EventHandler(this.ExportFileExcel_button_Click);
+            // 
             // InsertFile_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1491, 881);
+            this.Controls.Add(this.ExportFileExcel_button);
             this.Controls.Add(this.SelectinDate_button);
             this.Controls.Add(this.status_comboBox);
             this.Controls.Add(this.SelectPrice_button);
@@ -998,5 +1011,6 @@
         public System.Windows.Forms.DataGridView selectFile_dataGridView;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
         public System.Windows.Forms.Button SelectinDate_button;
+        private System.Windows.Forms.Button ExportFileExcel_button;
     }
 }
