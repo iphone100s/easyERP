@@ -4,7 +4,9 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
+
 
 namespace easyERP
 {
@@ -61,6 +63,8 @@ namespace easyERP
                 btnPreviousPage.Enabled = true;
                 btnNextPage.Enabled = true;
                 btnLastPage.Enabled = true;
+                ExportExcel_button.Enabled = true;
+
             }
 
         }
@@ -235,27 +239,27 @@ namespace easyERP
                         if (memberAccount != "" && password.Equals("") && memberName.Equals(""))//輸入 帳號
                         {
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "'  where memberID = " + memberID + "", con);
-                           
+
                         }
                         if (memberAccount != "" && password != "" && memberName.Equals(""))//輸入 帳號 密碼
                         {
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' where memberID =" + memberID + "", con);
-                           
+
                         }
                         if (memberAccount.Trim().Length > 0 && password != "" && memberName != "")   //輸入 帳號 密碼 姓名
                         {
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' , memberName='" + memberName + "' where memberID =" + memberID + " ", con);
-                           
+
                         }
                         if (memberAccount.Trim().Length > 0 && password != "" && memberName != "" && key != "" && Value != "")   //輸入 帳號 密碼 姓名 職等
                         {
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' , memberName='" + memberName + "' , permission='" + Value + "' , permissionName='" + key + "' where memberID =" + memberID + " ", con);
-                            
+
                         }
                         if (memberAccount.Trim().Length > 0 && password != "" && memberName != "" && key != "" && Value != "" && keyError != "" && ValueError != "")   //輸入 帳號 密碼 姓名 職等 狀態
                         {
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' , memberName='" + memberName + "' , permission='" + Value + "' , permissionName='" + key + "', memberError=" + ValueError + " , memberErrorName='" + keyError + "' where memberID =" + memberID + " ", con);
-                            
+
                         }
                         updateSuccess();
                     }
@@ -465,6 +469,7 @@ namespace easyERP
             btnPreviousPage.Enabled = false;
             btnNextPage.Enabled = false;
             btnLastPage.Enabled = false;
+            ExportExcel_button.Enabled = false;
 
 
             //設定標題的底色為透明標題
@@ -532,5 +537,82 @@ namespace easyERP
 
         }
 
+
+   
+        private void ExportExcel_button_Click(object sender, EventArgs e)
+        {
+            string saveFileName = "";
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Execl files (*.xlsx)|*.xlsx";
+            saveFileDialog.FilterIndex = 0;
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.CreatePrompt = true;
+            saveFileDialog.Title = "Export Excel File To";
+            saveFileDialog.ShowDialog();
+            saveFileName = saveFileDialog.FileName;
+
+            if (saveFileName.IndexOf(":") < 0)
+                return;
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            if (xlApp == null)
+            {
+                MessageBox.Show("請確定是否有安裝Excel?", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            Microsoft.Office.Interop.Excel.Workbooks workbooks = xlApp.Workbooks;
+            Microsoft.Office.Interop.Excel.Workbook workbook = workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
+            Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Worksheets[1];//取得sheet1 
+            //下面只是匯出到excel的簡單格式設定 可自行變化 
+            //worksheet.get_Range(worksheet.Cells[1, 1], worksheet.Cells[1, 10]).MergeCells = true; //左右合併 
+            //            worksheet.get_Range(worksheet.Cells[2, 1], worksheet.Cells[2, 10]).MergeCells = true; //左右合併 
+            //            worksheet.get_Range(worksheet.Cells[1, 1], worksheet.Cells[2, 10]).MergeCells = true; //上下合併 1.2列合併 
+            //           worksheet.get_Range(worksheet.Cells[3, 1], worksheet.Cells[3, 10]).MergeCells = true; //左右合併 
+            //           worksheet.get_Range(worksheet.Cells[4, 1], worksheet.Cells[4, 10]).MergeCells = true; //左右合併 
+            //          worksheet.get_Range(worksheet.Cells[3, 1], worksheet.Cells[4, 10]).MergeCells = true; //上下合併 3.4列合併 
+            //          worksheet.get_Range(worksheet.Cells[1, 1], worksheet.Cells[1, 10]).Cells.Font.Size = 20; //標題字型大小 
+            //           worksheet.get_Range(worksheet.Cells[1, 1], worksheet.Cells[1, 10]).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            //          worksheet.get_Range(worksheet.Cells[3, 1], worksheet.Cells[3, 10]).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+
+
+            DateTime dt = DateTime.Now;
+            worksheet.Cells[1, 7] = "員工資料一覽表"; //第1行 第7列
+            worksheet.Cells[3, 7] = "報表產出時間為: " //第3行 第7列
+            + dt.Year + "年" + dt.Month.ToString().PadLeft(2, '0') +"月"+ dt.Day.ToString().PadLeft(2, '0')+"日 "+dt.Hour.ToString()+":"+dt.Minute.ToString().PadLeft(2, '0') + "分";
+
+
+            for (int i = 0; i < select_dataGridView.ColumnCount; i++)
+            {
+                worksheet.Cells[5, i + 1] = select_dataGridView.Columns[i].HeaderText; // 依照上面合併使用過的列數(最大值+1) 前面四行我拿作標題跟時間了所以重第五列開始 
+            }
+            for (int r = 0; r < select_dataGridView.Rows.Count; r++)
+            {
+                for (int i = 0; i < select_dataGridView.ColumnCount; i++)
+                {
+                    worksheet.Cells[r + 6, i + 1] = select_dataGridView.Rows[r].Cells[i].Value;
+                }
+                System.Windows.Forms.Application.DoEvents();
+
+                worksheet.Columns.EntireColumn.AutoFit();//自動調整欄位 
+
+
+
+                if (saveFileName != "")
+                {
+                    try
+                    {
+                        workbook.Saved = true;
+                        workbook.SaveCopyAs(saveFileName);
+                    }
+                    catch (Exception ex)
+                    {
+                       MessageBox.Show("匯出文件時出錯,EXCEL文件可能正在使用!!\n" + ex.Message);
+                      
+                    }
+
+                }
+            }
+        }
     }
 }

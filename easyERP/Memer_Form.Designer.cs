@@ -36,6 +36,12 @@
             this.Employee_label = new System.Windows.Forms.Label();
             this.SelectMember_button = new System.Windows.Forms.Button();
             this.select_dataGridView = new System.Windows.Forms.DataGridView();
+            this.memberIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.memberAccountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.memberNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.permissionNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.memberErrorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.easyERP_Member = new System.Windows.Forms.BindingSource(this.components);
             this.eRPDataSet3 = new easyERP.ERPDataSet3();
             this.btnFirstPage = new System.Windows.Forms.Button();
@@ -67,12 +73,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.error_comboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.memberIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memberAccountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memberNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.permissionNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memberErrorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExportExcel_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.select_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyERP_Member)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eRPDataSet3)).BeginInit();
@@ -95,7 +96,7 @@
             // SelectMember_button
             // 
             this.SelectMember_button.Font = new System.Drawing.Font("標楷體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.SelectMember_button.Location = new System.Drawing.Point(238, 225);
+            this.SelectMember_button.Location = new System.Drawing.Point(131, 227);
             this.SelectMember_button.Name = "SelectMember_button";
             this.SelectMember_button.Size = new System.Drawing.Size(100, 45);
             this.SelectMember_button.TabIndex = 9;
@@ -152,6 +153,48 @@
             this.select_dataGridView.Size = new System.Drawing.Size(800, 240);
             this.select_dataGridView.TabIndex = 10;
             this.select_dataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Select_dataGridView_CellMouseClick);
+            // 
+            // memberIDDataGridViewTextBoxColumn
+            // 
+            this.memberIDDataGridViewTextBoxColumn.DataPropertyName = "memberID";
+            this.memberIDDataGridViewTextBoxColumn.HeaderText = "員工ID";
+            this.memberIDDataGridViewTextBoxColumn.Name = "memberIDDataGridViewTextBoxColumn";
+            this.memberIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // memberAccountDataGridViewTextBoxColumn
+            // 
+            this.memberAccountDataGridViewTextBoxColumn.DataPropertyName = "memberAccount";
+            this.memberAccountDataGridViewTextBoxColumn.HeaderText = "帳號";
+            this.memberAccountDataGridViewTextBoxColumn.Name = "memberAccountDataGridViewTextBoxColumn";
+            this.memberAccountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // memberNameDataGridViewTextBoxColumn
+            // 
+            this.memberNameDataGridViewTextBoxColumn.DataPropertyName = "memberName";
+            this.memberNameDataGridViewTextBoxColumn.HeaderText = "姓名";
+            this.memberNameDataGridViewTextBoxColumn.Name = "memberNameDataGridViewTextBoxColumn";
+            this.memberNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "密碼";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // permissionNameDataGridViewTextBoxColumn
+            // 
+            this.permissionNameDataGridViewTextBoxColumn.DataPropertyName = "permissionName";
+            this.permissionNameDataGridViewTextBoxColumn.HeaderText = "職等";
+            this.permissionNameDataGridViewTextBoxColumn.Name = "permissionNameDataGridViewTextBoxColumn";
+            this.permissionNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // memberErrorName
+            // 
+            this.memberErrorName.DataPropertyName = "memberErrorName";
+            this.memberErrorName.HeaderText = "狀態";
+            this.memberErrorName.Name = "memberErrorName";
+            this.memberErrorName.ReadOnly = true;
             // 
             // easyERP_Member
             // 
@@ -308,7 +351,7 @@
             // UpdateMember_button
             // 
             this.UpdateMember_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.UpdateMember_button.Location = new System.Drawing.Point(368, 225);
+            this.UpdateMember_button.Location = new System.Drawing.Point(261, 227);
             this.UpdateMember_button.Name = "UpdateMember_button";
             this.UpdateMember_button.Size = new System.Drawing.Size(100, 45);
             this.UpdateMember_button.TabIndex = 29;
@@ -323,7 +366,7 @@
             // IInsertMember_button
             // 
             this.IInsertMember_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.IInsertMember_button.Location = new System.Drawing.Point(630, 225);
+            this.IInsertMember_button.Location = new System.Drawing.Point(523, 227);
             this.IInsertMember_button.Name = "IInsertMember_button";
             this.IInsertMember_button.Size = new System.Drawing.Size(100, 45);
             this.IInsertMember_button.TabIndex = 41;
@@ -334,7 +377,7 @@
             // DeleteMember_button
             // 
             this.DeleteMember_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.DeleteMember_button.Location = new System.Drawing.Point(500, 225);
+            this.DeleteMember_button.Location = new System.Drawing.Point(393, 227);
             this.DeleteMember_button.Name = "DeleteMember_button";
             this.DeleteMember_button.Size = new System.Drawing.Size(100, 45);
             this.DeleteMember_button.TabIndex = 44;
@@ -483,53 +526,23 @@
             this.label2.TabIndex = 55;
             this.label2.Text = "狀態";
             // 
-            // memberIDDataGridViewTextBoxColumn
+            // ExportExcel_button
             // 
-            this.memberIDDataGridViewTextBoxColumn.DataPropertyName = "memberID";
-            this.memberIDDataGridViewTextBoxColumn.HeaderText = "員工ID";
-            this.memberIDDataGridViewTextBoxColumn.Name = "memberIDDataGridViewTextBoxColumn";
-            this.memberIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // memberAccountDataGridViewTextBoxColumn
-            // 
-            this.memberAccountDataGridViewTextBoxColumn.DataPropertyName = "memberAccount";
-            this.memberAccountDataGridViewTextBoxColumn.HeaderText = "帳號";
-            this.memberAccountDataGridViewTextBoxColumn.Name = "memberAccountDataGridViewTextBoxColumn";
-            this.memberAccountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // memberNameDataGridViewTextBoxColumn
-            // 
-            this.memberNameDataGridViewTextBoxColumn.DataPropertyName = "memberName";
-            this.memberNameDataGridViewTextBoxColumn.HeaderText = "姓名";
-            this.memberNameDataGridViewTextBoxColumn.Name = "memberNameDataGridViewTextBoxColumn";
-            this.memberNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "密碼";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // permissionNameDataGridViewTextBoxColumn
-            // 
-            this.permissionNameDataGridViewTextBoxColumn.DataPropertyName = "permissionName";
-            this.permissionNameDataGridViewTextBoxColumn.HeaderText = "職等";
-            this.permissionNameDataGridViewTextBoxColumn.Name = "permissionNameDataGridViewTextBoxColumn";
-            this.permissionNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // memberErrorName
-            // 
-            this.memberErrorName.DataPropertyName = "memberErrorName";
-            this.memberErrorName.HeaderText = "狀態";
-            this.memberErrorName.Name = "memberErrorName";
-            this.memberErrorName.ReadOnly = true;
+            this.ExportExcel_button.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ExportExcel_button.Location = new System.Drawing.Point(650, 227);
+            this.ExportExcel_button.Name = "ExportExcel_button";
+            this.ExportExcel_button.Size = new System.Drawing.Size(100, 45);
+            this.ExportExcel_button.TabIndex = 58;
+            this.ExportExcel_button.Text = "匯出EXCEL";
+            this.ExportExcel_button.UseVisualStyleBackColor = true;
+            this.ExportExcel_button.Click += new System.EventHandler(this.ExportExcel_button_Click);
             // 
             // Memer_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 738);
+            this.Controls.Add(this.ExportExcel_button);
             this.Controls.Add(this.error_comboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.memberID_label);
@@ -616,5 +629,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn permissionNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn memberErrorName;
+        private System.Windows.Forms.Button ExportExcel_button;
     }
 }
