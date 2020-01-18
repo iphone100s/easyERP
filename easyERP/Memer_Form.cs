@@ -569,7 +569,7 @@ namespace easyERP
             Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Worksheets[1];//取得sheet1 
             //下面只是匯出到excel的簡單格式設定 可自行變化 
             worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, 2]].MergeCells = true; //左右合併 
-            worksheet.Range[worksheet.Cells[3, 1], worksheet.Cells[3, 4]].MergeCells = true; //左右合併  
+            worksheet.Range[worksheet.Cells[3, 1], worksheet.Cells[3, 5]].MergeCells = true; //左右合併  
             //            worksheet.get_Range(worksheet.Cells[1, 1], worksheet.Cells[2, 10]).MergeCells = true; //上下合併 1.2列合併 
             //           worksheet.get_Range(worksheet.Cells[3, 1], worksheet.Cells[3, 10]).MergeCells = true; //左右合併 
             //           worksheet.get_Range(worksheet.Cells[4, 1], worksheet.Cells[4, 10]).MergeCells = true; //左右合併 
