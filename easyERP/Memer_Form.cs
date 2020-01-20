@@ -261,20 +261,21 @@ namespace easyERP
                             cmd = new SqlCommand(" UPDATE Member SET memberAccount='" + memberAccount + "' , password='" + password + "' , memberName='" + memberName + "' , permission='" + Value + "' , permissionName='" + key + "', memberError=" + ValueError + " , memberErrorName='" + keyError + "' where memberID =" + memberID + " ", con);
 
                         }
+
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        da.Update(dt);
+
                         updateSuccess();
                     }
 
                 }
 
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                da.Update(dt);
-
                 //修改完後重新查詢
                 SqlCommand cmd1 = new SqlCommand();
                 {
-                    cmd1 = new SqlCommand(" select memberID,memberAccount, password, memberName, permissionName, memberErrorName from Member where memberID ='" + memberID + "' ", con);
+                    cmd1 = new SqlCommand(" select memberID,memberAccount, password, memberName, permissionName, memberErrorName from Member where memberID =" + memberID + " ", con);
                 }
 
                 DataTable dt1 = new DataTable();

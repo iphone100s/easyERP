@@ -36,7 +36,7 @@ namespace easyERP
             string finishDate = this.finishDate_dateTimePicker.Value.Date.ToString("yyyy-MM-dd");
 
             InsertFile_Form insertFile_Form = new InsertFile_Form();
-            insertFile_Form.getDate(startDate, finishDate);
+            insertFile_Form.getFinishDate(startDate, finishDate);
             insertFile_Form.Show();
             this.Close();
         }

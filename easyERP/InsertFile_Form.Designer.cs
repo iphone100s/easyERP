@@ -50,22 +50,6 @@
             this.depotName_label = new System.Windows.Forms.Label();
             this.untaxed_label = new System.Windows.Forms.Label();
             this.selectFile_dataGridView = new System.Windows.Forms.DataGridView();
-            this.productNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productSpec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productSn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inventoryQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.factoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.factoryNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.outDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.depotNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.depotName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.untaxed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxIncluded = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.easyERPProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.easyERP_Product = new easyERP.easyERP_Product();
             this.inDate_label = new System.Windows.Forms.Label();
@@ -107,6 +91,23 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.ExportFileExcel_button = new System.Windows.Forms.Button();
+            this.SelectFinishDate_button = new System.Windows.Forms.Button();
+            this.productNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productSpec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productSn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventoryQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.factoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.factoryNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.depotNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.depotName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.untaxed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxIncluded = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.selectFile_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyERPProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyERP_Product)).BeginInit();
@@ -244,6 +245,7 @@
             this.note_textBox.Name = "note_textBox";
             this.note_textBox.Size = new System.Drawing.Size(361, 150);
             this.note_textBox.TabIndex = 22;
+            this.note_textBox.Text = "N/A";
             // 
             // productNo_textBox
             // 
@@ -253,6 +255,7 @@
             this.productNo_textBox.Name = "productNo_textBox";
             this.productNo_textBox.Size = new System.Drawing.Size(200, 27);
             this.productNo_textBox.TabIndex = 23;
+            this.productNo_textBox.Text = "N/A";
             // 
             // depotName_label
             // 
@@ -280,8 +283,8 @@
             // 
             this.selectFile_dataGridView.AllowUserToAddRows = false;
             this.selectFile_dataGridView.AllowUserToDeleteRows = false;
-            this.selectFile_dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.selectFile_dataGridView.AllowUserToResizeColumns = false;
+            this.selectFile_dataGridView.AllowUserToResizeRows = false;
             this.selectFile_dataGridView.AutoGenerateColumns = false;
             this.selectFile_dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.selectFile_dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -334,121 +337,8 @@
             this.selectFile_dataGridView.RowTemplate.Height = 24;
             this.selectFile_dataGridView.Size = new System.Drawing.Size(1472, 320);
             this.selectFile_dataGridView.TabIndex = 57;
+            this.selectFile_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectFile_dataGridView_CellContentClick);
             this.selectFile_dataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SelectFile_dataGridView_CellMouseClick);
-            // 
-            // productNo
-            // 
-            this.productNo.DataPropertyName = "productNo";
-            this.productNo.HeaderText = "產品編號";
-            this.productNo.Name = "productNo";
-            this.productNo.ReadOnly = true;
-            // 
-            // productName
-            // 
-            this.productName.DataPropertyName = "productName";
-            this.productName.HeaderText = "產品名稱";
-            this.productName.Name = "productName";
-            this.productName.ReadOnly = true;
-            // 
-            // productSpec
-            // 
-            this.productSpec.DataPropertyName = "productSpec";
-            this.productSpec.HeaderText = "產品規格";
-            this.productSpec.Name = "productSpec";
-            this.productSpec.ReadOnly = true;
-            // 
-            // productSn
-            // 
-            this.productSn.DataPropertyName = "productSn";
-            this.productSn.HeaderText = "產品序號";
-            this.productSn.Name = "productSn";
-            this.productSn.ReadOnly = true;
-            // 
-            // productModel
-            // 
-            this.productModel.DataPropertyName = "productModel";
-            this.productModel.HeaderText = "產品型號";
-            this.productModel.Name = "productModel";
-            this.productModel.ReadOnly = true;
-            // 
-            // inQuantity
-            // 
-            this.inQuantity.DataPropertyName = "inQuantity";
-            this.inQuantity.HeaderText = "進貨數量";
-            this.inQuantity.Name = "inQuantity";
-            this.inQuantity.ReadOnly = true;
-            // 
-            // inventoryQuantity
-            // 
-            this.inventoryQuantity.DataPropertyName = "inventoryQuantity";
-            this.inventoryQuantity.HeaderText = "庫存數量";
-            this.inventoryQuantity.Name = "inventoryQuantity";
-            this.inventoryQuantity.ReadOnly = true;
-            // 
-            // factoryName
-            // 
-            this.factoryName.DataPropertyName = "factoryName";
-            this.factoryName.HeaderText = "廠商名稱";
-            this.factoryName.Name = "factoryName";
-            this.factoryName.ReadOnly = true;
-            // 
-            // factoryNo
-            // 
-            this.factoryNo.DataPropertyName = "factoryNo";
-            this.factoryNo.HeaderText = "廠商編號";
-            this.factoryNo.Name = "factoryNo";
-            this.factoryNo.ReadOnly = true;
-            // 
-            // inDate
-            // 
-            this.inDate.DataPropertyName = "inDate";
-            this.inDate.HeaderText = "進貨日期";
-            this.inDate.Name = "inDate";
-            this.inDate.ReadOnly = true;
-            // 
-            // outDate
-            // 
-            this.outDate.DataPropertyName = "outDate";
-            this.outDate.HeaderText = "出貨日期";
-            this.outDate.Name = "outDate";
-            this.outDate.ReadOnly = true;
-            // 
-            // depotNo
-            // 
-            this.depotNo.DataPropertyName = "depotNo";
-            this.depotNo.HeaderText = "倉庫編號";
-            this.depotNo.Name = "depotNo";
-            this.depotNo.ReadOnly = true;
-            // 
-            // depotName
-            // 
-            this.depotName.DataPropertyName = "depotName";
-            this.depotName.HeaderText = "倉庫名稱";
-            this.depotName.Name = "depotName";
-            this.depotName.ReadOnly = true;
-            // 
-            // untaxed
-            // 
-            this.untaxed.DataPropertyName = "untaxed";
-            this.untaxed.HeaderText = "免稅金額";
-            this.untaxed.Name = "untaxed";
-            this.untaxed.ReadOnly = true;
-            // 
-            // taxIncluded
-            // 
-            this.taxIncluded.DataPropertyName = "taxIncluded";
-            this.taxIncluded.HeaderText = "含稅金額";
-            this.taxIncluded.Name = "taxIncluded";
-            this.taxIncluded.ReadOnly = true;
-            // 
-            // note
-            // 
-            this.note.DataPropertyName = "note";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.note.DefaultCellStyle = dataGridViewCellStyle2;
-            this.note.HeaderText = "備註";
-            this.note.Name = "note";
-            this.note.ReadOnly = true;
             // 
             // easyERPProductBindingSource
             // 
@@ -501,6 +391,7 @@
             this.productName_textBox.Name = "productName_textBox";
             this.productName_textBox.Size = new System.Drawing.Size(200, 27);
             this.productName_textBox.TabIndex = 61;
+            this.productName_textBox.Text = "N/A";
             // 
             // productSn_textBox
             // 
@@ -510,6 +401,7 @@
             this.productSn_textBox.Name = "productSn_textBox";
             this.productSn_textBox.Size = new System.Drawing.Size(200, 27);
             this.productSn_textBox.TabIndex = 62;
+            this.productSn_textBox.Text = "N/A";
             // 
             // productModel_textBox
             // 
@@ -519,6 +411,7 @@
             this.productModel_textBox.Name = "productModel_textBox";
             this.productModel_textBox.Size = new System.Drawing.Size(200, 27);
             this.productModel_textBox.TabIndex = 63;
+            this.productModel_textBox.Text = "N/A";
             // 
             // productSpec_textBox
             // 
@@ -528,6 +421,7 @@
             this.productSpec_textBox.Name = "productSpec_textBox";
             this.productSpec_textBox.Size = new System.Drawing.Size(334, 27);
             this.productSpec_textBox.TabIndex = 64;
+            this.productSpec_textBox.Text = "N/A";
             // 
             // inQuantity_textBox
             // 
@@ -557,6 +451,7 @@
             this.factoryNo_textBox.Name = "factoryNo_textBox";
             this.factoryNo_textBox.Size = new System.Drawing.Size(200, 27);
             this.factoryNo_textBox.TabIndex = 67;
+            this.factoryNo_textBox.Text = "N/A";
             // 
             // factoryName_textBox
             // 
@@ -566,6 +461,7 @@
             this.factoryName_textBox.Name = "factoryName_textBox";
             this.factoryName_textBox.Size = new System.Drawing.Size(200, 27);
             this.factoryName_textBox.TabIndex = 68;
+            this.factoryName_textBox.Text = "N/A";
             // 
             // taxIncluded_textBox
             // 
@@ -794,7 +690,7 @@
             // SelectDepot_button
             // 
             this.SelectDepot_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.SelectDepot_button.Location = new System.Drawing.Point(1117, 196);
+            this.SelectDepot_button.Location = new System.Drawing.Point(960, 196);
             this.SelectDepot_button.Name = "SelectDepot_button";
             this.SelectDepot_button.Size = new System.Drawing.Size(100, 45);
             this.SelectDepot_button.TabIndex = 88;
@@ -805,7 +701,7 @@
             // SelectFactory_button
             // 
             this.SelectFactory_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.SelectFactory_button.Location = new System.Drawing.Point(1263, 107);
+            this.SelectFactory_button.Location = new System.Drawing.Point(1266, 196);
             this.SelectFactory_button.Name = "SelectFactory_button";
             this.SelectFactory_button.Size = new System.Drawing.Size(100, 45);
             this.SelectFactory_button.TabIndex = 89;
@@ -816,7 +712,7 @@
             // SelectPrice_button
             // 
             this.SelectPrice_button.Font = new System.Drawing.Font("標楷體", 14.25F);
-            this.SelectPrice_button.Location = new System.Drawing.Point(1263, 196);
+            this.SelectPrice_button.Location = new System.Drawing.Point(1117, 196);
             this.SelectPrice_button.Name = "SelectPrice_button";
             this.SelectPrice_button.Size = new System.Drawing.Size(100, 45);
             this.SelectPrice_button.TabIndex = 90;
@@ -841,7 +737,7 @@
             this.SelectinDate_button.Name = "SelectinDate_button";
             this.SelectinDate_button.Size = new System.Drawing.Size(100, 45);
             this.SelectinDate_button.TabIndex = 94;
-            this.SelectinDate_button.Text = "進出貨日期查詢";
+            this.SelectinDate_button.Text = "進貨日期查詢";
             this.SelectinDate_button.UseVisualStyleBackColor = true;
             this.SelectinDate_button.Click += new System.EventHandler(this.SelectinDate_button_Click);
             // 
@@ -866,11 +762,137 @@
             this.ExportFileExcel_button.UseVisualStyleBackColor = true;
             this.ExportFileExcel_button.Click += new System.EventHandler(this.ExportFileExcel_button_Click);
             // 
+            // SelectFinishDate_button
+            // 
+            this.SelectFinishDate_button.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.SelectFinishDate_button.Location = new System.Drawing.Point(1266, 109);
+            this.SelectFinishDate_button.Name = "SelectFinishDate_button";
+            this.SelectFinishDate_button.Size = new System.Drawing.Size(100, 45);
+            this.SelectFinishDate_button.TabIndex = 96;
+            this.SelectFinishDate_button.Text = "出貨日期查詢";
+            this.SelectFinishDate_button.UseVisualStyleBackColor = true;
+            this.SelectFinishDate_button.Click += new System.EventHandler(this.SelectFinishDate_button_Click);
+            // 
+            // productNo
+            // 
+            this.productNo.DataPropertyName = "productNo";
+            this.productNo.HeaderText = "產品編號";
+            this.productNo.Name = "productNo";
+            this.productNo.ReadOnly = true;
+            // 
+            // productName
+            // 
+            this.productName.DataPropertyName = "productName";
+            this.productName.HeaderText = "產品名稱";
+            this.productName.Name = "productName";
+            this.productName.ReadOnly = true;
+            // 
+            // productSpec
+            // 
+            this.productSpec.DataPropertyName = "productSpec";
+            this.productSpec.HeaderText = "產品規格";
+            this.productSpec.Name = "productSpec";
+            this.productSpec.ReadOnly = true;
+            // 
+            // productSn
+            // 
+            this.productSn.DataPropertyName = "productSn";
+            this.productSn.HeaderText = "產品序號";
+            this.productSn.Name = "productSn";
+            this.productSn.ReadOnly = true;
+            // 
+            // productModel
+            // 
+            this.productModel.DataPropertyName = "productModel";
+            this.productModel.HeaderText = "產品型號";
+            this.productModel.Name = "productModel";
+            this.productModel.ReadOnly = true;
+            // 
+            // inQuantity
+            // 
+            this.inQuantity.DataPropertyName = "inQuantity";
+            this.inQuantity.HeaderText = "進貨數量";
+            this.inQuantity.Name = "inQuantity";
+            this.inQuantity.ReadOnly = true;
+            // 
+            // inventoryQuantity
+            // 
+            this.inventoryQuantity.DataPropertyName = "inventoryQuantity";
+            this.inventoryQuantity.HeaderText = "庫存數量";
+            this.inventoryQuantity.Name = "inventoryQuantity";
+            this.inventoryQuantity.ReadOnly = true;
+            // 
+            // factoryName
+            // 
+            this.factoryName.DataPropertyName = "factoryName";
+            this.factoryName.HeaderText = "廠商名稱";
+            this.factoryName.Name = "factoryName";
+            this.factoryName.ReadOnly = true;
+            // 
+            // factoryNo
+            // 
+            this.factoryNo.DataPropertyName = "factoryNo";
+            this.factoryNo.HeaderText = "廠商編號";
+            this.factoryNo.Name = "factoryNo";
+            this.factoryNo.ReadOnly = true;
+            // 
+            // inDate
+            // 
+            this.inDate.DataPropertyName = "inDate";
+            this.inDate.HeaderText = "進貨日期";
+            this.inDate.Name = "inDate";
+            this.inDate.ReadOnly = true;
+            // 
+            // outDate
+            // 
+            this.outDate.DataPropertyName = "outDate";
+            this.outDate.HeaderText = "出貨日期";
+            this.outDate.Name = "outDate";
+            this.outDate.ReadOnly = true;
+            // 
+            // depotNo
+            // 
+            this.depotNo.DataPropertyName = "depotNo";
+            this.depotNo.HeaderText = "倉庫編號";
+            this.depotNo.Name = "depotNo";
+            this.depotNo.ReadOnly = true;
+            // 
+            // depotName
+            // 
+            this.depotName.DataPropertyName = "depotName";
+            this.depotName.HeaderText = "倉庫名稱";
+            this.depotName.Name = "depotName";
+            this.depotName.ReadOnly = true;
+            // 
+            // untaxed
+            // 
+            this.untaxed.DataPropertyName = "untaxed";
+            this.untaxed.HeaderText = "免稅金額";
+            this.untaxed.Name = "untaxed";
+            this.untaxed.ReadOnly = true;
+            // 
+            // taxIncluded
+            // 
+            this.taxIncluded.DataPropertyName = "taxIncluded";
+            this.taxIncluded.HeaderText = "含稅金額";
+            this.taxIncluded.Name = "taxIncluded";
+            this.taxIncluded.ReadOnly = true;
+            // 
+            // note
+            // 
+            this.note.DataPropertyName = "note";
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.note.DefaultCellStyle = dataGridViewCellStyle2;
+            this.note.HeaderText = "備註";
+            this.note.Name = "note";
+            this.note.ReadOnly = true;
+            // 
             // InsertFile_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1491, 881);
+            this.Controls.Add(this.SelectFinishDate_button);
             this.Controls.Add(this.ExportFileExcel_button);
             this.Controls.Add(this.SelectinDate_button);
             this.Controls.Add(this.status_comboBox);
@@ -988,6 +1010,15 @@
         private System.Windows.Forms.Label lbCurrentPage;
         private System.Windows.Forms.BindingSource easyERPProductBindingSource;
         private easyERP_Product easyERP_Product;
+        private System.Windows.Forms.Button SelectDepot_button;
+        private System.Windows.Forms.Button SelectFactory_button;
+        private System.Windows.Forms.Button SelectPrice_button;
+        private System.Windows.Forms.ComboBox status_comboBox;
+        public System.Windows.Forms.DataGridView selectFile_dataGridView;
+        private System.DirectoryServices.DirectoryEntry directoryEntry1;
+        public System.Windows.Forms.Button SelectinDate_button;
+        private System.Windows.Forms.Button ExportFileExcel_button;
+        public System.Windows.Forms.Button SelectFinishDate_button;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn productName;
         private System.Windows.Forms.DataGridViewTextBoxColumn productSpec;
@@ -1004,13 +1035,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn untaxed;
         private System.Windows.Forms.DataGridViewTextBoxColumn taxIncluded;
         private System.Windows.Forms.DataGridViewTextBoxColumn note;
-        private System.Windows.Forms.Button SelectDepot_button;
-        private System.Windows.Forms.Button SelectFactory_button;
-        private System.Windows.Forms.Button SelectPrice_button;
-        private System.Windows.Forms.ComboBox status_comboBox;
-        public System.Windows.Forms.DataGridView selectFile_dataGridView;
-        private System.DirectoryServices.DirectoryEntry directoryEntry1;
-        public System.Windows.Forms.Button SelectinDate_button;
-        private System.Windows.Forms.Button ExportFileExcel_button;
     }
 }

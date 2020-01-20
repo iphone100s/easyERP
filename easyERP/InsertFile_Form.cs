@@ -340,41 +340,43 @@ namespace easyERP
                             "UPDATE Product SET productName = '" + productName + "' , productSpec = '" + productSpec + "' , productSn = '" + productSn + "' , productModel = '" + productModel + "' , inQuantity = " + inQuantity + ", inventoryQuantity = " + inventoryQuantity + ", factoryName = '" + factoryName + "', factoryNo = '" + factoryNo + "', note = '" + note + "' " +
                             "WHERE productNo  = '" + productNo + "' ; ", con);
 
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        da.Update(dt);
+
+
                         MessageBox.Show("資料修改成功!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
-
-
                 }
 
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                da.Update(dt);
 
                 //修改完後重新查詢
                 SqlCommand cmd1 = new SqlCommand();
                 {
                     cmd1 = new SqlCommand("select p.productNo ,p.productName,p.productSpec,p.productSn,p.productModel," +
-                            "p.inQuantity, p.inventoryQuantity, p.factoryName," +
-                            "p.factoryNo, p.note," +
-                            "m.Untaxed, m.taxIncluded," +
-                            "a.depotNo, a.depotName," +
-                            "t.inDate, t.outDate " +
-                            "from Product p join Price m " +
-                            "on p.productNo = m.productNo " +
-                            "join Depot a " +
-                            "on p.productNo = a.productNo " +
-                            "join Date t " +
-                            "on p.productNo = t.productNo " +
-                            " where p.productNo = '" + productNo + "' ", con);
+                             "p.inQuantity, p.inventoryQuantity, p.factoryName," +
+                             "p.factoryNo, p.note," +
+                             "m.Untaxed, m.taxIncluded," +
+                             "a.depotNo, a.depotName," +
+                             "t.inDate, t.outDate " +
+                             "from Product p join Price m " +
+                             "on p.productNo = m.productNo " +
+                             "join Depot a " +
+                             "on p.productNo = a.productNo " +
+                             "join Date t " +
+                             "on p.productNo = t.productNo " +
+                             " where p.productNo = '" + productNo + "' ", con);
+
+                    DataTable dt1 = new DataTable();
+                    SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+                    da1.Fill(dt1);
+
+                    selectFile_dataGridView.DataSource = dt1;
+
                 }
 
-                DataTable dt1 = new DataTable();
-                SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
-                da1.Fill(dt1);
-
-                selectFile_dataGridView.DataSource = dt1;
 
             }
         }
@@ -499,52 +501,54 @@ namespace easyERP
             SqlHelp sqlhelper = new SqlHelp();
             DataSet ds = sqlhelper.SqlServerRecordCount2(pNo); // 返回符合的結果數量
 
-
-
-            using (SqlConnection con = new SqlConnection(_connecString))
-            {
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand();
+                using (SqlConnection con = new SqlConnection(_connecString))
                 {
-                    //inQuantity.Equals("") ||
-
                     try
                     {
-                        if (productNo.Equals("") || productSn.Equals("") ||  factoryNo.Equals("") || factoryName.Equals("") ||  inDate.Equals(""))
+
+                        con.Open();
+
+                        SqlCommand cmd = new SqlCommand();
                         {
-                            MessageBox.Show("請勿空白產品編號" + Environment.NewLine + 
-                                                    "產品序號" + Environment.NewLine + 
-                                                        "數量" + Environment.NewLine + 
-                                                    "廠商編號" + Environment.NewLine + 
-                                                    "廠商名稱" + Environment.NewLine + 
-                                                    "倉庫編號" + Environment.NewLine + 
-                                                    "倉庫名稱" + Environment.NewLine + 
-                                                    "進貨日期", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            return;
-                        }
-                        if (ds.Tables[0].Rows.Count > 0)
-                        {
-                            string ReturnPermission = ds.Tables["Product"].Rows[0]["productNo"].ToString();
-                            if (ReturnPermission.Equals(productNo))
+                            if (productNo.Equals("") || productSn.Equals("") || factoryNo.Equals("") || factoryName.Equals("") || inDate.Equals(""))
                             {
-                                MessageBox.Show("請勿重複產品編號!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                                MessageBox.Show("請勿空白產品編號" + Environment.NewLine +
+                                                        "產品序號" + Environment.NewLine +
+                                                            "數量" + Environment.NewLine +
+                                                        "廠商編號" + Environment.NewLine +
+                                                        "廠商名稱" + Environment.NewLine +
+                                                        "倉庫編號" + Environment.NewLine +
+                                                        "倉庫名稱" + Environment.NewLine +
+                                                        "進貨日期", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 return;
                             }
-                        }
-                        else
-                        {
-                            cmd = new SqlCommand("insert into Date(inDate, outDate,productNo) values('" + inDate + "','" + outDate + "','" + productNo + "');" +
-                                                 "insert into Depot(depotNo, depotName,productNo) values('" + Value + "','" + key + "','" + productNo + "');" +
-                                                 "insert into Price(Untaxed, taxIncluded,productNo) values(" + untaxed + "," + taxIncluded + ",'" + productNo + "'); " +
-                                                 "insert into Product(productNo, productName,productSpec,productSn,productModel,inQuantity,inventoryQuantity,factoryName,factoryNo,note) values" +
-                                                 "(" + productNo + "," + productName + ",'" + productSpec + "' ,'" + productSn + "','" + productModel + "'," + inQuantity + "," + inventoryQuantity + ",'" + factoryName + "','" + factoryNo + "','" + note + "' ) ", con);
-
+                            if (ds.Tables[0].Rows.Count > 0)
+                            {
+                                string ReturnPermission = ds.Tables["Product"].Rows[0]["productNo"].ToString();
+                                if (ReturnPermission.Equals(productNo))
+                                {
+                                    MessageBox.Show("請勿重複產品編號!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                cmd = new SqlCommand("insert into Date(inDate, outDate,productNo) values('" + inDate + "','" + outDate + "','" + productNo + "');" +
+                                                     "insert into Depot(depotNo, depotName,productNo) values('" + Value + "','" + key + "','" + productNo + "');" +
+                                                     "insert into Price(Untaxed, taxIncluded,productNo) values(" + untaxed + "," + taxIncluded + ",'" + productNo + "'); " +
+                                                     "insert into Product(productNo, productName,productSpec,productSn,productModel,inQuantity,inventoryQuantity,factoryName,factoryNo,note) values" +
+                                                     "('" + productNo + "','" + productName + "','" + productSpec + "' ,'" + productSn + "','" + productModel + "'," + inQuantity + "," + inventoryQuantity + ",'" + factoryName + "','" + factoryNo + "','" + note + "' ) ", con);
 
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("資料儲存成功!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("資料儲存成功!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            cmd = new SqlCommand("select p.productNo ,p.productName,p.productSpec,p.productSn,p.productModel," +
+                            }
+
+                        }
+
+                        SqlCommand cmd1 = new SqlCommand();
+                        {
+                        cmd1 = new SqlCommand("select p.productNo ,p.productName,p.productSpec,p.productSn,p.productModel," +
                             "p.inQuantity, p.inventoryQuantity, p.factoryName," +
                             "p.factoryNo, p.note," +
                             "m.Untaxed, m.taxIncluded," +
@@ -558,6 +562,16 @@ namespace easyERP
                             "on p.productNo = t.productNo " +
                             " where p.productNo = '" + productNo + "' ", con);
                         }
+
+
+                        DataTable dt1 = new DataTable();
+                        SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+                        da1.Fill(dt1);
+
+                        selectFile_dataGridView.DataSource = dt1;
+
+
+
                     }
                     catch (Exception ex)
                     {
@@ -567,14 +581,8 @@ namespace easyERP
                     {
                         con.Close();
                     }
+
                 }
-                DataTable dt1 = new DataTable();
-                SqlDataAdapter da1 = new SqlDataAdapter(cmd);
-                da1.Fill(dt1);
-
-                selectFile_dataGridView.DataSource = dt1;
-
-            }
         }
 
         private void InsertFile_Form_Load(object sender, EventArgs e)
@@ -603,6 +611,9 @@ namespace easyERP
             btnLastPage.Enabled = false;
             ExportFileExcel_button.Enabled = false;
 
+           //selectFile_dataGridView.DataSource = false;
+
+            //selectFile_dataGridView.RowHeadersVisible = false;
 
             //設定標題的底色為透明標題
             productNo_label.BackColor = Color.Transparent;
@@ -660,6 +671,13 @@ namespace easyERP
             lbTotalPage.Parent = pictureBox1;
 
 
+            //int index = this.selectFile_dataGridView.Rows.Add();
+            //this.selectFile_dataGridView.Rows[index].Cells[0].Value = "1";
+            //this.selectFile_dataGridView.Rows[index].Cells[1].Value = "2";
+            //this.selectFile_dataGridView.Rows[index].Cells[2].Value = "監聽";
+
+
+
         }
 
         //金額查詢
@@ -701,6 +719,13 @@ namespace easyERP
                                 "join Date t " +
                                 "on p.productNo = t.productNo " +
                                 " where m.Untaxed Like '%" + untaxed + "%'  ", con);
+
+                            DataTable dt = new DataTable();
+                            SqlDataAdapter da = new SqlDataAdapter(cmd);
+                            da.Fill(dt);
+                            selectFile_dataGridView.DataSource = dt;
+                            lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
                         }
                     }
                     catch (Exception ex)
@@ -713,11 +738,7 @@ namespace easyERP
                     }
                 }
 
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                selectFile_dataGridView.DataSource = dt;
-                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
 
             }
 
@@ -755,6 +776,13 @@ namespace easyERP
                                 "join Date t " +
                                 "on p.productNo = t.productNo " +
                                 " where m.taxIncluded Like '%" + taxIncluded + "%'  ", con);
+
+                            DataTable dt = new DataTable();
+                            SqlDataAdapter da = new SqlDataAdapter(cmd);
+                            da.Fill(dt);
+                            selectFile_dataGridView.DataSource = dt;
+                            lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
                         }
                     }
                     catch (Exception ex)
@@ -767,11 +795,7 @@ namespace easyERP
                     }
                 }
 
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                selectFile_dataGridView.DataSource = dt;
-                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
 
             }
 
@@ -823,6 +847,14 @@ namespace easyERP
                                 "join Date t " +
                                 "on p.productNo = t.productNo " +
                                 " where p.factoryNo Like '%" + factoryNo + "%'  ", con);
+
+                            DataTable dt = new DataTable();
+                            SqlDataAdapter da = new SqlDataAdapter(cmd);
+                            da.Fill(dt);
+                            selectFile_dataGridView.DataSource = dt;
+                            lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
+
                         }
                     }
                     catch (Exception ex)
@@ -835,11 +867,7 @@ namespace easyERP
                     }
                 }
 
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                selectFile_dataGridView.DataSource = dt;
-                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
 
             }
 
@@ -878,6 +906,14 @@ namespace easyERP
                                 "join Date t " +
                                 "on p.productNo = t.productNo " +
                                 " where p.factoryNo Like '%" + factoryName + "%'  ", con);
+
+                            DataTable dt = new DataTable();
+                            SqlDataAdapter da = new SqlDataAdapter(cmd);
+                            da.Fill(dt);
+                            selectFile_dataGridView.DataSource = dt;
+                            lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
+
                         }
                     }
                     catch (Exception ex)
@@ -890,11 +926,7 @@ namespace easyERP
                     }
                 }
 
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                selectFile_dataGridView.DataSource = dt;
-                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
 
             }
 
@@ -940,7 +972,8 @@ namespace easyERP
                                 "on p.productNo = a.productNo " +
                                 "join Date t " +
                                 "on p.productNo = t.productNo " +
-                                " where t.inDate BETWEEN '" + startDate + "'  and '" + finishDate + "' ", con);
+                                " where t.inDate BETWEEN '" + startDate + "'  and '" + finishDate + "' "     , con);
+
                         }
                     }
                     catch (Exception ex)
@@ -957,7 +990,73 @@ namespace easyERP
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 selectFile_dataGridView.DataSource = dt;
+              
                 lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+  
+
+            }
+        }
+
+
+        private void SelectFinishDate_button_Click(object sender, EventArgs e)
+        {
+            SelectIndate_Form selectIndate_Form = new SelectIndate_Form();
+            selectIndate_Form.Show();
+            this.Close();
+        }
+
+        public void getFinishDate(string startDate, string finishDate)
+        {
+
+            using (SqlConnection con = new SqlConnection(_connecString))
+            {
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                {
+
+                    try
+                    {
+                        if (startDate.Equals("") || finishDate.Equals(""))
+                        {
+                            MessageBox.Show("請輸入日期!!", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("select p.productNo ,p.productName,p.productSpec,p.productSn,p.productModel," +
+                                "p.inQuantity, p.inventoryQuantity, p.factoryName," +
+                                "p.factoryNo, p.note," +
+                                "m.Untaxed, m.taxIncluded," +
+                                "a.depotNo, a.depotName," +
+                                "t.inDate, t.outDate " +
+                                "from Product p join Price m " +
+                                "on p.productNo = m.productNo " +
+                                "join Depot a " +
+                                "on p.productNo = a.productNo " +
+                                "join Date t " +
+                                "on p.productNo = t.productNo " +
+                                " where t.outDate BETWEEN '" + startDate + "'  and '" + finishDate + "' ", con);
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                }
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                selectFile_dataGridView.DataSource = dt;
+
+                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
 
             }
         }
@@ -995,23 +1094,27 @@ namespace easyERP
                             "join Date t " +
                             "on p.productNo = t.productNo " +
                             " where a.depotName = '" + key + "' ", con);
+
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        selectFile_dataGridView.DataSource = dt;
+                        lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
                     }
                 }
 
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                selectFile_dataGridView.DataSource = dt;
-                lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
+
             }
         }
 
         private void SelectFile_dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+
+
             int A = selectFile_dataGridView.Rows.Count;
 
-
-            if (A == 1)
+            if (A == 0)
             {
                 MessageBox.Show("請先查詢", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -1027,10 +1130,10 @@ namespace easyERP
 
                 inQuantity_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[5].Value.ToString();
                 inventoryQuantity_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[6].Value.ToString();
-                factoryNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[7].Value.ToString();
-                factoryName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[8].Value.ToString();
+                factoryName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[7].Value.ToString();
+                factoryNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[8].Value.ToString();
+                
 
-               
                 //string dateInput = selectFile_dataGridView.CurrentRow.Cells[9].Value.ToString();
                 //DateTime parsedDate = DateTime.Parse(dateInput);
                 //inDate_dateTimePicker.Value = parsedDate;
@@ -1134,5 +1237,12 @@ namespace easyERP
                 }
             }
         }
+
+        private void SelectFile_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
     }
 }
