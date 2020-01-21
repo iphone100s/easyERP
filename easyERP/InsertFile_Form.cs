@@ -611,7 +611,9 @@ namespace easyERP
             btnLastPage.Enabled = false;
             ExportFileExcel_button.Enabled = false;
 
-           //selectFile_dataGridView.DataSource = false;
+
+            
+            //selectFile_dataGridView.DataSource = false;
 
             //selectFile_dataGridView.RowHeadersVisible = false;
 
@@ -877,6 +879,8 @@ namespace easyERP
         //廠商名稱查詢
         public void getFactoryName(string factoryName)
         {
+            
+
             using (SqlConnection con = new SqlConnection(_connecString))
             {
 
@@ -911,6 +915,7 @@ namespace easyERP
                             SqlDataAdapter da = new SqlDataAdapter(cmd);
                             da.Fill(dt);
                             selectFile_dataGridView.DataSource = dt;
+                         
                             lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
 
 
@@ -997,7 +1002,7 @@ namespace easyERP
             }
         }
 
-
+        //出貨日期查詢
         private void SelectFinishDate_button_Click(object sender, EventArgs e)
         {
             SelectIndate_Form selectIndate_Form = new SelectIndate_Form();
@@ -1054,7 +1059,6 @@ namespace easyERP
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 selectFile_dataGridView.DataSource = dt;
-
                 lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
 
 
@@ -1110,53 +1114,58 @@ namespace easyERP
 
         private void SelectFile_dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            try
+            {
+                int A = selectFile_dataGridView.Rows.Count;
+
+                if (A == 0)
+                {
+                    MessageBox.Show("請先查詢", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                else
+                {
+                    productNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[0].Value.ToString();
+                    productName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[1].Value.ToString();
+                    productSpec_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[2].Value.ToString();
+                    productSn_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[3].Value.ToString();
+                    productModel_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[4].Value.ToString();
 
 
-            int A = selectFile_dataGridView.Rows.Count;
+                    inQuantity_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[5].Value.ToString();
+                    inventoryQuantity_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[6].Value.ToString();
+                    factoryName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[7].Value.ToString();
+                    factoryNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[8].Value.ToString();
 
-            if (A == 0)
+
+                    //string dateInput = selectFile_dataGridView.CurrentRow.Cells[9].Value.ToString();
+                    //DateTime parsedDate = DateTime.Parse(dateInput);
+                    //inDate_dateTimePicker.Value = parsedDate;
+
+                    //string dateInputa = selectFile_dataGridView.CurrentRow.Cells[10].Value.ToString();
+                    //DateTime parsedDatea = DateTime.Parse(dateInputa);
+                    //outDate_dateTimePicker.Value = parsedDatea;
+
+
+                    inDate_dateTimePicker.Text = selectFile_dataGridView.CurrentRow.Cells[9].Value.ToString();
+                    outDate_dateTimePicker.Text = selectFile_dataGridView.CurrentRow.Cells[10].Value.ToString();
+
+                    //depotNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[11].Value.ToString();
+                    status_comboBox.Text = selectFile_dataGridView.CurrentRow.Cells[12].Value.ToString();
+
+                    untaxed_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[13].Value.ToString();
+                    taxIncluded_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[14].Value.ToString();
+                    note_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[15].Value.ToString();
+
+
+                }
+            }
+            catch(Exception)
             {
                 MessageBox.Show("請先查詢", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
             }
-            else
-            {
-                productNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[0].Value.ToString();
-                productName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[1].Value.ToString();
-                productSpec_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[2].Value.ToString();
-                productSn_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[3].Value.ToString();
-                productModel_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[4].Value.ToString();
-                
 
-                inQuantity_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[5].Value.ToString();
-                inventoryQuantity_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[6].Value.ToString();
-                factoryName_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[7].Value.ToString();
-                factoryNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[8].Value.ToString();
-                
-
-                //string dateInput = selectFile_dataGridView.CurrentRow.Cells[9].Value.ToString();
-                //DateTime parsedDate = DateTime.Parse(dateInput);
-                //inDate_dateTimePicker.Value = parsedDate;
-
-                //string dateInputa = selectFile_dataGridView.CurrentRow.Cells[10].Value.ToString();
-                //DateTime parsedDatea = DateTime.Parse(dateInputa);
-                //outDate_dateTimePicker.Value = parsedDatea;
-
-
-                inDate_dateTimePicker.Text = selectFile_dataGridView.CurrentRow.Cells[9].Value.ToString();
-                outDate_dateTimePicker.Text = selectFile_dataGridView.CurrentRow.Cells[10].Value.ToString();
-
-                //depotNo_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[11].Value.ToString();
-                status_comboBox.Text = selectFile_dataGridView.CurrentRow.Cells[12].Value.ToString();
-
-                untaxed_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[13].Value.ToString();
-                taxIncluded_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[14].Value.ToString();
-                note_textBox.Text = selectFile_dataGridView.CurrentRow.Cells[15].Value.ToString();
-
-
-
-
-            }
+            
 
         }
 
@@ -1240,7 +1249,7 @@ namespace easyERP
 
         private void SelectFile_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           
         }
 
 
