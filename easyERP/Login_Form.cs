@@ -106,6 +106,8 @@ namespace easyERP
                             string updateDeleteMemberError = "UPDATE Member SET memberError = 0  WHERE memberAccount ='" + username + "' ; "; //正式用資料庫
                             sqlhelper.SqlServerRecordCount2(updateDeleteMemberError);
 
+                            ReturnPermission = ds.Tables["Member"].Rows[0]["memberName"].ToString().Trim();
+
                             MessageBox.Show(ReturnPermission + " 歡迎您登入，請按確定登入系統", "提示訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             //跳轉道主頁面

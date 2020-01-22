@@ -870,7 +870,6 @@ namespace easyERP
                 }
 
 
-
             }
 
         }
@@ -909,13 +908,12 @@ namespace easyERP
                                 "on p.productNo = a.productNo " +
                                 "join Date t " +
                                 "on p.productNo = t.productNo " +
-                                " where p.factoryNo Like '%" + factoryName + "%'  ", con);
+                                " where p.factoryName Like '%" + factoryName + "%'  ", con);
 
                             DataTable dt = new DataTable();
                             SqlDataAdapter da = new SqlDataAdapter(cmd);
                             da.Fill(dt);
-                            selectFile_dataGridView.DataSource = dt;
-                         
+                            selectFile_dataGridView.DataSource = dt;                       
                             lbCurrentPage.Text = "第 " + _currentPageIndex + " 頁";
 
 
